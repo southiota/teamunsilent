@@ -70,11 +70,12 @@ h1,h2,h3{font-weight:800;letter-spacing:-.035em;line-height:1.1;text-wrap:balanc
 .hero{position:relative;min-height:100svh;overflow:hidden;isolation:isolate;display:flex;flex-direction:column;justify-content:center}
 .hero .bg{position:absolute;inset:-4%;z-index:-4;background:url(img/v5/night.webp) center 40%/cover;filter:grayscale(1) blur(14px) brightness(.35);opacity:.55;transform:scale(1.04);transition:filter 1.6s var(--slow),opacity 1.6s var(--slow)}
 .hero::before{content:"";position:absolute;inset:0;z-index:-3;background:radial-gradient(70% 90% at 70% 60%,transparent,var(--night) 78%),linear-gradient(180deg,rgba(17,28,28,.6),transparent 30%,transparent 70%,var(--night))}
-.word{position:absolute;left:0;right:0;bottom:-.3em;z-index:-2;text-align:center;font-family:var(--f-disp);font-stretch:125%;font-weight:900;font-size:min(19vw,32svh);line-height:.8;letter-spacing:-.05em;white-space:nowrap;color:transparent;-webkit-text-stroke:1.5px rgba(244,247,239,.14);transition:-webkit-text-stroke-color 1.4s var(--slow)}
+.word{position:absolute;left:0;right:0;bottom:84px;z-index:-2;text-align:center;font-family:var(--f-disp);font-stretch:125%;font-weight:900;font-size:var(--wf);line-height:.74;letter-spacing:-.05em;white-space:nowrap;color:transparent;-webkit-text-stroke:1.5px rgba(244,247,239,.14);transition:-webkit-text-stroke-color 1.4s var(--slow)}
 .word b{font-weight:inherit;display:inline-block;max-width:0;overflow:hidden;vertical-align:bottom;-webkit-text-stroke:1.5px var(--lime);transition:max-width 1.2s var(--slow)}
 .glow{position:absolute;right:max(-6vw,calc(50% - 760px));bottom:-20%;width:min(70vw,1000px);aspect-ratio:1;border-radius:50%;z-index:-1;background:radial-gradient(circle,rgba(194,234,140,.34),rgba(194,234,140,.1) 42%,transparent 66%);opacity:0;transform:scale(.8);transition:opacity 1.6s var(--slow),transform 2s var(--slow)}
 .joy{position:absolute;right:max(1vw,calc(50% - 690px));bottom:0;height:min(76svh,820px);width:auto;max-width:none;-webkit-mask-image:linear-gradient(180deg,transparent,#000 16%);mask-image:linear-gradient(180deg,transparent,#000 16%);filter:grayscale(1) brightness(.62) contrast(1.05);transition:filter 1.6s var(--slow),transform 1.8s var(--slow);transform:scale(.98);transform-origin:bottom center}
-.copy{position:relative;z-index:2;max-width:min(560px,46vw);padding-top:62px;padding-bottom:88px}
+.hero{--wf:min(14.6vw,23svh)}
+.copy{position:relative;z-index:2;max-width:min(560px,46vw);padding-top:62px;padding-bottom:calc(var(--wf) * .78 + 96px)}
 .copy .mono{color:var(--mute);display:flex;gap:10px;align-items:center}
 .copy .mono::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--mute);transition:background .6s,box-shadow .6s}
 .h1{position:relative;margin-top:26px;font-size:clamp(42px,5.4vw,82px);font-weight:900;line-height:1.06;letter-spacing:-.05em;min-height:2.2em}
@@ -118,7 +119,8 @@ h1,h2,h3{font-weight:800;letter-spacing:-.035em;line-height:1.1;text-wrap:balanc
   .h1{font-size:11vw}
   .joy{position:relative;right:auto;height:auto;width:min(108vw,600px);margin:24px auto 0;align-self:center}
   .glow{right:-30vw;width:140vw;bottom:-10%}
-  .word{bottom:0;font-size:24vw}
+  .word{position:relative;order:2;bottom:auto;font-size:14.6vw;line-height:.74;margin:44px 0 -.5em}
+  .hero .joy{order:3;margin-top:0}
   .credits{position:relative;order:3}
   .credits .wrap{grid-template-columns:1fr 1fr;gap:12px 16px}
   .credits div{display:grid;gap:0}
@@ -135,7 +137,7 @@ h1,h2,h3{font-weight:800;letter-spacing:-.035em;line-height:1.1;text-wrap:balanc
 /* ── 그날 밤: DJ 부스 뒤에서 본 3시간 ── */
 .night{position:relative;min-height:100svh;overflow:hidden;isolation:isolate;display:flex}
 .night video,.night .poster{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:-2}
-.night .poster{background:url(vid/v6/tl.jpg) center/cover}
+.night .poster{background:url(vid/v7/tl.jpg) center/cover}
 .night::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(90deg,rgba(17,28,28,.9) 0%,rgba(17,28,28,.55) 36%,transparent 62%),linear-gradient(0deg,rgba(17,28,28,.85),transparent 34%),linear-gradient(180deg,var(--night),transparent 18%)}
 .night-ui{position:relative;width:100%;display:grid;grid-template-columns:minmax(0,1fr) 300px;gap:32px;align-items:end;padding-block:110px 40px}
 .night .h2{font-size:clamp(30px,3.8vw,52px)}
@@ -204,8 +206,12 @@ h1,h2,h3{font-weight:800;letter-spacing:-.035em;line-height:1.1;text-wrap:balanc
 .volc h3{font-size:clamp(24px,2.3vw,30px);margin-top:8px}
 .volc dl{display:grid;grid-template-columns:auto 1fr;gap:6px 14px;font-size:14px;margin-top:14px}
 .volc dt{color:var(--mute)}
-.volc .ask-b{all:unset;cursor:pointer;margin-top:16px;font-weight:800;font-size:14px;color:var(--lime);display:inline-flex;gap:6px;align-items:center}
-.volc .ask-b:focus-visible{outline:3px solid var(--lime);outline-offset:3px}
+.volc .ask-b{all:unset;box-sizing:border-box;cursor:pointer;align-self:flex-end;margin-top:20px;display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:44px;padding:11px 20px;border-radius:99px;background:var(--lime);color:var(--ink);font-weight:800;font-size:15px;line-height:1.2;transition:transform .3s var(--ease),box-shadow .3s,background .3s,color .3s}
+.volc .ask-b:hover{transform:translateY(-2px);box-shadow:0 12px 30px -12px rgba(194,234,140,.7)}
+.volc .ask-b:focus-visible{outline:3px solid var(--lime);outline-offset:4px}
+/* 장소를 고른 뒤: 고른 카드만 채운 라임, 나머지는 라임 외곽선 */
+.vols.has .volc:not(.sel) .ask-b{background:rgba(17,28,28,.6);color:var(--lime);box-shadow:inset 0 0 0 1.5px var(--lime)}
+@media (max-width:560px){.volc .ask-b{align-self:stretch}}
 @media (max-width:960px){.vols{grid-template-columns:1fr}.volc{min-height:600px}}
 
 /* DJ: 한 명당 한 화면 */
@@ -222,7 +228,12 @@ h1,h2,h3{font-weight:800;letter-spacing:-.035em;line-height:1.1;text-wrap:balanc
 .djp ul{list-style:none;padding:0;display:flex;flex-wrap:wrap;gap:6px}
 .djp ul li{font-family:var(--f-disp);font-stretch:110%;font-weight:800;font-size:11px;letter-spacing:.05em;border:1px solid rgba(244,247,239,.3);padding:5px 11px;border-radius:99px}
 .djp .row{display:flex;gap:10px;flex-wrap:wrap;margin-top:8px}
-@media (min-width:861px) and (min-height:640px){.stack .djp{position:sticky;top:0}.stack .djp+.djp{box-shadow:0 -40px 80px -20px rgba(0,0,0,.6)}}
+@media (min-width:861px) and (min-height:640px){
+  .stack .djp{position:sticky;top:0;margin-bottom:70svh}   /* 고정된 채 70svh 동안 머문다 */
+  .stack .djp:last-child{margin-bottom:0}
+  .stack::after{content:"";display:block;height:70svh}       /* 마지막 KALI도 같은 시간 머문다 */
+  .stack .djp+.djp{box-shadow:0 -40px 80px -20px rgba(0,0,0,.6)}
+}
 @media (max-width:860px){
   .djp{min-height:0;display:block;padding-top:80px}
   .djp::before{background:radial-gradient(70% 34% at 50% 30%,var(--gc,rgba(194,234,140,.26)),transparent 70%)}
@@ -295,10 +306,10 @@ h1,h2,h3{font-weight:800;letter-spacing:-.035em;line-height:1.1;text-wrap:balanc
 .rider li{padding:14px 0;border-bottom:1px solid var(--line);display:grid;gap:2px}
 .rider li:nth-child(even){padding-left:16px;border-left:1px solid var(--line)}
 .rider small{font-family:var(--f-mono);font-size:11px;color:var(--mute)}
-.kit{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
-.kit figure{background:radial-gradient(circle at 50% 60%,var(--ink-3),var(--ink-2));border-radius:16px;display:grid;place-items:center;aspect-ratio:1;padding:16px;position:relative;min-width:0}
-.kit img{max-height:76%;max-width:100%;width:auto;object-fit:contain;filter:drop-shadow(0 16px 24px rgba(0,0,0,.5))}
-.kit figcaption{position:absolute;left:12px;bottom:10px;font-family:var(--f-mono);font-size:10px;color:var(--mute)}
+.kit{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;align-items:start}
+.kit figure{position:relative;display:block;aspect-ratio:1;margin:0;padding:0;overflow:hidden;min-width:0;border-radius:16px;background:radial-gradient(circle at 50% 60%,var(--ink-3),var(--ink-2))}
+.kit img{position:absolute;left:10%;top:8%;width:80%;height:64%;max-width:none;max-height:none;object-fit:contain;object-position:50% 50%;filter:drop-shadow(0 16px 24px rgba(0,0,0,.5))}
+.kit figcaption{position:absolute;left:12px;bottom:12px;line-height:1;font-family:var(--f-mono);font-size:11px;letter-spacing:.1em;color:var(--mute)}
 @media (max-width:860px){.rider{grid-template-columns:1fr}}
 .steps{list-style:none;padding:0;display:grid;grid-template-columns:repeat(5,1fr);gap:14px;counter-reset:s;margin-top:clamp(36px,4vw,56px)}
 .steps li{border-top:1px solid var(--lime);padding-top:14px;display:grid;gap:4px;align-content:start}
@@ -361,21 +372,20 @@ form .cta{grid-column:1/-1;justify-self:start}
 
 <section class="night" id="night" aria-labelledby="t-night">
   <div class="poster" aria-hidden="true"></div>
-  <video id="reel" muted playsinline loop preload="none" aria-label="2026년 5월 10일 한강 사일런트 디스코, DJ 부스 뒤에 고정한 카메라로 본 3시간. 빈 광장이 헤드셋을 쓴 관객으로 가득 찹니다."></video>
+  <video id="reel" muted playsinline loop preload="none" aria-label="2026년 5월 10일 한강 사일런트 디스코, DJ 부스 뒤에 고정한 카메라로 본 3시간. 헤드셋을 쓰고 모여든 관객으로 광장이 가득 찹니다."></video>
   <div class="wrap night-ui">
     <div>
       <p class="kick mono rv">2026.05.10 · 한강 사일런트 디스코 · DJ 부스 뒤에서</p>
-      <h2 class="h2 rv" id="t-night">빈 광장이 춤추기까지,<br>3시간을 24초로.</h2>
-      <p class="clk" aria-hidden="true"><span id="hh">18</span><i>:</i><span id="mm">03</span></p>
-      <div class="ctl"><button type="button" id="reelpp">일시정지</button><span>18:03</span><div class="bar" aria-hidden="true"><i id="reelbar"></i></div><span>21:13</span></div>
+      <h2 class="h2 rv" id="t-night">광장이 가득 차기까지,<br>3시간을 20초로.</h2>
+      <p class="clk" aria-hidden="true"><span id="hh">18</span><i>:</i><span id="mm">00</span></p>
+      <div class="ctl"><button type="button" id="reelpp">일시정지</button><span>18:00</span><div class="bar" aria-hidden="true"><i id="reelbar"></i></div><span>21:00</span></div>
     </div>
     <ol id="tlist" aria-label="그날의 흐름">
-      <li data-at="1083"><time>18:03</time><div><b>빈 광장</b><span>장비 세팅 · 헤드셋 준비</span></div></li>
-      <li data-at="1090"><time>18:10</time><div><b>헤드셋을 쓰고 모여듭니다</b><span>지나가던 사람도 멈춰 섭니다</span></div></li>
-      <li data-at="1100"><time>18:20</time><div><b>광장이 찹니다</b><span>아이부터 어른까지 한 광장에</span></div></li>
-      <li data-at="1200"><time>20:00</time><div><b>해가 집니다</b><span>강 건너 조명이 켜집니다</span></div></li>
-      <li data-at="1220"><time>20:20</time><div><b>헤드셋 불빛만 남은 밤</b><span>파란 헤드셋이 광장을 채웁니다</span></div></li>
-      <li data-at="1265"><time>21:05</time><div><b>마지막까지 자리를 지킵니다</b><span>DR.KTRL · LiFY · KALI 세 명이 함께</span></div></li>
+      <li data-at="1080"><time>18:00</time><div><b>헤드셋을 쓰고 모여듭니다</b><span>지나가던 사람도 멈춰 섭니다</span></div></li>
+      <li data-at="1130"><time>18:50</time><div><b>광장이 찹니다</b><span>아이부터 어른까지 한 광장에</span></div></li>
+      <li data-at="1165"><time>19:25</time><div><b>해가 집니다</b><span>강 건너 조명이 켜집니다</span></div></li>
+      <li data-at="1190"><time>19:50</time><div><b>헤드셋 불빛만 남은 밤</b><span>파란 헤드셋이 광장을 채웁니다</span></div></li>
+      <li data-at="1250"><time>20:50</time><div><b>마지막까지 자리를 지킵니다</b><span>DR.KTRL · LiFY · KALI 세 명이 함께</span></div></li>
     </ol>
   </div>
 </section>
@@ -404,18 +414,19 @@ form .cta{grid-column:1/-1;justify-self:start}
   <div class="wrap">
     <p class="kick mono rv">현장 영상</p>
     <h2 class="h2 rv" id="t-live">소리 없이 봐도,<br>들리는 현장.</h2>
-    <p class="lede rv">헤드셋 속 음악은 들리지 않지만 관객의 반응은 그대로 보입니다. 옆으로 넘겨 보세요. 더 많은 영상은 DR.KTRL 프레스킷에서 볼 수 있습니다.</p>
+    <p class="lede rv">헤드셋 속 음악은 들리지 않지만 관객의 반응은 그대로 보입니다. 옆으로 넘겨 보세요. 더 많은 영상은 각 DJ 프레스킷에서.</p>
     <div class="vids">
-      <figure class="vid rv"><video data-src="vid/v1.mp4" poster="vid/v1.jpg" muted loop playsinline preload="none" aria-label="한강 잠수교 사일런트 디스코, DR.KTRL 현장 영상"></video><span class="tag">LIVE</span><figcaption>한강 잠수교 · 밤<small>DR.KTRL · 사일런트 디스코</small></figcaption></figure>
       <figure class="vid rv"><video data-src="vid/clips/ktrl-ttuk.mp4" poster="vid/clips/ktrl-ttuk.jpg" muted loop playsinline preload="none" aria-label="한강 뚝섬 사일런트 디스코, DR.KTRL 현장 영상"></video><span class="tag">LIVE</span><figcaption>한강 뚝섬<small>DR.KTRL · 사일런트 디스코</small></figcaption></figure>
-      <figure class="vid rv"><video data-src="vid/v2.mp4" poster="vid/v2.jpg" muted loop playsinline preload="none" aria-label="한강 마포대교 사일런트 디스코, DR.KTRL 현장 영상"></video><span class="tag">LIVE</span><figcaption>한강 마포대교<small>DR.KTRL · 사일런트 디스코</small></figcaption></figure>
-      <figure class="vid rv"><video data-src="vid/clips/ktrl-incheon.mp4" poster="vid/clips/ktrl-incheon.jpg" muted loop playsinline preload="none" aria-label="실내 행사, DR.KTRL 현장 영상"></video><span class="tag">LIVE</span><figcaption>실내 행사<small>DR.KTRL · 사일런트 디스코</small></figcaption></figure>
-      <figure class="vid rv"><video data-src="vid/v3.mp4" poster="vid/v3.jpg" muted loop playsinline preload="none" aria-label="서리풀 페스티벌 현장 영상"></video><span class="tag">LIVE</span><figcaption>서초 서리풀 페스티벌<small>저소음 사일런트 디스코</small></figcaption></figure>
+      <figure class="vid rv"><video data-src="vid/clips/lify-calling.mp4" poster="vid/clips/lify-calling.jpg" muted loop playsinline preload="none" aria-label="한강 반포 사일런트 디스코, LiFY 현장 영상"></video><span class="tag">LIVE</span><figcaption>한강 반포<small>LiFY · 사일런트 디스코</small></figcaption></figure>
+      <figure class="vid rv"><video data-src="vid/clips/kali-jamsu.mp4" poster="vid/clips/kali-jamsu.jpg" muted loop playsinline preload="none" aria-label="한강 잠수교 사일런트 디스코, KALI 현장 영상"></video><span class="tag">LIVE</span><figcaption>한강 잠수교 · 밤<small>KALI · 사일런트 디스코</small></figcaption></figure>
+      <figure class="vid rv"><video data-src="vid/clips/ktrl-incheon.mp4" poster="vid/clips/ktrl-incheon.jpg" muted loop playsinline preload="none" aria-label="밤마다 인천 FESTA 무소음 DJ 파티, DR.KTRL 현장 영상"></video><span class="tag">LIVE</span><figcaption>밤마다 인천 FESTA<small>DR.KTRL · 사일런트 디스코</small></figcaption></figure>
+      <figure class="vid rv"><video data-src="vid/clips/lify-seori.mp4" poster="vid/clips/lify-seori.jpg" muted loop playsinline preload="none" aria-label="서초 서리풀 페스티벌, LiFY 현장 영상"></video><span class="tag">LIVE</span><figcaption>서초 서리풀 페스티벌<small>LiFY · 사일런트 디스코</small></figcaption></figure>
+      <figure class="vid rv"><video data-src="vid/clips/kali-apt.mp4" poster="vid/clips/kali-apt.jpg" muted loop playsinline preload="none" aria-label="한강 마포대교 사일런트 디스코, KALI 현장 영상"></video><span class="tag">LIVE</span><figcaption>한강 마포대교<small>KALI · 사일런트 디스코</small></figcaption></figure>
     </div>
   </div>
   <div class="rail" role="region" aria-label="공연 현장 사진"><button type="button" class="railpp" id="railpp">사진 멈춤</button>
-  <div class="track"><figure><img src="img/live2/c180.webp" alt="" decoding="async"></figure><figure><img src="img/live2/kt27.webp" alt="" decoding="async"></figure><figure><img src="img/live2/c048.webp" alt="" decoding="async"></figure><figure><img src="img/live/s_k1.webp" alt="" decoding="async"></figure><figure><img src="img/live2/kt19.webp" alt="" loading="lazy" decoding="async"></figure><figure><img src="img/live2/c117.webp" alt="" loading="lazy" decoding="async"></figure><figure><img src="img/live/lify02.webp" alt="" loading="lazy" decoding="async"></figure><figure><img src="img/live2/kt15.webp" alt="" loading="lazy" decoding="async"></figure><figure><img src="img/live2/c050.webp" alt="" loading="lazy" decoding="async"></figure><figure><img src="img/live3/lify_banpo_night.webp" alt="" loading="lazy" decoding="async"></figure><figure><img src="img/live/kali09.webp" alt="" loading="lazy" decoding="async"></figure><figure><img src="img/live2/c112.webp" alt="" loading="lazy" decoding="async"></figure><figure aria-hidden="true"><img src="img/live2/c180.webp" alt="" loading="lazy" decoding="async"></figure><figure aria-hidden="true"><img src="img/live2/kt27.webp" alt="" loading="lazy" decoding="async"></figure><figure aria-hidden="true"><img src="img/live2/c048.webp" alt="" loading="lazy" decoding="async"></figure><figure aria-hidden="true"><img src="img/live/s_k1.webp" alt="" loading="lazy" decoding="async"></figure><figure aria-hidden="true"><img src="img/live2/kt19.webp" alt="" loading="lazy" decoding="async"></figure><figure aria-hidden="true"><img src="img/live2/c117.webp" alt="" loading="lazy" decoding="async"></figure><figure aria-hidden="true"><img src="img/live/lify02.webp" alt="" loading="lazy" decoding="async"></figure><figure aria-hidden="true"><img src="img/live2/kt15.webp" alt="" loading="lazy" decoding="async"></figure><figure aria-hidden="true"><img src="img/live2/c050.webp" alt="" loading="lazy" decoding="async"></figure><figure aria-hidden="true"><img src="img/live3/lify_banpo_night.webp" alt="" loading="lazy" decoding="async"></figure><figure aria-hidden="true"><img src="img/live/kali09.webp" alt="" loading="lazy" decoding="async"></figure><figure aria-hidden="true"><img src="img/live2/c112.webp" alt="" loading="lazy" decoding="async"></figure></div>
-  <div class="track rev"><figure><img src="img/live2/kt23.webp" alt="" decoding="async"></figure><figure><img src="img/live2/c077.webp" alt="" loading="lazy" decoding="async"></figure><figure><img src="img/live2/c181.webp" alt="" decoding="async"></figure><figure><img src="img/live2/c073.webp" alt="" decoding="async"></figure><figure><img src="img/live/lify03.webp" alt="" decoding="async"></figure><figure><img src="img/live2/kt34.webp" alt="" loading="lazy" decoding="async"></figure><figure><img src="img/live3/lify_cheonan1.webp" alt="" loading="lazy" decoding="async"></figure><figure><img src="img/live2/kt26.webp" alt="" loading="lazy" decoding="async"></figure><figure><img src="img/live/kali03.webp" alt="" loading="lazy" decoding="async"></figure><figure><img src="img/live2/c014.webp" alt="" loading="lazy" decoding="async"></figure><figure><img src="img/live3/team_cheonan.webp" alt="" loading="lazy" decoding="async"></figure><figure><img src="img/live2/c080.webp" alt="" loading="lazy" decoding="async"></figure><figure><img src="img/live2/kt28.webp" alt="" loading="lazy" decoding="async"></figure><figure><img src="img/live/lify04.webp" alt="" loading="lazy" decoding="async"></figure><figure><img src="img/live2/c352.webp" alt="" loading="lazy" decoding="async"></figure><figure aria-hidden="true"><img src="img/live2/kt23.webp" alt="" loading="lazy" decoding="async"></figure><figure aria-hidden="true"><img src="img/live2/c077.webp" alt="" loading="lazy" decoding="async"></figure><figure aria-hidden="true"><img src="img/live2/c181.webp" alt="" loading="lazy" decoding="async"></figure><figure aria-hidden="true"><img src="img/live2/c073.webp" alt="" loading="lazy" decoding="async"></figure><figure aria-hidden="true"><img src="img/live/lify03.webp" alt="" loading="lazy" decoding="async"></figure><figure aria-hidden="true"><img src="img/live2/kt34.webp" alt="" loading="lazy" decoding="async"></figure><figure aria-hidden="true"><img src="img/live3/lify_cheonan1.webp" alt="" loading="lazy" decoding="async"></figure><figure aria-hidden="true"><img src="img/live2/kt26.webp" alt="" loading="lazy" decoding="async"></figure><figure aria-hidden="true"><img src="img/live/kali03.webp" alt="" loading="lazy" decoding="async"></figure><figure aria-hidden="true"><img src="img/live2/c014.webp" alt="" loading="lazy" decoding="async"></figure><figure aria-hidden="true"><img src="img/live3/team_cheonan.webp" alt="" loading="lazy" decoding="async"></figure><figure aria-hidden="true"><img src="img/live2/c080.webp" alt="" loading="lazy" decoding="async"></figure><figure aria-hidden="true"><img src="img/live2/kt28.webp" alt="" loading="lazy" decoding="async"></figure><figure aria-hidden="true"><img src="img/live/lify04.webp" alt="" loading="lazy" decoding="async"></figure><figure aria-hidden="true"><img src="img/live2/c352.webp" alt="" loading="lazy" decoding="async"></figure></div>
+  <div class="track"><figure><img src="img/live2/c180.webp" alt="" decoding="async"></figure><figure><img src="img/live2/kt20.webp" alt="" decoding="async"></figure><figure><img src="img/live3/kali_sac_crowd.webp" alt="" decoding="async"></figure><figure><img src="img/live2/c048.webp" alt="" decoding="async"></figure><figure><img src="img/live3/lify_banpo_night.webp" alt="" loading="lazy" decoding="async"></figure><figure><img src="img/live2/c050.webp" alt="" loading="lazy" decoding="async"></figure><figure><img src="img/live2/c073.webp" alt="" loading="lazy" decoding="async"></figure><figure><img src="img/live2/c123.webp" alt="" loading="lazy" decoding="async"></figure><figure><img src="img/live3/lify_mapo_point.webp" alt="" loading="lazy" decoding="async"></figure><figure><img src="img/live3/team_cheonan.webp" alt="" loading="lazy" decoding="async"></figure><figure aria-hidden="true"><img src="img/live2/c180.webp" alt="" loading="lazy" decoding="async"></figure><figure aria-hidden="true"><img src="img/live2/kt20.webp" alt="" loading="lazy" decoding="async"></figure><figure aria-hidden="true"><img src="img/live3/kali_sac_crowd.webp" alt="" loading="lazy" decoding="async"></figure><figure aria-hidden="true"><img src="img/live2/c048.webp" alt="" loading="lazy" decoding="async"></figure><figure aria-hidden="true"><img src="img/live3/lify_banpo_night.webp" alt="" loading="lazy" decoding="async"></figure><figure aria-hidden="true"><img src="img/live2/c050.webp" alt="" loading="lazy" decoding="async"></figure><figure aria-hidden="true"><img src="img/live2/c073.webp" alt="" loading="lazy" decoding="async"></figure><figure aria-hidden="true"><img src="img/live2/c123.webp" alt="" loading="lazy" decoding="async"></figure><figure aria-hidden="true"><img src="img/live3/lify_mapo_point.webp" alt="" loading="lazy" decoding="async"></figure><figure aria-hidden="true"><img src="img/live3/team_cheonan.webp" alt="" loading="lazy" decoding="async"></figure></div>
+  <div class="track rev"><figure><img src="img/live2/c112.webp" alt="" decoding="async"></figure><figure><img src="img/live/e_gwang_ktrl.webp" alt="" decoding="async"></figure><figure><img src="img/live2/c077.webp" alt="" decoding="async"></figure><figure><img src="img/live/e_seori2.webp" alt="" decoding="async"></figure><figure><img src="img/live3/lify_cheonan1.webp" alt="" loading="lazy" decoding="async"></figure><figure><img src="img/live2/c014.webp" alt="" loading="lazy" decoding="async"></figure><figure><img src="img/live2/c080.webp" alt="" loading="lazy" decoding="async"></figure><figure><img src="img/live/s_k1.webp" alt="" loading="lazy" decoding="async"></figure><figure><img src="img/live2/kt12.webp" alt="" loading="lazy" decoding="async"></figure><figure><img src="img/live2/c352.webp" alt="" loading="lazy" decoding="async"></figure><figure aria-hidden="true"><img src="img/live2/c112.webp" alt="" loading="lazy" decoding="async"></figure><figure aria-hidden="true"><img src="img/live/e_gwang_ktrl.webp" alt="" loading="lazy" decoding="async"></figure><figure aria-hidden="true"><img src="img/live2/c077.webp" alt="" loading="lazy" decoding="async"></figure><figure aria-hidden="true"><img src="img/live/e_seori2.webp" alt="" loading="lazy" decoding="async"></figure><figure aria-hidden="true"><img src="img/live3/lify_cheonan1.webp" alt="" loading="lazy" decoding="async"></figure><figure aria-hidden="true"><img src="img/live2/c014.webp" alt="" loading="lazy" decoding="async"></figure><figure aria-hidden="true"><img src="img/live2/c080.webp" alt="" loading="lazy" decoding="async"></figure><figure aria-hidden="true"><img src="img/live/s_k1.webp" alt="" loading="lazy" decoding="async"></figure><figure aria-hidden="true"><img src="img/live2/kt12.webp" alt="" loading="lazy" decoding="async"></figure><figure aria-hidden="true"><img src="img/live2/c352.webp" alt="" loading="lazy" decoding="async"></figure></div>
 </div>
 </section>
 

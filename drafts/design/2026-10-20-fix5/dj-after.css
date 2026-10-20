@@ -1,0 +1,5 @@
+@media (min-width:861px) and (min-height:640px){
+  .stack .djp{margin-bottom:70svh}
+  .stack .djp:last-child{margin-bottom:0}
+  .stack::after{content:"";display:block;height:70svh}
+}

@@ -1,0 +1,4 @@
+.kit{align-items:start}
+.kit figure{display:block;aspect-ratio:1;padding:0;margin:0;overflow:hidden}
+.kit img{position:absolute;left:10%;top:8%;width:80%;height:64%;max-width:none;max-height:none;object-fit:contain;object-position:50% 50%}
+.kit figcaption{left:12px;bottom:12px;line-height:1}

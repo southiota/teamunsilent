@@ -24,10 +24,11 @@
   sw.addEventListener('click', () => { touched = true; set(!hero.classList.contains('on')); });
   if (RM) set(true); else setTimeout(() => { if (!touched) set(true); }, 1800);
 
-  // 그날 밤: 18:03:10부터 20초 간격 컷을 20fps로. 19:28~20:00(99컷)은 뺐다 → 영상 프레임 번호로 실제 시각을 계산한다.
+  // 그날 밤 (vid/v7): 실제 18:20:10부터 20초 간격 컷 421장을 20초에 담았다(19:28~20:00 99컷은 뺀 그대로).
+  // 화면 시각은 사용자 지시(2026-10-20)대로 실제 촬영 시각이 아니라 18:00→21:00을 20초에 고르게 흐르게 한다.
   const reel = $('reel'), hh = $('hh'), mm = $('mm'), rb = $('reelbar'), pp = $('reelpp'), night = $('night');
-  const rows = [...document.querySelectorAll('#tlist li')], T0 = 18 * 3600 + 3 * 60 + 10, GAP = 255, SKIP = 99;
-  const at = t => { const i = Math.floor(t * 20); return T0 + (i < GAP ? i : i + SKIP) * 20; };
+  const rows = [...document.querySelectorAll('#tlist li')], T0 = 18 * 3600, SPAN = 3 * 3600, DUR = 20;
+  const at = t => T0 + Math.min(t, DUR) / DUR * SPAN;
   const show = sec => {
     const m = Math.floor(sec / 60);
     hh.textContent = pad(Math.floor(m / 60)); mm.textContent = pad(m % 60);
@@ -39,13 +40,13 @@
   let loaded = false, userPaused = false;
   const load = () => {
     if (loaded) return; loaded = true;
-    reel.poster = 'vid/v6/tl.jpg';
-    if (small) reel.src = 'vid/v6/tl-sm.mp4';
-    else reel.innerHTML = '<source src="vid/v6/tl.av1.mp4" type=\'video/mp4; codecs="av01.0.08M.08"\'><source src="vid/v6/tl.mp4" type="video/mp4">';
+    reel.poster = 'vid/v7/tl.jpg';
+    if (small) reel.src = 'vid/v7/tl-sm.mp4';
+    else reel.innerHTML = '<source src="vid/v7/tl.av1.mp4" type=\'video/mp4; codecs="av01.0.08M.08"\'><source src="vid/v7/tl.mp4" type="video/mp4">';
     reel.load();
   };
   if (RM || navigator.connection?.saveData) {
-    show(at(20)); pp.hidden = true; rb.style.width = '85%'; night.classList.add('paused');
+    show(at(17)); pp.hidden = true; rb.style.width = '85%'; night.classList.add('paused');
   } else {
     new IntersectionObserver(([e]) => {
       if (e.isIntersecting) { load(); if (!userPaused) reel.play().catch(() => {}); }

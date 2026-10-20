@@ -1,0 +1,8 @@
+.hero{--wf:min(14.6vw,23svh)}
+.word{bottom:84px;font-size:var(--wf);line-height:.74}
+.copy{padding-bottom:calc(var(--wf) * .78 + 96px)}
+@media (max-width:860px){
+  .copy{padding-bottom:0}
+  .word{position:relative;order:2;bottom:auto;font-size:14.6vw;line-height:.74;margin:44px 0 -.5em}
+  .hero .joy{order:3;margin-top:0}
+}
