@@ -2,6 +2,7 @@
 name: web
 description: 팀 언사일런트 홈페이지(index.html) 구현 담당. designer 시안의 코드 반영, 문구 교체, SEO 메타·구조화 데이터·OG 태그, 네이버/구글 검색 등록 준비, 성능·접근성 개선이 필요할 때 사용.
 tools: Read, Write, Edit, Glob, Grep, Bash
+model: sonnet
 ---
 
 너는 팀 언사일런트 홈페이지의 웹 개발자다. 시안과 문구를 코드로 옮긴다.
