@@ -1,0 +1,86 @@
+/* 팀 언사일런트 v3 공용 스타일 — 토큰은 brand/design.md 기준 */
+:root{
+  --ink:#1A2828; --ink-2:#223333; --ink-3:#2C3E3E;
+  --paper:#F4F7EF; --lime:#C2EA8C; --lime-2:#D3E6BF; --moss:#3F5A33; --mute:#93A68E; --rec:#E42A19;
+  --line:rgba(244,247,239,.13);
+  --f-body:"Pretendard Variable",Pretendard,"Noto Sans KR",-apple-system,"Apple SD Gothic Neo",sans-serif;
+  --f-disp:"Archivo","Pretendard Variable",Pretendard,"Noto Sans KR",sans-serif;
+  --f-mono:"JetBrains Mono",ui-monospace,Menlo,monospace;
+  --w:1180px; --gut:clamp(20px,5vw,64px);
+  --ease:cubic-bezier(.2,.8,.2,1);
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:72px}
+body{margin:0;background:var(--ink);color:var(--paper);font-family:var(--f-body);font-size:17px;line-height:1.6;letter-spacing:-.01em;word-break:keep-all;overflow-wrap:anywhere;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img,video{max-width:100%;display:block}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--lime);outline-offset:4px}
+h1,h2,h3{margin:0;font-weight:800;letter-spacing:-.03em;line-height:1.12;text-wrap:balance}
+p,ul,ol,figure{margin:0}
+.wrap{max-width:var(--w);margin-inline:auto;padding-inline:var(--gut)}
+.sec{position:relative;padding-block:clamp(80px,11vw,140px)}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.skip{position:absolute;left:12px;top:-60px;z-index:50;background:var(--lime);color:var(--ink);padding:10px 14px;font-weight:700;text-decoration:none}
+.skip:focus{top:12px}
+
+.eyebrow{font-family:var(--f-mono);font-size:12px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--lime);display:flex;gap:10px;align-items:center;margin-bottom:20px}
+.eyebrow::before{content:"";width:18px;height:1px;background:currentColor}
+.h2{font-size:clamp(32px,4.8vw,58px)}
+.lede{color:var(--mute);max-width:58ch;margin-top:18px}
+.note{font-size:13px;color:var(--mute);margin-top:18px}
+.ow{font-family:var(--f-disp);font-stretch:125%;font-weight:900;color:transparent;-webkit-text-stroke:1.5px rgba(194,234,140,.5);line-height:.84;letter-spacing:-.02em}
+
+.cta{display:inline-flex;align-items:center;gap:10px;background:var(--lime);color:var(--ink);font:inherit;font-weight:700;text-decoration:none;padding:14px 22px;border:0;cursor:pointer;transition:transform .3s var(--ease),box-shadow .3s var(--ease)}
+.cta:hover{transform:translateY(-2px);box-shadow:0 10px 30px -10px rgba(194,234,140,.6)}
+.ghost{display:inline-flex;align-items:center;gap:10px;color:var(--paper);text-decoration:none;border:1px solid rgba(244,247,239,.35);padding:13px 20px;transition:border-color .2s,color .2s}
+.ghost:hover{border-color:var(--lime);color:var(--lime)}
+
+/* 상단 바 */
+.nav{position:fixed;inset:0 0 auto;z-index:30;transition:background .3s,border-color .3s;border-bottom:1px solid transparent}
+.nav.solid{background:rgba(26,40,40,.86);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-color:var(--line)}
+.nav .wrap{display:flex;align-items:center;gap:28px;height:64px}
+.nav .logo{font-weight:900;letter-spacing:-.02em;text-decoration:none;display:flex;align-items:center;gap:10px}
+.nav .logo i{width:9px;height:9px;border-radius:50%;background:var(--lime);box-shadow:0 0 0 4px rgba(194,234,140,.18);animation:pulse 1.9s var(--ease) infinite}
+@keyframes pulse{50%{box-shadow:0 0 0 9px rgba(194,234,140,0)}}
+.nav nav{display:flex;gap:22px;margin-left:auto;font-size:14px}
+.nav nav a{text-decoration:none;color:rgba(244,247,239,.72);transition:color .2s}
+.nav nav a:hover{color:var(--lime)}
+.nav .cta{padding:9px 16px;font-size:14px}
+@media (max-width:860px){.nav nav{display:none}.nav .cta{margin-left:auto}}
+
+/* 파형 띠 */
+.wave{border-block:1px solid var(--line);background:linear-gradient(180deg,rgba(0,0,0,.14),transparent)}
+.wave .wrap{display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:22px;padding-block:18px}
+.wave canvas{width:100%;height:60px;display:block;min-width:0}
+.wave.tall canvas{height:96px}
+.wave .lab{font-family:var(--f-mono);font-size:11px;letter-spacing:.12em;color:var(--mute);white-space:nowrap;display:flex;align-items:center;gap:8px}
+.wave .lab i{width:7px;height:7px;border-radius:50%;background:var(--lime);box-shadow:0 0 0 4px rgba(194,234,140,.15)}
+@media (max-width:640px){.wave .wrap{grid-template-columns:1fr;gap:10px}.wave .lab:last-child{display:none}}
+
+/* 마키 */
+.marq{overflow:hidden;border-block:1px solid var(--line);padding-block:18px;mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent)}
+.marq .t{display:flex;gap:48px;width:max-content;animation:slide 40s linear infinite}
+.marq span{font-family:var(--f-disp);font-stretch:112%;font-weight:800;font-size:clamp(22px,3vw,36px);letter-spacing:-.02em;white-space:nowrap;display:flex;align-items:center;gap:48px}
+.marq span::after{content:"";width:10px;height:10px;border-radius:50%;background:var(--lime)}
+.marq span small{font-family:var(--f-body);font-size:.5em;font-weight:500;color:var(--mute);margin-left:-36px}
+@keyframes slide{to{transform:translateX(-50%)}}
+
+/* 등장 */
+.rv{opacity:0;transform:translateY(22px);transition:opacity .8s var(--ease),transform .9s var(--ease)}
+.rv.in{opacity:1;transform:none}
+.rv.d1{transition-delay:.1s}.rv.d2{transition-delay:.2s}.rv.d3{transition-delay:.3s}
+
+/* 푸터 */
+.foot{border-top:1px solid var(--line);padding-block:56px 64px;font-size:14px;color:var(--mute)}
+.foot .wrap{display:grid;grid-template-columns:1.4fr 1fr;gap:32px 48px;align-items:end}
+.foot .big{font-family:var(--f-disp);font-stretch:125%;font-weight:900;font-size:clamp(48px,9vw,120px);line-height:.85;color:transparent;-webkit-text-stroke:1.2px rgba(244,247,239,.28);letter-spacing:-.03em;grid-column:1/-1;margin-bottom:12px}
+.foot nav{display:flex;flex-wrap:wrap;gap:8px 18px;justify-content:flex-end}
+.foot a{text-decoration:none;color:var(--mute);transition:color .2s}
+.foot a:hover{color:var(--lime)}
+@media (max-width:760px){.foot .wrap{grid-template-columns:1fr}.foot nav{justify-content:flex-start}}
+
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}
+  .rv{opacity:1;transform:none}
+}

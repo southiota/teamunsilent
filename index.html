@@ -2,383 +2,673 @@
 <html lang="ko">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>팀 언사일런트 — 포터블 무소음 디제잉</title>
-<meta name="description" content="4년간 한강에서 검증된 사일런트 디스코 DJ 팀. 무소음·저소음·언사일런트, 행사에 맞춰 섭외하세요.">
-<meta property="og:title" content="팀 언사일런트">
-<meta property="og:description" content="디제이는 찍지 마세요. 굳이 찍겠다면, 가장 즐거운 '나'를 찍으세요.">
-<meta property="og:image" content="img/hero.jpg">
+<meta name="description" content="4년간 한강에서 검증된 사일런트 디스코 DJ 팀. 무소음·저소음·언사일런트 디스코, 행사 장소와 규모에 맞춰 섭외하세요.">
+<link rel="canonical" href="https://southiota.github.io/teamunsilent/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="팀 언사일런트 — 포터블 무소음 디제잉">
+<meta property="og:description" content="디제이는 찍지 마세요. 굳이 찍겠다면, 가장 즐거운 ‘나’를 찍으세요.">
+<meta property="og:image" content="https://southiota.github.io/teamunsilent/img/og.jpg">
+<meta property="og:locale" content="ko_KR">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#111C1C">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%231A2828'/%3E%3Ccircle cx='16' cy='16' r='6' fill='%23C2EA8C'/%3E%3C/svg%3E">
+<link rel="preload" as="image" href="img/v5/joy-cut.webp" fetchpriority="high">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="assets/cover.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,600..900&family=JetBrains+Mono:wght@500;700&display=swap">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"PerformingGroup","name":"팀 언사일런트","alternateName":"Team Unsilent","url":"https://southiota.github.io/teamunsilent/","description":"4년간 한강에서 검증된 포터블 무소음 디제잉 팀. 무소음·저소음·언사일런트 디스코.","image":"https://southiota.github.io/teamunsilent/img/og.jpg","sameAs":["https://www.instagram.com/dr.ktrl/","https://www.instagram.com/djkali92/","https://www.instagram.com/dj_lify/","https://blog.naver.com/night_share"],"member":[{"@type":"Person","name":"DR.KTRL"},{"@type":"Person","name":"KALI"},{"@type":"Person","name":"LiFY"}]}
+</script>
 <style>
+/* 팀 언사일런트 v6 — 시네마. 밖에서 보면 조용한 흑백, 헤드셋을 켜면 색과 빛이 들어온다. 토큰은 brand/design.md */
 :root{
-  --ink:#1A2828; --ink-2:#223333; --ink-3:#2C3E3E;
-  --lime:#C2EA8C; --lime-2:#D3E6BF; --moss:#3F5A33; --mute:#93A68E; --paper:#F4F7EF; --rec:#E42A19;
-  --w:1180px; --gut:clamp(20px,5vw,64px);
-  --ease:cubic-bezier(.2,.8,.2,1);
+  --night:#111C1C; --ink:#1A2828; --ink-2:#223333; --ink-3:#2C3E3E; --paper:#F4F7EF; --lime:#C2EA8C; --lime-2:#D3E6BF; --mute:#93A68E;
+  --line:rgba(244,247,239,.13);
+  --f-body:"Pretendard Variable",Pretendard,"Noto Sans KR",-apple-system,"Apple SD Gothic Neo",sans-serif;
+  --f-disp:"Archivo","Pretendard Variable",Pretendard,"Noto Sans KR",sans-serif;
+  --f-mono:"JetBrains Mono",ui-monospace,Menlo,monospace;
+  --w:1240px; --gut:clamp(18px,4.4vw,56px); --ease:cubic-bezier(.2,.8,.2,1); --slow:cubic-bezier(.3,0,.1,1);
+  color-scheme:dark;
 }
 *{box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{margin:0;background:var(--ink);color:var(--paper);font-family:"Pretendard Variable",Pretendard,-apple-system,sans-serif;font-size:17px;line-height:1.6;letter-spacing:-0.01em;word-break:keep-all;overflow-wrap:anywhere;-webkit-font-smoothing:antialiased;overflow-x:hidden}
-img{display:block;max-width:100%}
+html{scroll-behavior:smooth;scroll-padding-top:64px}
+body{margin:0;background:var(--night);color:var(--paper);font-family:var(--f-body);font-size:17px;line-height:1.6;letter-spacing:-.01em;word-break:keep-all;-webkit-font-smoothing:antialiased;overflow-x:clip}
+/* 필름 그레인 */
+body::after{content:"";position:fixed;inset:0;z-index:80;pointer-events:none;opacity:.07;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+img,video{max-width:100%;display:block}
 a{color:inherit}
-h1,h2,h3{margin:0;font-weight:800;letter-spacing:-0.03em;line-height:1.12;text-wrap:balance}
-p,ul,ol{margin:0}
-.wrap{max-width:var(--w);margin:0 auto;padding:0 var(--gut)}
-section{position:relative;padding:clamp(80px,11vw,140px) 0}
-.lime{color:var(--lime)}.mute{color:var(--mute)}
-:focus-visible{outline:3px solid var(--lime);outline-offset:4px}
-.glow{position:fixed;left:0;top:0;width:520px;height:520px;border-radius:50%;pointer-events:none;z-index:1;opacity:0;background:radial-gradient(circle,rgba(194,234,140,.16),transparent 60%);transform:translate(-50%,-50%);transition:opacity .4s}
-@media (hover:hover) and (pointer:fine){body.has-mouse .glow{opacity:1}}
-.nav{position:fixed;inset:0 0 auto 0;z-index:30;display:flex;justify-content:space-between;align-items:center;padding:14px var(--gut);color:var(--paper);mix-blend-mode:difference}
-.nav b{font-weight:800;letter-spacing:-0.02em}
-.nav a.cta{font-size:14px;font-weight:600;text-decoration:none;border:1.5px solid currentColor;border-radius:999px;padding:8px 16px;transition:background .25s,color .25s}
-.nav a.cta:hover{background:#fff;color:#000}
-/* HERO */
-.hero{min-height:100svh;padding:0;overflow:hidden;isolation:isolate;display:grid;align-items:end}
-.hero .bg{position:absolute;inset:0;z-index:-3;background:url(img/hero.jpg) center 20%/cover;filter:brightness(.42) saturate(.6);transform:scale(1.06)}
-.hero .mark{position:absolute;left:50%;top:46%;z-index:-2;transform:translate(-50%,-50%);font-size:clamp(100px,24vw,330px);font-weight:900;letter-spacing:-0.06em;line-height:.9;color:transparent;-webkit-text-stroke:2px rgba(194,234,140,.55);white-space:nowrap;opacity:0;will-change:transform}
-.hero .mark small{position:absolute;right:-.05em;bottom:-.42em;font-size:.28em;font-weight:900;-webkit-text-stroke:1.5px rgba(194,234,140,.55)}
-.hero .cut{position:absolute;left:50%;bottom:0;z-index:-1;width:min(900px,100vw);transform:translateX(-46%);opacity:0;will-change:transform;filter:drop-shadow(0 20px 60px rgba(0,0,0,.6))}
-.hero::after{content:"";position:absolute;inset:auto 0 0 0;height:55%;z-index:0;background:linear-gradient(180deg,transparent,rgba(26,40,40,.92) 70%)}
-.vf{position:absolute;inset:clamp(18px,4vw,48px);pointer-events:none;z-index:2}
-.vf i{position:absolute;width:40px;height:40px;border:3px solid var(--paper);opacity:0}
-.vf i:nth-child(1){top:0;left:0;border-right:0;border-bottom:0}
-.vf i:nth-child(2){top:0;right:0;border-left:0;border-bottom:0}
-.vf i:nth-child(3){bottom:0;left:0;border-right:0;border-top:0}
-.vf i:nth-child(4){bottom:0;right:0;border-left:0;border-top:0}
-.rec{position:absolute;z-index:2;top:calc(clamp(18px,4vw,48px) + 56px);right:calc(clamp(18px,4vw,48px) + 4px);display:flex;gap:8px;align-items:center;font-size:13px;font-weight:700;letter-spacing:.1em;opacity:0;background:rgba(26,40,40,.6);padding:6px 10px;backdrop-filter:blur(6px)}
-.rec::before{content:"";width:10px;height:10px;border-radius:50%;background:var(--rec);animation:blink 1.1s steps(2) infinite}
-@keyframes blink{to{opacity:0}}
-.hero .wrap{position:relative;z-index:3;padding-bottom:clamp(60px,9vw,110px);padding-top:38vh;width:100%}
-.hero h1{font-size:clamp(38px,6.8vw,92px);line-height:1.04;opacity:0;transform:translateY(22px)}
-.hero h1 small{display:block;font-size:.36em;font-weight:500;color:var(--lime);margin-top:.55em;line-height:1.35}
-.hero .sub{margin-top:26px;font-size:15px;color:var(--lime-2);opacity:0}
-.hero .sub b{font-weight:700;color:var(--paper)}
-.hero .scroll{position:absolute;right:var(--gut);bottom:30px;z-index:3;font-size:11px;color:var(--mute);letter-spacing:.25em;writing-mode:vertical-rl;opacity:0}
-.hero .scroll::after{content:"";display:block;width:1px;height:48px;background:var(--mute);margin:10px auto 0;animation:drip 1.8s var(--ease) infinite}
-@keyframes drip{0%{transform:scaleY(0);transform-origin:top}50%{transform:scaleY(1);transform-origin:top}51%{transform-origin:bottom}100%{transform:scaleY(0);transform-origin:bottom}}
-.ready .hero .mark{animation:markin 1.2s .1s var(--ease) forwards}
-.ready .hero .cut{animation:cutin 1.1s .35s var(--ease) forwards}
-.ready .vf i{animation:pop .5s .9s var(--ease) forwards}
-.ready .vf i:nth-child(2){animation-delay:1s}.ready .vf i:nth-child(3){animation-delay:1.1s}.ready .vf i:nth-child(4){animation-delay:1.2s}
-.ready .rec{animation:fade .4s 1.4s forwards}
-.ready .hero h1{animation:rise .9s 1.5s var(--ease) forwards}
-.ready .hero .sub,.ready .hero .scroll{animation:fade .8s 2.1s forwards}
-@keyframes markin{from{opacity:0;transform:translate(-50%,-50%) scale(1.15);letter-spacing:.02em}to{opacity:1;transform:translate(-50%,-50%)}}
-@keyframes cutin{from{opacity:0;transform:translateX(-46%) translateY(60px)}to{opacity:1;transform:translateX(-46%)}}
-@media (max-width:640px){@keyframes cutin{from{opacity:0;transform:translateX(-50%) translateY(60px)}to{opacity:1;transform:translateX(-50%)}}}
-@keyframes pop{from{opacity:0;transform:scale(.6)}to{opacity:1;transform:none}}
-@keyframes fade{to{opacity:1}}
-@keyframes rise{to{opacity:1;transform:none}}
-@media (max-width:640px){.hero .mark{top:38%}.hero .cut{width:118vw;transform:translateX(-50%)}.hero .wrap{padding-top:48vh}.rec{top:calc(clamp(18px,4vw,48px) + 48px)}.hero .scroll{display:none}}
-/* 차별점 */
-.why{background:var(--paper);color:var(--ink);overflow:hidden}
-.why .grid{display:grid;grid-template-columns:1.1fr 1fr;gap:clamp(32px,6vw,96px);align-items:start}
-.why h2{font-size:clamp(34px,4.8vw,64px);line-height:1.08}
-.why h2 .big{display:block;font-size:1.55em;color:var(--moss);margin-top:.15em;position:relative;padding-left:.9em}
-.why h2 .big svg{position:absolute;left:0;top:50%;width:.75em;height:.25em;transform:translateY(-50%);overflow:visible}
-.why h2 .big svg path{stroke:var(--moss);stroke-width:3;fill:none;stroke-dasharray:4 7;stroke-dashoffset:300;transition:stroke-dashoffset 1.4s var(--ease) .3s}
-.why.in h2 .big svg path{stroke-dashoffset:0}
-.why .photo{aspect-ratio:4/5;overflow:hidden;background:var(--ink);position:relative;clip-path:inset(0 0 100% 0);transition:clip-path 1.1s var(--ease)}
-.why.in .photo{clip-path:inset(0)}
-.why .photo img{width:100%;height:100%;object-fit:cover;object-position:45% 30%;transform:scale(1.12);transition:transform 1.6s var(--ease)}
-.why.in .photo img{transform:none}
-.stats{margin-top:clamp(48px,7vw,88px);display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(20px,3vw,40px)}
-.stat{border-top:2px solid var(--ink);padding-top:22px;opacity:0;transform:translateY(24px);transition:opacity .7s var(--ease),transform .7s var(--ease)}
-.in .stat{opacity:1;transform:none}.in .stat:nth-child(2){transition-delay:.12s}.in .stat:nth-child(3){transition-delay:.24s}
-.stat .n{font-size:clamp(68px,8.5vw,120px);font-weight:300;line-height:.9;letter-spacing:-0.05em;font-variant-numeric:tabular-nums}
-.stat .n b{font-weight:800;font-size:.5em;vertical-align:top;color:var(--moss);margin-left:.05em}
-.stat h3{font-size:clamp(18px,1.7vw,22px);font-weight:700;margin-top:18px}
-.stat p{margin-top:6px;color:#4C5B55;font-size:15px}
-@media (max-width:760px){.why .grid{grid-template-columns:1fr}.why .photo{aspect-ratio:3/2}.stats{grid-template-columns:1fr}}
-/* 마키 */
-.strip{padding:0;background:var(--ink-2);overflow:hidden}
-.row{display:flex;width:max-content;gap:10px;will-change:transform}
-.row.photos{animation:slide 55s linear infinite}
-.row.photos img{height:clamp(170px,24vw,300px);aspect-ratio:3/2;object-fit:cover}
-.row.words{gap:0;padding:14px 0;animation:slide 30s linear infinite reverse;font-size:clamp(28px,4vw,56px);font-weight:900;letter-spacing:-0.03em;line-height:1;white-space:nowrap}
-.row.words span{padding:0 .5em;color:transparent;-webkit-text-stroke:1.5px var(--lime)}
-.row.words span:nth-child(2n){color:var(--lime);-webkit-text-stroke:0}
-.row:hover{animation-play-state:paused}
-@keyframes slide{to{transform:translateX(-50%)}}
-/* 솔루션 (스택) */
-.sol{padding-bottom:0}
-.sol .intro h2{font-size:clamp(32px,4.4vw,56px)}
-.sol .intro p{margin-top:16px;max-width:36em;color:var(--mute);font-size:clamp(16px,1.5vw,19px)}
-.stack{margin-top:clamp(40px,6vw,80px)}
-.card{position:sticky;top:0;min-height:100svh;display:grid;align-items:center;overflow:hidden;isolation:isolate;border-top:1px solid rgba(194,234,140,.25);background:var(--ink)}
-.card .bg{position:absolute;inset:0;z-index:-2;background-size:cover;background-position:center;filter:brightness(.5) saturate(.7);transform:scale(1.08);transition:transform 1.2s var(--ease)}
-.card.in .bg{transform:none}
-.card::before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(90deg,rgba(26,40,40,.1) 0%,rgba(26,40,40,.75) 55%,rgba(26,40,40,.95) 100%)}
-.card .fig{position:absolute;left:0;bottom:0;z-index:0;width:42%;height:min(82svh,720px);object-fit:contain;object-position:center bottom;opacity:0;transform:translateY(40px);transition:opacity .8s var(--ease) .2s,transform .9s var(--ease) .2s;filter:drop-shadow(0 20px 40px rgba(0,0,0,.5))}
-.card.in .fig{opacity:1;transform:none}
-.card .wrap{position:relative;z-index:1;display:flex;justify-content:flex-end;width:100%;padding-top:80px;padding-bottom:80px}
-.card .tag{position:absolute;top:clamp(84px,10vh,120px);left:var(--gut);background:var(--lime);color:var(--ink);font-size:13px;font-weight:700;padding:7px 12px;z-index:1}
-.card .body{width:min(520px,100%);flex:none}
-.card h3{font-size:clamp(28px,3.4vw,44px)}
-.card h3 span{display:block;font-size:.5em;font-weight:500;color:var(--lime);margin-bottom:.5em}
-.gauge{display:grid;grid-template-columns:repeat(3,1fr);gap:6px;margin:28px 0 8px;max-width:360px}
-.gauge i{display:block;height:7px;border:1.5px solid var(--moss)}
-.gauge i.on{background:var(--lime);border-color:var(--lime)}
-.gauge .lbl{grid-column:1/-1;font-size:12px;color:var(--mute);margin-top:4px}
-.facts{list-style:none;padding:0;margin-top:18px;display:grid;gap:12px}
-.facts li{display:grid;grid-template-columns:88px 1fr;gap:12px;border-top:1px solid rgba(194,234,140,.3);padding-top:11px;font-size:15px;line-height:1.5}
-.facts li b{color:var(--lime);font-weight:600}
-.facts li.hi{background:rgba(194,234,140,.1);border:0;padding:14px;grid-template-columns:1fr;backdrop-filter:blur(4px)}
-.facts li.hi b{display:block;margin-bottom:4px}
-@media (max-width:860px){.card .wrap{padding-top:110px;justify-content:flex-start}.card .body{width:100%}.card .fig{height:46svh;width:70%;left:auto;right:-8vw;object-position:right bottom;opacity:.55}.card.in .fig{opacity:.55}.card::before{background:linear-gradient(180deg,rgba(26,40,40,.35),rgba(26,40,40,.92) 60%)}}
-/* 섭외 안내 */
-.book{background:var(--ink-2)}
-.book h2{font-size:clamp(30px,4vw,52px)}
-.tbl{margin-top:40px;overflow-x:auto;-webkit-overflow-scrolling:touch}
-table{width:100%;border-collapse:collapse;min-width:680px;font-size:15px}
-th,td{text-align:left;padding:15px 12px;vertical-align:top;border-bottom:1px solid var(--moss)}
-th{font-weight:700;color:var(--lime);font-size:20px;border-bottom:2px solid var(--lime)}
-td:first-child{color:var(--mute);font-size:13px;width:150px}
-tbody tr{transition:background .25s}
-tbody tr:hover{background:rgba(194,234,140,.07)}
-tr.price td{font-weight:600;color:var(--lime)}
-tr.price td small{display:block;font-weight:400;color:var(--lime-2);font-size:13px;margin-top:4px}
-.note{margin-top:18px;font-size:13px;color:var(--mute)}
-/* 테크라이더 */
-.tech .wrap{display:grid;grid-template-columns:1fr 1fr;gap:clamp(32px,5vw,72px);align-items:center}
-.tech h2{font-size:clamp(28px,3.6vw,48px)}
-.tech h2 span{display:block;color:var(--lime);font-size:.48em;font-weight:500;margin-top:.6em}
-.kit{display:grid;grid-template-columns:1fr 1fr;gap:12px}
-.kit figure{margin:0;background:var(--paper);aspect-ratio:1;display:grid;place-items:center;position:relative;padding:28px;opacity:0;transform:translateY(20px) rotate(-1.5deg);transition:opacity .7s var(--ease),transform .8s var(--ease)}
-.kit figure:first-child{grid-column:1/-1;aspect-ratio:2/1}
-.in .kit figure{opacity:1;transform:none}
-.in .kit figure:nth-child(2){transition-delay:.12s}.in .kit figure:nth-child(3){transition-delay:.24s}
-.kit img{max-height:78%;max-width:82%;object-fit:contain;transition:transform .5s var(--ease)}
-.kit figure:hover img{transform:translateY(-6px) scale(1.03)}
-.kit figcaption{position:absolute;top:14px;left:16px;font-size:13px;font-weight:600;color:var(--ink)}
-.need{margin:32px 0 0;padding:0;list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:20px 24px}
-.need li{font-size:15px;color:var(--lime-2)}
-.need li b{display:block;color:var(--lime);font-weight:600;margin-bottom:2px}
-@media (max-width:760px){.tech .wrap{grid-template-columns:1fr}}
-/* 팀 */
-.team{background:var(--lime);color:var(--ink);overflow:hidden}
-.team h2{font-size:clamp(20px,2.4vw,30px);font-weight:600;text-align:center;max-width:30em;margin:0 auto;line-height:1.4}
-.team h2 b{font-weight:800}
-.team .mark{position:absolute;left:50%;top:55%;transform:translate(-50%,-50%);font-size:clamp(96px,23vw,320px);font-weight:900;letter-spacing:-0.05em;color:var(--ink);opacity:.14;pointer-events:none;white-space:nowrap;line-height:1;will-change:transform}
-.members{position:relative;display:grid;grid-template-columns:repeat(3,1fr);gap:0 20px;margin-top:clamp(36px,5vw,64px);align-items:end}
-.member{display:grid}
-.member img{height:clamp(240px,34vw,460px);width:100%;object-fit:contain;object-position:bottom;opacity:0;transform:translateY(40px);transition:opacity .8s var(--ease),transform .9s var(--ease)}
-.in .member img{opacity:1;transform:none}
-.in .member:nth-child(2) img{transition-delay:.15s}.in .member:nth-child(3) img{transition-delay:.3s}
-.member .cardb{background:var(--ink);color:var(--paper);padding:22px 20px 24px;min-height:190px;position:relative;overflow:hidden}
-.member .cardb::after{content:"";position:absolute;left:0;bottom:0;height:3px;width:0;background:var(--lime);transition:width .6s var(--ease)}
-.member:hover .cardb::after{width:100%}
-.member h3{font-size:22px;color:var(--lime)}
-.member .job{margin-top:8px;font-size:13px;color:var(--mute)}
-.member .q{margin-top:4px;font-weight:700;font-size:16px}
-.member .gigs{margin-top:12px;font-size:13px;color:var(--mute);line-height:1.5}
-@media (max-width:760px){.members{grid-template-columns:1fr;gap:28px}.member img{height:280px}}
-/* 절차 */
-.steps h2{font-size:clamp(30px,4vw,52px)}
-.flow{margin-top:44px;display:grid;grid-template-columns:repeat(3,1fr);gap:24px;list-style:none;padding:0;position:relative}
-.flow::before{content:"";position:absolute;left:0;top:0;height:2px;width:0;background:var(--lime);transition:width 1.6s var(--ease)}
-.in .flow::before{width:100%}
-.flow li{border-top:2px solid var(--moss);padding-top:18px;opacity:0;transform:translateY(14px);transition:opacity .6s var(--ease),transform .6s var(--ease)}
-.in .flow li{opacity:1;transform:none}.in .flow li:nth-child(2){transition-delay:.4s}.in .flow li:nth-child(3){transition-delay:.8s}
-.flow li span{display:block;font-size:13px;color:var(--mute);margin-bottom:10px}
-.flow li b{display:block;font-size:22px;margin-bottom:8px}
-.flow li p{font-size:15px;color:var(--lime-2)}
-@media (max-width:640px){.flow{grid-template-columns:1fr}}
-/* 문의 */
-.contact{background:var(--paper);color:var(--ink);overflow:hidden}
-.contact .wrap{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:end}
-.contact h2{font-size:clamp(36px,5.4vw,70px)}
-.contact h2 span{display:block;font-size:.38em;font-weight:500;color:var(--moss)}
-.contact .soon{margin-top:22px;display:inline-block;border:1.5px dashed var(--moss);color:var(--moss);padding:10px 16px;font-size:14px;font-weight:600}
-.contact p.small{font-size:14px;color:#4C5B55;max-width:30em}
-@media (max-width:760px){.contact .wrap{grid-template-columns:1fr}}
-footer{padding:28px var(--gut);font-size:12px;color:var(--mute);display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px}
-.rv{opacity:0;transform:translateY(16px);transition:opacity .7s var(--ease),transform .7s var(--ease)}
+:focus-visible{outline:3px solid var(--lime);outline-offset:3px}
+h1,h2,h3,p,ul,ol,figure,dl,dd{margin:0}
+h1,h2,h3{font-weight:800;letter-spacing:-.035em;line-height:1.1;text-wrap:balance}
+.wrap{max-width:var(--w);margin-inline:auto;padding-inline:var(--gut)}
+.mono{font-family:var(--f-mono);font-size:12px;letter-spacing:.12em;text-transform:uppercase}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.skip{position:absolute;left:12px;top:-60px;z-index:90;background:var(--lime);color:var(--ink);padding:10px 14px;font-weight:700;text-decoration:none}
+.skip:focus{top:12px}
+.cta{display:inline-flex;align-items:center;gap:10px;background:var(--lime);color:var(--ink);font:inherit;font-weight:800;text-decoration:none;padding:14px 22px;border:0;cursor:pointer;border-radius:99px;transition:transform .3s var(--ease),box-shadow .3s}
+.cta:hover{transform:translateY(-2px);box-shadow:0 12px 30px -12px rgba(194,234,140,.7)}
+.ghost{display:inline-flex;align-items:center;gap:8px;text-decoration:none;border:1px solid rgba(244,247,239,.3);padding:13px 20px;border-radius:99px;background:rgba(17,28,28,.4);transition:border-color .2s}
+.ghost:hover{border-color:var(--lime)}
+.rv{opacity:0;transform:translateY(26px);transition:opacity 1s var(--ease),transform 1.1s var(--ease)}
 .rv.in{opacity:1;transform:none}
-@media (prefers-reduced-motion:reduce){
-  html{scroll-behavior:auto}
-  *,*::before,*::after{animation:none!important;transition:none!important}
-  .hero .mark,.hero .cut,.vf i,.rec,.hero h1,.hero .sub,.hero .scroll,.rv,.stat,.kit figure,.member img,.flow li,.card .fig{opacity:1!important;transform:none!important}
-  .why .photo{clip-path:none}.why .photo img{transform:none}.row{animation:none}.glow{display:none}.flow::before{width:100%}
+
+.top{position:fixed;inset:0 0 auto;z-index:40;transition:background .3s}
+.top.solid{background:rgba(17,28,28,.82);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px)}
+.top .wrap{display:flex;align-items:center;gap:24px;height:62px}
+.logo{font-weight:900;text-decoration:none;display:flex;gap:9px;align-items:center}
+.logo i{width:9px;height:9px;border-radius:50%;background:var(--lime);box-shadow:0 0 12px var(--lime)}
+.top nav{margin-left:auto;display:flex;gap:22px;font-size:14px;color:rgba(244,247,239,.75)}
+.top nav a{text-decoration:none}.top nav a:hover{color:var(--lime)}
+.top .cta{padding:8px 16px;font-size:14px}
+@media (max-width:860px){.top nav{display:none}.top .cta{margin-left:auto}}
+
+/* ── 히어로: 꺼짐(흑백) → 켜짐(색·빛) ── */
+.hero{position:relative;min-height:100svh;overflow:hidden;isolation:isolate;display:flex;flex-direction:column;justify-content:center}
+.hero .bg{position:absolute;inset:-4%;z-index:-4;background:url(img/v5/night.webp) center 40%/cover;filter:grayscale(1) blur(14px) brightness(.35);opacity:.55;transform:scale(1.04);transition:filter 1.6s var(--slow),opacity 1.6s var(--slow)}
+.hero::before{content:"";position:absolute;inset:0;z-index:-3;background:radial-gradient(70% 90% at 70% 60%,transparent,var(--night) 78%),linear-gradient(180deg,rgba(17,28,28,.6),transparent 30%,transparent 70%,var(--night))}
+.word{position:absolute;left:0;right:0;bottom:-.3em;z-index:-2;text-align:center;font-family:var(--f-disp);font-stretch:125%;font-weight:900;font-size:min(19vw,32svh);line-height:.8;letter-spacing:-.05em;white-space:nowrap;color:transparent;-webkit-text-stroke:1.5px rgba(244,247,239,.14);transition:-webkit-text-stroke-color 1.4s var(--slow)}
+.word b{font-weight:inherit;display:inline-block;max-width:0;overflow:hidden;vertical-align:bottom;-webkit-text-stroke:1.5px var(--lime);transition:max-width 1.2s var(--slow)}
+.glow{position:absolute;right:max(-6vw,calc(50% - 760px));bottom:-20%;width:min(70vw,1000px);aspect-ratio:1;border-radius:50%;z-index:-1;background:radial-gradient(circle,rgba(194,234,140,.34),rgba(194,234,140,.1) 42%,transparent 66%);opacity:0;transform:scale(.8);transition:opacity 1.6s var(--slow),transform 2s var(--slow)}
+.joy{position:absolute;right:max(1vw,calc(50% - 690px));bottom:0;height:min(76svh,820px);width:auto;max-width:none;-webkit-mask-image:linear-gradient(180deg,transparent,#000 16%);mask-image:linear-gradient(180deg,transparent,#000 16%);filter:grayscale(1) brightness(.62) contrast(1.05);transition:filter 1.6s var(--slow),transform 1.8s var(--slow);transform:scale(.98);transform-origin:bottom center}
+.copy{position:relative;z-index:2;max-width:min(560px,46vw);padding-top:62px;padding-bottom:88px}
+.copy .mono{color:var(--mute);display:flex;gap:10px;align-items:center}
+.copy .mono::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--mute);transition:background .6s,box-shadow .6s}
+.h1{position:relative;margin-top:26px;font-size:clamp(42px,5.4vw,82px);font-weight:900;line-height:1.06;letter-spacing:-.05em;min-height:2.2em}
+.h1 span{display:block;transition:opacity .9s var(--slow),transform 1s var(--slow),filter .9s}
+.h1 .on{position:absolute;inset:0;opacity:0;transform:translateY(18px);filter:blur(6px);color:var(--paper)}
+.h1 .on em{font-style:normal;color:var(--lime)}
+.h1 .off{color:rgba(244,247,239,.62)}
+.copy .sub{margin-top:22px;font-size:clamp(17px,1.5vw,20px);color:var(--lime-2);max-width:28em;opacity:.8;transition:opacity 1s}
+.copy .row{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}
+.switch{all:unset;box-sizing:border-box;cursor:pointer;display:inline-flex;align-items:center;gap:14px;margin-top:32px;padding:8px 18px 8px 8px;border-radius:99px;border:1px solid rgba(244,247,239,.25);background:rgba(17,28,28,.5);font-weight:700;font-size:15px}
+.switch:focus-visible{outline:3px solid var(--lime);outline-offset:4px}
+.switch .k{position:relative;width:54px;height:30px;border-radius:99px;background:var(--ink-3);transition:background .5s}
+.switch .k::after{content:"";position:absolute;left:4px;top:4px;width:22px;height:22px;border-radius:50%;background:var(--paper);transition:transform .5s var(--ease)}
+.switch svg{width:22px;height:22px;flex:none}
+.meter{display:flex;gap:4px;align-items:flex-end;height:18px;margin-left:4px}
+.meter i{width:3px;height:20%;background:var(--mute);border-radius:2px}
+.credits{position:absolute;left:0;right:0;bottom:0;z-index:3;border-top:1px solid var(--line);background:linear-gradient(180deg,rgba(17,28,28,.2),rgba(17,28,28,.78));backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px)}
+.credits .wrap{display:grid;grid-template-columns:repeat(4,auto);justify-content:space-between;gap:16px;padding-block:14px}
+.credits div{display:flex;gap:10px;align-items:baseline}
+.credits b{font-family:var(--f-disp);font-stretch:112%;font-weight:900;font-size:22px;letter-spacing:-.03em}
+.credits span{font-size:12.5px;color:var(--mute);line-height:1.3}
+.hero.on .bg{filter:grayscale(0) blur(10px) brightness(.55) saturate(1.1);opacity:.9}
+.hero.on .word{-webkit-text-stroke-color:rgba(194,234,140,.3)}
+.hero.on .word b{max-width:2.3em}
+.hero.on .glow{opacity:1;transform:none}
+.hero.on .joy{filter:none;transform:none}
+.hero.on .h1 .on{opacity:1;transform:none;filter:none}
+.hero.on .h1 .off{opacity:0;transform:translateY(-18px);filter:blur(6px)}
+.hero.on .copy .sub{opacity:1}
+.hero.on .copy .mono{color:var(--lime)}
+.hero.on .copy .mono::before{background:var(--lime);box-shadow:0 0 10px var(--lime)}
+.hero.on .switch .k{background:var(--lime)}
+.hero.on .switch .k::after{transform:translateX(24px);background:var(--ink)}
+.hero.on .meter i{background:var(--lime);animation:lv .9s ease-in-out infinite alternate}
+.meter i:nth-child(2){animation-delay:-.2s!important}.meter i:nth-child(3){animation-delay:-.5s!important}.meter i:nth-child(4){animation-delay:-.1s!important}.meter i:nth-child(5){animation-delay:-.7s!important}
+@keyframes lv{0%{height:20%}100%{height:100%}}
+@media (max-width:860px){
+  .hero{min-height:auto;justify-content:flex-start}
+  .hero>.wrap{order:1}.hero .joy{order:2}
+  .copy{max-width:none;padding-top:96px;padding-bottom:0}
+  .h1{font-size:11vw}
+  .joy{position:relative;right:auto;height:auto;width:min(108vw,600px);margin:24px auto 0;align-self:center}
+  .glow{right:-30vw;width:140vw;bottom:-10%}
+  .word{bottom:0;font-size:24vw}
+  .credits{position:relative;order:3}
+  .credits .wrap{grid-template-columns:1fr 1fr;gap:12px 16px}
+  .credits div{display:grid;gap:0}
 }
+
+/* 섹션 공통 */
+.sec{position:relative;padding-block:clamp(90px,12vw,160px)}
+.kick{display:flex;gap:12px;align-items:center;color:var(--lime);margin-bottom:22px}
+.kick::before{content:"";width:22px;height:1px;background:currentColor}
+.h2{font-size:clamp(34px,4.8vw,64px);font-weight:900;letter-spacing:-.045em}
+.lede{color:var(--mute);margin-top:18px;max-width:54ch}
+.note{font-size:13px;color:var(--mute);margin-top:16px}
+
+/* ── 그날 밤: DJ 부스 뒤에서 본 3시간 ── */
+.night{position:relative;min-height:100svh;overflow:hidden;isolation:isolate;display:flex}
+.night video,.night .poster{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:-2}
+.night .poster{background:url(vid/v6/tl.jpg) center/cover}
+.night::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(90deg,rgba(17,28,28,.9) 0%,rgba(17,28,28,.55) 36%,transparent 62%),linear-gradient(0deg,rgba(17,28,28,.85),transparent 34%),linear-gradient(180deg,var(--night),transparent 18%)}
+.night-ui{position:relative;width:100%;display:grid;grid-template-columns:minmax(0,1fr) 300px;gap:32px;align-items:end;padding-block:110px 40px}
+.night .h2{font-size:clamp(30px,3.8vw,52px)}
+.night .clk{font-family:var(--f-disp);font-stretch:118%;font-weight:900;font-size:clamp(88px,15vw,220px);line-height:.8;letter-spacing:-.05em;font-variant-numeric:tabular-nums;margin-top:24px;margin-left:-.04em}
+.night .clk i{font-style:normal;color:var(--lime);animation:bl 1s steps(2,start) infinite}
+.night.paused .clk i{animation:none}
+@keyframes bl{to{visibility:hidden}}
+.night .ctl{display:flex;gap:14px;align-items:center;margin-top:26px;max-width:620px}
+.night .ctl button{all:unset;cursor:pointer;font-family:var(--f-mono);font-size:11px;border:1px solid rgba(244,247,239,.3);padding:6px 11px;border-radius:99px;flex:none}
+.night .ctl button:focus-visible{outline:3px solid var(--lime);outline-offset:3px}
+.night .bar{position:relative;flex:1;height:2px;background:rgba(244,247,239,.2)}
+.night .bar i{position:absolute;left:0;top:0;bottom:0;width:0;background:var(--lime)}
+.night .ctl span{font-family:var(--f-mono);font-size:11px;color:var(--mute)}
+.night ol{list-style:none;padding:6px;display:grid;gap:2px;background:rgba(17,28,28,.8);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-radius:18px;border:1px solid var(--line)}
+.night li{display:grid;grid-template-columns:48px 1fr;gap:10px;padding:10px 12px;border-radius:12px;color:rgba(244,247,239,.72);transition:background .4s,color .4s}
+.night li time{font-family:var(--f-mono);font-size:12px;font-weight:700;padding-top:2px}
+.night li b{display:block;font-size:15px}
+.night li span{display:block;font-size:12.5px}
+.night li.cur{background:var(--ink-3);color:var(--paper);box-shadow:inset 3px 0 0 var(--lime)}
+.night li.cur span{color:var(--mute)}
+@media (max-width:860px){.night-ui{grid-template-columns:1fr;gap:16px;padding-block:96px 28px}.night ol li:not(.cur){display:none}.night::after{background:linear-gradient(0deg,rgba(17,28,28,.92),rgba(17,28,28,.25) 62%),linear-gradient(180deg,var(--night),transparent 18%)}}
+
+/* 왜 */
+.about-g{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);gap:clamp(28px,5vw,72px);align-items:end}
+.about-g figure{position:relative;border-radius:18px;overflow:hidden;aspect-ratio:4/3}
+.about-g figure img{width:100%;height:100%;object-fit:cover}
+.about-g figcaption{position:absolute;left:14px;bottom:12px;font-family:var(--f-mono);font-size:11px;letter-spacing:.06em;background:rgba(17,28,28,.75);padding:5px 9px;border-radius:99px}
+.why{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(18px,3vw,40px);margin-top:clamp(48px,6vw,80px);padding:0}
+.why li{list-style:none;border-top:1px solid var(--line);padding-top:22px;display:grid;gap:10px;align-content:start}
+.why b{font-family:var(--f-disp);font-stretch:118%;font-size:clamp(60px,7vw,108px);font-weight:900;letter-spacing:-.05em;line-height:.85;color:transparent;-webkit-text-stroke:1.5px var(--lime)}
+.why h3{font-size:clamp(19px,1.9vw,24px)}
+.why p{color:var(--mute);font-size:15px}
+.press-strip{display:flex;flex-wrap:wrap;gap:8px 28px;align-items:baseline;margin-top:clamp(48px,6vw,80px);padding-top:22px;border-top:1px solid var(--line)}
+.press-strip .mono{color:var(--mute)}
+.press-strip b{font-family:var(--f-disp);font-stretch:112%;font-weight:900;font-size:clamp(18px,2vw,26px);letter-spacing:-.02em}
+.press-strip b small{font-family:var(--f-body);font-weight:500;font-size:13px;color:var(--mute);margin-left:6px;letter-spacing:0}
+.press-strip + .note{max-width:80ch}
+@media (max-width:860px){.why,.about-g{grid-template-columns:1fr}}
+
+/* ── 볼륨 = 공연 방식 + 장소로 고르기 ── */
+.pick{display:flex;flex-wrap:wrap;gap:8px;margin-top:clamp(28px,3vw,40px);align-items:center}
+.pick .mono{color:var(--mute);margin-right:6px}
+.pick button{all:unset;box-sizing:border-box;cursor:pointer;padding:10px 16px;border-radius:99px;border:1px solid rgba(244,247,239,.25);font-size:15px;font-weight:700;transition:background .25s,color .25s,border-color .25s}
+.pick button:hover{border-color:var(--lime)}
+.pick button[aria-checked=true]{background:var(--lime);color:var(--ink);border-color:var(--lime)}
+.pick button:focus-visible{outline:3px solid var(--lime);outline-offset:3px}
+.vols{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(14px,2vw,24px);margin-top:clamp(24px,3vw,36px)}
+.volc{position:relative;border-radius:20px;overflow:hidden;min-height:700px;display:flex;flex-direction:column;justify-content:flex-end;isolation:isolate;padding:24px;outline:1px solid var(--line);transition:outline-color .4s,opacity .5s}
+.volc img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:-2;transition:transform 1.4s var(--ease),filter .6s}
+.volc::before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(17,28,28,.25) 0%,rgba(17,28,28,.15) 22%,rgba(17,28,28,.94) 56%)}
+.vols.has .volc:not(.sel){outline-color:transparent}
+.vols.has .volc:not(.sel) img{opacity:.45}
+.vols.has .volc:not(.sel) img{filter:grayscale(1)}
+.volc.sel{outline:2px solid var(--lime)}
+.volc.sel img{transform:scale(1.04)}
+.volc .vn{position:absolute;left:22px;top:18px;font-family:var(--f-disp);font-stretch:118%;font-weight:900;font-size:clamp(64px,6vw,96px);line-height:.8;letter-spacing:-.05em;color:transparent;-webkit-text-stroke:1.5px var(--paper)}
+.volc .vn small{display:block;font-family:var(--f-mono);font-size:11px;letter-spacing:.12em;-webkit-text-stroke:0;color:var(--paper);margin-bottom:6px}
+.volc .fit{position:absolute;right:16px;top:18px;font-family:var(--f-mono);font-size:11px;font-weight:700;background:var(--lime);color:var(--ink);padding:5px 10px;border-radius:99px;opacity:0;transform:translateY(-6px);transition:opacity .3s,transform .3s var(--ease)}
+.volc.sel .fit{opacity:1;transform:none}
+
+.bars{display:flex;gap:4px;align-items:flex-end;height:28px;margin-bottom:14px}
+.bars i{width:8px;background:rgba(244,247,239,.22);border-radius:1px}
+.bars i:nth-child(1){height:30%}.bars i:nth-child(2){height:48%}.bars i:nth-child(3){height:66%}.bars i:nth-child(4){height:84%}.bars i:nth-child(5){height:100%}
+.bars i.on{background:var(--lime);box-shadow:0 0 10px rgba(194,234,140,.5)}
+.volc .k{color:var(--lime);font-family:var(--f-mono);font-size:11px;letter-spacing:.06em}
+.volc h3{font-size:clamp(24px,2.3vw,30px);margin-top:8px}
+.volc dl{display:grid;grid-template-columns:auto 1fr;gap:6px 14px;font-size:14px;margin-top:14px}
+.volc dt{color:var(--mute)}
+.volc .ask-b{all:unset;cursor:pointer;margin-top:16px;font-weight:800;font-size:14px;color:var(--lime);display:inline-flex;gap:6px;align-items:center}
+.volc .ask-b:focus-visible{outline:3px solid var(--lime);outline-offset:3px}
+@media (max-width:960px){.vols{grid-template-columns:1fr}.volc{min-height:600px}}
+
+/* DJ: 한 명당 한 화면 */
+.djp{position:relative;min-height:100svh;overflow:hidden;isolation:isolate;display:flex;align-items:flex-end;background:var(--night)}
+.djp::before{content:"";position:absolute;inset:0;z-index:-2;background:radial-gradient(40% 55% at var(--gx,70%) 72%,var(--gc,rgba(194,234,140,.26)),transparent 70%)}
+.djp .in{position:relative;width:100%;padding-bottom:clamp(48px,8vw,104px)}
+.djp .box{max-width:520px;display:grid;gap:14px}
+.djp.r .box{margin-left:auto}
+.djp .mono{color:var(--mute)}
+.djp h3{font-family:var(--f-disp);font-stretch:120%;font-weight:900;font-size:clamp(56px,7vw,112px);line-height:.85;letter-spacing:-.05em;white-space:nowrap}
+.djp .job{color:var(--mute);font-size:15px}.djp .job b{color:var(--paper);font-weight:700}
+.djp .q{font-size:clamp(22px,2.4vw,32px);font-weight:900;color:var(--lime-2);line-height:1.25;letter-spacing:-.03em}
+.djp .d{color:var(--mute);font-size:15px;max-width:38ch}
+.djp ul{list-style:none;padding:0;display:flex;flex-wrap:wrap;gap:6px}
+.djp ul li{font-family:var(--f-disp);font-stretch:110%;font-weight:800;font-size:11px;letter-spacing:.05em;border:1px solid rgba(244,247,239,.3);padding:5px 11px;border-radius:99px}
+.djp .row{display:flex;gap:10px;flex-wrap:wrap;margin-top:8px}
+@media (min-width:861px) and (min-height:640px){.stack .djp{position:sticky;top:0}.stack .djp+.djp{box-shadow:0 -40px 80px -20px rgba(0,0,0,.6)}}
+@media (max-width:860px){
+  .djp{min-height:0;display:block;padding-top:80px}
+  .djp::before{background:radial-gradient(70% 34% at 50% 30%,var(--gc,rgba(194,234,140,.26)),transparent 70%)}
+  .djp .in{padding-top:24px}
+  .djp.r .box{margin-left:0}
+}
+
+/* 현장 영상 · 사진 레일 */
+.vids{display:grid;grid-auto-flow:column;grid-auto-columns:clamp(220px,24vw,300px);gap:16px;margin-top:clamp(36px,4vw,56px);overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:10px;scrollbar-width:thin;scrollbar-color:var(--ink-3) transparent}
+.vid{scroll-snap-align:start}
+.vid{position:relative;aspect-ratio:9/16;overflow:hidden;background:var(--ink-2);border-radius:20px}
+.vid video{width:100%;height:100%;object-fit:cover}
+.vid .tag{position:absolute;left:12px;top:12px;font-family:var(--f-mono);font-size:11px;background:rgba(17,28,28,.75);padding:4px 9px;display:flex;gap:6px;align-items:center;border-radius:99px}
+.vid .tag::before{content:"";width:7px;height:7px;border-radius:50%;background:#E42A19}
+.vid .pp{position:absolute;right:10px;top:10px;font:500 11px var(--f-mono);color:var(--paper);background:rgba(17,28,28,.75);border:0;padding:5px 10px;cursor:pointer;border-radius:99px}
+.vid figcaption{position:absolute;left:0;right:0;bottom:0;padding:48px 16px 16px;background:linear-gradient(transparent,rgba(17,28,28,.92));font-weight:800}
+.vid figcaption small{display:block;font-weight:400;font-size:13px;color:var(--mute)}
+@media (max-width:860px){.vids{grid-auto-columns:72%;margin-inline:calc(var(--gut) * -1);padding-inline:var(--gut);scrollbar-width:none}.vid{scroll-snap-align:center}}
+.rail{overflow-x:clip;overflow-y:visible;display:grid;gap:14px;margin-top:clamp(80px,8vw,110px);mask-image:linear-gradient(90deg,transparent,#000 5%,#000 95%,transparent)}
+.track{display:flex;gap:14px;width:max-content;animation:slide 90s linear infinite}
+.track.rev{animation-direction:reverse;animation-duration:110s}
+.rail:hover .track,.rail:focus-within .track,.rail.stop .track{animation-play-state:paused}
+.rail{position:relative}
+.railpp{position:absolute;right:var(--gut);top:-46px;font:500 11px var(--f-mono);color:var(--paper);background:none;border:1px solid rgba(244,247,239,.3);padding:6px 11px;border-radius:99px;cursor:pointer}
+@keyframes slide{to{transform:translateX(-50%)}}
+.track figure{height:clamp(160px,20vw,260px);aspect-ratio:3/2;overflow:hidden;flex:none;border-radius:16px;background:var(--ink-2)}
+.track figure.v{aspect-ratio:4/5}
+.track img{width:100%;height:100%;object-fit:cover}
+@media (prefers-reduced-motion:reduce){.rail{overflow-x:auto;mask-image:none}}
+
+/* 실적 · 언론 */
+.rec{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(28px,5vw,80px);margin-top:clamp(40px,5vw,64px)}
+.yr{list-style:none;padding:0;border-top:1px solid var(--line)}
+.yr li{display:grid;grid-template-columns:62px 1fr auto;gap:14px;align-items:baseline;padding:13px 0;border-bottom:1px solid var(--line)}
+.yr .y{font-family:var(--f-mono);font-size:12px;color:var(--mute)}
+.yr b{font-size:clamp(17px,1.8vw,22px);letter-spacing:-.03em}
+.yr .t{font-family:var(--f-mono);font-size:11px;color:var(--mute)}
+.yr li:first-child b{color:var(--lime)}
+.press{display:grid;gap:0;border-top:1px solid var(--line);align-content:start}
+.press a{display:grid;grid-template-columns:1fr auto;gap:4px 16px;padding:16px 0;border-bottom:1px solid var(--line);text-decoration:none}
+.press small{grid-column:1/-1;font-family:var(--f-mono);font-size:11px;color:var(--lime);letter-spacing:.06em}
+.press b{font-size:17px;line-height:1.4}
+.press span{font-size:13px;color:var(--mute);align-self:end}
+.press a:hover b{color:var(--lime)}
+.press-tabs{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:6px}
+.press-tabs button{all:unset;cursor:pointer;white-space:nowrap;padding:8px 14px;border:1px solid var(--line);border-radius:99px;font-size:14px;font-weight:700}
+.press-tabs button b{color:var(--lime);margin-left:4px}
+.press-tabs button[aria-pressed=true]{background:var(--lime);color:var(--ink)}
+.press-tabs button[aria-pressed=true] b{color:var(--ink)}
+.press-tabs button:focus-visible,.press-more:focus-visible{outline:3px solid var(--lime);outline-offset:3px}
+.js .press[data-f=tv] a:not([data-k=tv]),.js .press[data-f=news] a:not([data-k=news]),.js .press[data-f=intl] a:not([data-k=intl]){display:none}
+.js .press:not(.all) a[data-more]{display:none}
+.press-tabs,.press-more{display:none}.js .press-tabs{display:flex}.js .press-more{display:inline-block}
+.press-more{all:unset;cursor:pointer;margin-top:14px;font-weight:800;font-size:14px;color:var(--lime)}
+@media (max-width:860px){.rec{grid-template-columns:1fr}.yr li{grid-template-columns:56px 1fr}.yr .t{display:none}}
+
+/* 구성 · 준비물 · 진행 */
+.cmp{width:100%;border-collapse:collapse;font-size:15px;margin-top:clamp(36px,4vw,56px)}
+.cmp th,.cmp td{text-align:left;padding:15px 16px;border-bottom:1px solid var(--line);vertical-align:top}
+.cmp thead th{font-size:18px;font-weight:900;border-bottom:1px solid var(--lime)}
+.cmp thead th small{display:block;font-family:var(--f-mono);font-size:11px;font-weight:500;color:var(--lime);margin-bottom:6px;letter-spacing:.1em}
+.cmp tbody th{font-weight:500;color:var(--mute);width:16%;white-space:nowrap}
+.cmp td .sub{display:block;font-size:13px;color:var(--mute);margin-bottom:6px}
+.tabs{display:none;gap:6px;margin-top:24px}
+.tabs button{all:unset;cursor:pointer;flex:1;text-align:center;padding:10px;border:1px solid var(--line);border-radius:99px;font-weight:700;font-size:14px}
+.tabs button[aria-pressed=true]{background:var(--lime);color:var(--ink)}
+@media (max-width:760px){.tabs{display:flex}.cmp thead{display:none}.cmp tbody th{width:34%;white-space:normal;padding-left:0}.cmp[data-show="1"] td:not(:nth-of-type(1)),.cmp[data-show="2"] td:not(:nth-of-type(2)),.cmp[data-show="3"] td:not(:nth-of-type(3)){display:none}}
+.rider{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.2fr);gap:clamp(24px,4vw,56px);align-items:center;margin-top:clamp(72px,9vw,120px)}
+.rider ul{list-style:none;padding:0;display:grid;grid-template-columns:1fr 1fr;border-top:1px solid var(--line);margin-top:22px}
+.rider li{padding:14px 0;border-bottom:1px solid var(--line);display:grid;gap:2px}
+.rider li:nth-child(even){padding-left:16px;border-left:1px solid var(--line)}
+.rider small{font-family:var(--f-mono);font-size:11px;color:var(--mute)}
+.kit{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.kit figure{background:radial-gradient(circle at 50% 60%,var(--ink-3),var(--ink-2));border-radius:16px;display:grid;place-items:center;aspect-ratio:1;padding:16px;position:relative;min-width:0}
+.kit img{max-height:76%;max-width:100%;width:auto;object-fit:contain;filter:drop-shadow(0 16px 24px rgba(0,0,0,.5))}
+.kit figcaption{position:absolute;left:12px;bottom:10px;font-family:var(--f-mono);font-size:10px;color:var(--mute)}
+@media (max-width:860px){.rider{grid-template-columns:1fr}}
+.steps{list-style:none;padding:0;display:grid;grid-template-columns:repeat(5,1fr);gap:14px;counter-reset:s;margin-top:clamp(36px,4vw,56px)}
+.steps li{border-top:1px solid var(--lime);padding-top:14px;display:grid;gap:4px;align-content:start}
+.steps li::before{counter-increment:s;content:"0" counter(s);font-family:var(--f-disp);font-stretch:118%;font-weight:900;font-size:32px;color:transparent;-webkit-text-stroke:1px var(--lime);line-height:1}
+.steps b{font-size:18px}.steps p{font-size:14px;color:var(--mute)}
+@media (max-width:900px){.steps{grid-template-columns:1fr 1fr}}
+.ask{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.3fr);gap:clamp(24px,5vw,72px);margin-top:clamp(56px,7vw,96px);padding:clamp(24px,4vw,56px);border-radius:24px;background:radial-gradient(60% 80% at 100% 0%,rgba(194,234,140,.12),transparent 60%),var(--ink)}
+.ask h3{font-size:clamp(28px,3.4vw,44px)}
+.contact{list-style:none;padding:0;margin-top:24px;display:grid;gap:0;border-top:1px solid var(--line)}
+.contact li{display:grid;grid-template-columns:72px 1fr;gap:12px;padding:12px 0;border-bottom:1px solid var(--line);align-items:baseline}
+.contact small{font-family:var(--f-mono);font-size:11px;color:var(--mute);letter-spacing:.08em}
+.contact b{font-family:var(--f-disp);font-stretch:108%;font-size:20px;letter-spacing:-.01em}
+form{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+label{display:grid;gap:6px;font-size:13px;color:var(--mute)}
+label.full{grid-column:1/-1}
+input,select,textarea{font:inherit;font-size:16px;color:var(--paper);background:var(--night);border:1px solid var(--line);padding:12px;border-radius:10px;min-width:0}
+input:focus,select:focus,textarea:focus{outline:none;border-color:var(--lime)}
+input:focus-visible,select:focus-visible,textarea:focus-visible{outline:3px solid var(--lime);outline-offset:2px}
+textarea{min-height:90px;resize:vertical}
+form .cta{grid-column:1/-1;justify-self:start}
+#sent{grid-column:1/-1;color:var(--lime);font-size:14px}
+@media (max-width:760px){.ask,form{grid-template-columns:1fr}}
+.foot{padding-block:40px 64px;color:var(--mute);font-size:14px;border-top:1px solid var(--line);overflow:hidden}
+.foot .big{font-family:var(--f-disp);font-stretch:125%;font-weight:900;font-size:clamp(46px,14.6vw,230px);line-height:.8;letter-spacing:-.05em;white-space:nowrap;color:transparent;-webkit-text-stroke:1.5px rgba(194,234,140,.4);text-align:center;margin-bottom:28px}
+.foot .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+.foot nav{display:flex;gap:16px;flex-wrap:wrap}.foot a{text-decoration:none}.foot a:hover{color:var(--lime)}
+@media (prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}.rv{opacity:1;transform:none}}
 </style>
 </head>
 <body>
-<div class="glow" aria-hidden="true"></div>
-<nav class="nav"><b>팀 언사일런트</b><a class="cta" href="#contact">섭외 문의</a></nav>
-<header class="hero" id="top">
+<a class="skip" href="#main">본문으로 건너뛰기</a>
+<header class="top"><div class="wrap">
+  <a class="logo" href="#top"><i aria-hidden="true"></i>팀 언사일런트</a>
+  <nav aria-label="주 메뉴"><a href="#why">소개</a><a href="#live">현장</a><a href="#vol">공연 방식</a><a href="#djs">DJ</a><a href="#rec">실적</a><a href="#setup">구성</a></nav>
+  <a class="cta" href="#contact">섭외 문의</a>
+</div></header>
+
+<main id="main">
+<section class="hero" id="top" aria-labelledby="h1">
   <div class="bg" aria-hidden="true"></div>
-  <div class="mark" aria-hidden="true">SILENT<small>DISCO</small></div>
-  <img class="cut" src="img/hero_cut.png" alt="헤드셋을 쓰고 두 팔을 들고 환호하는 관객 두 명">
-  <div class="vf" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
-  <div class="rec" aria-hidden="true">REC</div>
-  <div class="wrap">
-    <h1>“디제이는 찍지 마세요.”<small>굳이 찍겠다면, 가장 즐거운 ‘나’를 찍으세요.</small></h1>
-    <p class="sub"><b>팀 언사일런트</b> · 4년간 한강에서 검증된 포터블 무소음 디제잉</p>
-  </div>
-  <div class="scroll" aria-hidden="true">SCROLL</div>
-</header>
-<section class="why rv" id="why">
-  <div class="wrap">
-    <div class="grid">
-      <h2>한강에서 4년,<br>주인공은 언제나<span class="big"><svg viewBox="0 0 100 30" preserveAspectRatio="none"><path d="M0 15 C 30 15, 50 15, 100 15"/></svg>관객</span></h2>
-      <div class="photo"><img src="img/crowd.jpg" alt="헤드셋을 쓰고 춤추는 관객"></div>
-    </div>
-    <div class="stats">
-      <div class="stat"><div class="n" data-count="200">0<b>+</b></div><h3>전 세대 입증된 떼창곡</h3><p>한강 4년, 전 세대가 따라 부른 곡만 모았습니다.</p></div>
-      <div class="stat"><div class="n" data-count="50">0<b>+</b></div><h3>누구나 함께하는 레크레이션 콘텐츠</h3><p>놀 줄 몰라도 괜찮습니다. 저희가 뛰게 만듭니다.</p></div>
-      <div class="stat"><div class="n" data-count="0">0</div><h3>폰을 들지 않아 배가 되는 즐거움</h3><p>유명한 DJ가 없어서, 관객이 더 놉니다.</p></div>
+  <p class="word" aria-hidden="true"><b>UN</b>SILENT</p>
+  <div class="glow" aria-hidden="true"></div>
+  <img class="joy" src="img/v5/joy-cut.webp" alt="헤드셋을 쓰고 두 팔을 들어 환호하는 관객 두 명" fetchpriority="high">
+  <div class="wrap" style="width:100%">
+    <div class="copy">
+      <p class="mono">Team Unsilent · Silent Disco</p>
+      <h1 class="h1" id="h1"><span class="off">밖에서 보면,<br>조용합니다.</span><span class="on">헤드셋 안에서는,<br><em>축제입니다.</em></span></h1>
+      <p class="sub">디제이는 찍지 마세요. 굳이 찍겠다면, 가장 즐거운 ‘나’를 찍으세요.</p>
+      <button type="button" class="switch" id="sw" aria-pressed="false"><span class="k" aria-hidden="true"></span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 15v-3a8 8 0 0 1 16 0v3"/><rect x="2.5" y="14" width="5" height="7" rx="2"/><rect x="16.5" y="14" width="5" height="7" rx="2"/></svg><span>헤드셋</span><span class="meter" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></span></button>
+      <div class="row"><a class="cta" href="#contact">섭외 문의 →</a><a class="ghost" href="#vol">우리 행사에 맞는 방식</a></div>
     </div>
   </div>
+  <div class="credits" aria-label="공연 실적 요약"><div class="wrap">
+    <div><b>4년</b><span>한강 사일런트 디스코<br>메인 DJ (2023~)</span></div>
+    <div><b>900+</b><span>한강 사일런트 디스코<br>회당 관객 · 2024 회차별 집계</span></div>
+    <div><b>194+</b><span>한강 사일런트 디스코<br>관련 보도 · 2023~24 집계</span></div>
+    <div><b>300대</b><span>헤드셋 한 번에<br>그 이상도 문의</span></div>
+  </div></div>
 </section>
-<div class="strip" aria-hidden="true">
-  <div class="row photos">
-    <img src="img/festival.jpg" alt=""><img src="img/night.jpg" alt=""><img src="img/gang.jpg" alt=""><img src="img/djback.jpg" alt=""><img src="img/k2.jpg" alt=""><img src="img/k1.jpg" alt="">
-    <img src="img/festival.jpg" alt=""><img src="img/night.jpg" alt=""><img src="img/gang.jpg" alt=""><img src="img/djback.jpg" alt=""><img src="img/k2.jpg" alt=""><img src="img/k1.jpg" alt="">
-  </div>
-  <div class="row words">
-    <span>SILENT DISCO</span><span>떼창</span><span>UNSILENT</span><span>레크레이션</span><span>한강 4년</span><span>관객이 주인공</span>
-    <span>SILENT DISCO</span><span>떼창</span><span>UNSILENT</span><span>레크레이션</span><span>한강 4년</span><span>관객이 주인공</span>
-  </div>
-</div>
-<section class="sol" id="solutions">
-  <div class="wrap intro">
-    <h2 class="rv">행사 장소에 맞춰 소리를 고르세요.</h2>
-    <p class="rv">스피커를 아예 안 쓰는 무소음부터 제약 없는 언사일런트까지. 세 가지 중 현장에 맞는 방식을 제안드립니다. 아래로 넘겨 보세요.</p>
-  </div>
-  <div class="stack">
-    <article class="card" id="s1">
-      <div class="bg" style="background-image:url(img/crowd.jpg)"></div>
-      <img class="fig" src="img/crowd_cut.png" alt="">
-      <span class="tag">진행 사례 · 광화문 서울썸머비치</span>
-      <div class="wrap"><div class="body">
-        <h3><span>솔루션 1 · 무소음 사일런트 디스코 포터블</span>300명 이내라면 언제 어디든</h3>
-        <div class="gauge" aria-label="소음 수준: 무소음"><i class="on"></i><i></i><i></i><span class="lbl">소음 수준 · 낮은 정도의 관객 박수 및 환호성</span></div>
-        <ul class="facts">
-          <li><b>추천 행사</b><span>주거지 인근, 심야, 실내</span></li>
-          <li><b>소음 정도</b><span>헤드셋만 사용, 스피커 출력 없음</span></li>
-          <li><b>공연 시간</b><span>60~120분, 행사 일정에 맞춥니다</span></li>
-          <li class="hi"><b>왜 팀 언사일런트인가</b>무소음 공연을 가장 잘 아는 팀. 시작부터 마무리까지 감정선이 끊기지 않습니다.</li>
-        </ul>
-      </div></div>
-    </article>
-    <article class="card" id="s2">
-      <div class="bg" style="background-image:url(img/night.jpg)"></div>
-      <img class="fig" src="img/dj2_cut.png" alt="">
-      <span class="tag">진행 사례 · 서초구 서리풀 페스티벌</span>
-      <div class="wrap"><div class="body">
-        <h3><span>솔루션 2 · 저소음 사일런트 디스코 포터블</span>길 가던 사람 붙잡는</h3>
-        <div class="gauge" aria-label="소음 수준: 저소음"><i class="on"></i><i class="on"></i><i></i><span class="lbl">소음 수준 · 관객 환호·함성 + 부스 앞 모니터링 스피커</span></div>
-        <ul class="facts">
-          <li><b>추천 행사</b><span>공원, 광장, 야시장, 캠퍼스</span></li>
-          <li><b>소음 정도</b><span>헤드셋 + 부스 전방 3~5m 모니터링 스피커</span></li>
-          <li><b>공연 시간</b><span>60~120분, 행사 일정에 맞춥니다</span></li>
-          <li class="hi"><b>왜 팀 언사일런트인가</b>적당한 소음은 최고의 연출 환경. 가장 열광적인 장면이 여기서 나옵니다.</li>
-        </ul>
-      </div></div>
-    </article>
-    <article class="card" id="s3">
-      <div class="bg" style="background-image:url(img/k2.jpg)"></div>
-      <img class="fig" src="img/dj_cut.png" alt="">
-      <span class="tag">진행 사례 · 한강 사일런트 디스코</span>
-      <div class="wrap"><div class="body">
-        <h3><span>솔루션 3 · 언사일런트 디스코</span>소음 걱정 필요 없는 곳에는</h3>
-        <div class="gauge" aria-label="소음 수준: 언사일런트"><i class="on"></i><i class="on"></i><i class="on"></i><span class="lbl">소음 수준 · 공연 음악 전체</span></div>
-        <ul class="facts">
-          <li><b>추천 행사</b><span>무대·음향이 있는 축제</span></li>
-          <li><b>소음 정도</b><span>주최 측 음향으로 하는 스피커 공연 (무소음 동시 진행 가능)</span></li>
-          <li><b>공연 시간</b><span>60~120분, 무소음 병행 진행 가능</span></li>
-          <li class="hi"><b>왜 팀 언사일런트인가</b>전 세대를 상대한 공연 노하우. 제약이 풀리면 저희 고삐도 풀립니다.</li>
-        </ul>
-      </div></div>
-    </article>
-  </div>
-</section>
-<section class="book rv" id="booking">
-  <div class="wrap">
-    <h2>행사 장소와 규모에 맞춰<br>공연 방식과 구성을 함께 정합니다.</h2>
-    <div class="tbl">
-      <table>
-        <thead><tr><td></td><th>무소음</th><th>저소음</th><th>언사일런트</th></tr></thead>
-        <tbody>
-          <tr><td>헤드셋 대여</td><td>O</td><td>O</td><td>X (디제이만 섭외 가능)</td></tr>
-          <tr><td>스피커 출력</td><td>없음 (헤드셋만)</td><td>모니터링 스피커 (3~5m 들리는 수준)</td><td>–</td></tr>
-          <tr><td>밖에서 들리는 소리</td><td>관객의 환호</td><td>관객의 환호·함성 + 모니터링 스피커</td><td>–</td></tr>
-          <tr><td>맞는 장소</td><td>주거지 인근, 심야, 실내</td><td>공원, 광장, 야시장, 캠퍼스</td><td>–</td></tr>
-          <tr><td>규모</td><td>헤드셋 300대까지</td><td>헤드셋 300대까지</td><td>헤드셋 병행 진행 가능</td></tr>
-          <tr class="price"><td>비용<small>송신기·디제잉 장비 포함</small></td>
-            <td>헤드셋 개당 15,000원<small>1시간 2인 1,200,000원<br>1~2시간 3인 1,800,000원</small></td>
-            <td>헤드셋 개당 15,000원<small>1시간 2인 1,200,000원<br>1~2시간 3인 1,800,000원</small></td>
-            <td>헤드셋 협의<small>1시간 2인 1,000,000원<br>1~2시간 3인 1,500,000원</small></td></tr>
-        </tbody>
-      </table>
-    </div>
-    <p class="note">기본 송신기·디제잉 장비 포함. 스피커 등 부대장비 별도. 헤드셋 300대 초과는 본사와 함께 진행합니다. 금액은 초안 기준이며 확정 전 조정됩니다.</p>
-  </div>
-</section>
-<section class="tech rv" id="tech">
-  <div class="wrap">
-    <div class="kit">
-      <figure><img src="img/eq_dj.png" alt="DJ 컨트롤러"><figcaption>디제잉 장비</figcaption></figure>
-      <figure><img src="img/eq_headset.png" alt="무선 헤드셋"><figcaption>헤드셋</figcaption></figure>
-      <figure><img src="img/eq_tx.png" alt="송신기"><figcaption>송신기</figcaption></figure>
-    </div>
+
+<section class="night" id="night" aria-labelledby="t-night">
+  <div class="poster" aria-hidden="true"></div>
+  <video id="reel" muted playsinline loop preload="none" aria-label="2026년 5월 10일 한강 사일런트 디스코, DJ 부스 뒤에 고정한 카메라로 본 3시간. 빈 광장이 헤드셋을 쓴 관객으로 가득 찹니다."></video>
+  <div class="wrap night-ui">
     <div>
-      <h2><span style="display:inline;white-space:nowrap;color:inherit;font-size:inherit;font-weight:inherit;margin:0">헤드셋·송신기·DJ 장비,</span><br>포터블로 대기 중입니다.<span>현장에는 이것만 있으면 됩니다.</span></h2>
-      <ul class="need">
-        <li><b>전원</b>220V 콘센트 2구</li>
-        <li><b>테이블</b>1800 × 600mm 1개</li>
-        <li><b>공간</b>행사 및 디제이 부스 공간</li>
-        <li><b>우천 대비</b>천막 또는 실내 대체 공간</li>
-      </ul>
+      <p class="kick mono rv">2026.05.10 · 한강 사일런트 디스코 · DJ 부스 뒤에서</p>
+      <h2 class="h2 rv" id="t-night">빈 광장이 춤추기까지,<br>3시간을 24초로.</h2>
+      <p class="clk" aria-hidden="true"><span id="hh">18</span><i>:</i><span id="mm">03</span></p>
+      <div class="ctl"><button type="button" id="reelpp">일시정지</button><span>18:03</span><div class="bar" aria-hidden="true"><i id="reelbar"></i></div><span>21:13</span></div>
     </div>
-  </div>
-</section>
-<section class="team rv" id="team">
-  <div class="mark" aria-hidden="true">UNSILENT</div>
-  <div class="wrap">
-    <h2>전 세대를 대상으로 한 디제잉 노하우, 그리고 본업의 내공으로 <b>관객이 ‘나’를 남기고 싶은 시간</b>을 만듭니다.</h2>
-    <div class="members">
-      <div class="member"><img src="img/m_ktrl.png" alt="DR.KTRL"><div class="cardb"><h3>DR.KTRL</h3><p class="job">본업 모먼트 · 15년 연구개발사업 기획</p><p class="q">“공연도 사전 준비가 8할입니다”</p><p class="gigs">한강 사일런트 디스코 (2023~)<br>송도 맥주 축제 · 서리풀 페스티벌 외 38건</p></div></div>
-      <div class="member"><img src="img/m_lify.png" alt="LiFY"><div class="cardb"><h3>LiFY</h3><p class="job">본업 모먼트 · 대기업 마케터</p><p class="q">“찍고 싶은 순간을 만듭니다”</p><p class="gigs">한강 사일런트 디스코 (2023~)<br>롯데백화점 루프탑 파티 · ACC City Run 외 16건</p></div></div>
-      <div class="member"><img src="img/m_kali.png" alt="KALI"><div class="cardb"><h3>KALI</h3><p class="job">본업 모먼트 · 제약회사 영업</p><p class="q">“쭈뼛대는 관객, 제가 설득합니다”</p><p class="gigs">한강 사일런트 디스코 (2023~)<br>예술의전당 두둠칫 · 광안리 무소음 콘서트 외 39건</p></div></div>
-    </div>
-  </div>
-</section>
-<section class="steps rv" id="steps">
-  <div class="wrap">
-    <h2>문의부터 공연까지, 단 3단계.</h2>
-    <ol class="flow">
-      <li><span>STEP 1</span><b>문의 · 방식 제안</b><p>날짜, 장소, 예상 인원만 알려주세요. 맞는 방식을 제안드립니다.</p></li>
-      <li><span>STEP 2</span><b>협의 · 계약</b><p>시간, 비용, 준비물을 함께 정합니다.</p></li>
-      <li><span>STEP 3</span><b>사전 점검 · 공연</b><p>전원과 동선, 우천 계획을 확인하고 공연합니다.</p></li>
+    <ol id="tlist" aria-label="그날의 흐름">
+      <li data-at="1083"><time>18:03</time><div><b>빈 광장</b><span>장비 세팅 · 헤드셋 준비</span></div></li>
+      <li data-at="1090"><time>18:10</time><div><b>헤드셋을 쓰고 모여듭니다</b><span>지나가던 사람도 멈춰 섭니다</span></div></li>
+      <li data-at="1100"><time>18:20</time><div><b>광장이 찹니다</b><span>아이부터 어른까지 한 광장에</span></div></li>
+      <li data-at="1200"><time>20:00</time><div><b>해가 집니다</b><span>강 건너 조명이 켜집니다</span></div></li>
+      <li data-at="1220"><time>20:20</time><div><b>헤드셋 불빛만 남은 밤</b><span>파란 헤드셋이 광장을 채웁니다</span></div></li>
+      <li data-at="1265"><time>21:05</time><div><b>마지막까지 자리를 지킵니다</b><span>DR.KTRL · LiFY · KALI 세 명이 함께</span></div></li>
     </ol>
   </div>
 </section>
-<section class="contact rv" id="contact">
+
+<section class="sec" id="why" aria-labelledby="t-why">
   <div class="wrap">
-    <div>
-      <h2><span>섭외 문의</span>팀 언사일런트</h2>
-      <p class="soon">연락처 준비 중</p>
+    <div class="about-g">
+      <div>
+        <p class="kick mono rv">왜 팀 언사일런트인가</p>
+        <h2 class="h2 rv" id="t-why">한강에서 4년,<br>주인공은 언제나 관객.</h2>
+        <p class="lede rv">시작부터 마무리까지 감정선이 끊기지 않습니다. 놀 줄 몰라도 괜찮습니다. 저희가 뛰게 만듭니다.</p>
+      </div>
+      <figure class="rv"><img src="img/v5/crowd.webp" alt="헤드셋을 쓰고 손을 뻗어 춤추는 관객" loading="lazy"><figcaption>무대 대신 관객을 봅니다</figcaption></figure>
     </div>
-    <p class="small">날짜·장소·예상 인원을 함께 보내주시면 답이 빨라집니다. 300대가 넘는 규모도 본사와 함께 진행합니다.</p>
+    <ol class="why">
+      <li class="rv"><b>200+</b><h3>전 세대 입증된 떼창곡</h3><p>한강 4년, 전 세대가 따라 부른 곡만 모았습니다.</p></li>
+      <li class="rv"><b>50+</b><h3>누구나 함께하는 레크레이션</h3><p>놀 줄 몰라도 괜찮습니다. 저희가 뛰게 만듭니다.</p></li>
+      <li class="rv"><b>0</b><h3>폰을 들지 않아 배가 되는 즐거움</h3><p>유명한 DJ가 없어서, 관객이 더 놉니다.</p></li>
+    </ol>
+    <div class="press-strip rv" aria-label="방송 소개"><span class="mono">방송 소개 8곳</span><b>MBC<small>뉴스투데이</small></b><b>KBS2<small>생생정보</small></b><b>JTBC<small>뉴스5후</small></b><b>TBS</b><b>딜라이브 TV<small>서울경기</small></b><b>연합뉴스TV</b><b>아리랑TV<small>K-NOW</small></b><b>SBS<small>생방송 투데이</small></b></div>
+    <p class="note">* 관객 900+는 2024년 회차별 집계, 보도 194+는 2023~2024년 한강 사일런트 디스코 관련 보도 집계입니다. 방송사 8곳은 2023~2025년 한강 사일런트 디스코를 소개한 방송사입니다. 아래 '공연 실적 · 언론'의 보도 목록은 별개 집계입니다.</p>
   </div>
 </section>
-<footer><span>© 팀 언사일런트</span><span>4년간 한강에서 검증된 포터블 무소음 디제잉</span></footer>
-<script>
-addEventListener('load',()=>document.documentElement.classList.add('ready'));
-const rm=matchMedia('(prefers-reduced-motion:reduce)').matches;
-const io=new IntersectionObserver(es=>{es.forEach(e=>{if(!e.isIntersecting)return;e.target.classList.add('in');e.target.querySelectorAll('[data-count]').forEach(n=>{if(!n.dataset.done){n.dataset.done=1;count(n)}});if(!e.target.classList.contains('card'))io.unobserve(e.target)})},{threshold:.18});
-document.querySelectorAll('.rv,.card').forEach(el=>io.observe(el));
-function count(el){const t=+el.dataset.count;if(rm||t===0){el.firstChild.nodeValue=t;return}const s=performance.now();(function f(now){const p=Math.min((now-s)/1300,1);el.firstChild.nodeValue=Math.round(t*(1-Math.pow(1-p,3)));if(p<1)requestAnimationFrame(f)})(s)}
-if(!rm){
-  const mark=document.querySelector('.hero .mark'),cut=document.querySelector('.hero .cut'),tm=document.querySelector('.team .mark'),team=document.querySelector('.team');
-  let tick=false;
-  addEventListener('scroll',()=>{if(tick)return;tick=true;requestAnimationFrame(()=>{const y=scrollY;if(y<innerHeight){mark.style.translate=`0 ${y*.25}px`;cut.style.translate=`0 ${y*.12}px`}const r=team.getBoundingClientRect();if(r.top<innerHeight&&r.bottom>0){tm.style.translate=`${(r.top-innerHeight/2)*.15}px 0`}tick=false})},{passive:true});
-  const g=document.querySelector('.glow');
-  addEventListener('pointermove',e=>{if(e.pointerType!=='mouse')return;document.body.classList.add('has-mouse');g.style.left=e.clientX+'px';g.style.top=e.clientY+'px'},{passive:true});
-}
-</script>
+
+<section class="sec" id="live" aria-labelledby="t-live">
+  <div class="wrap">
+    <p class="kick mono rv">현장 영상</p>
+    <h2 class="h2 rv" id="t-live">소리 없이 봐도,<br>들리는 현장.</h2>
+    <p class="lede rv">헤드셋 속 음악은 들리지 않지만 관객의 반응은 그대로 보입니다. 옆으로 넘겨 보세요. 더 많은 영상은 DR.KTRL 프레스킷에서 볼 수 있습니다.</p>
+    <div class="vids">
+      <figure class="vid rv"><video data-src="vid/v1.mp4" poster="vid/v1.jpg" muted loop playsinline preload="none" aria-label="한강 잠수교 사일런트 디스코, DR.KTRL 현장 영상"></video><span class="tag">LIVE</span><figcaption>한강 잠수교 · 밤<small>DR.KTRL · 사일런트 디스코</small></figcaption></figure>
+      <figure class="vid rv"><video data-src="vid/clips/ktrl-ttuk.mp4" poster="vid/clips/ktrl-ttuk.jpg" muted loop playsinline preload="none" aria-label="한강 뚝섬 사일런트 디스코, DR.KTRL 현장 영상"></video><span class="tag">LIVE</span><figcaption>한강 뚝섬<small>DR.KTRL · 사일런트 디스코</small></figcaption></figure>
+      <figure class="vid rv"><video data-src="vid/v2.mp4" poster="vid/v2.jpg" muted loop playsinline preload="none" aria-label="한강 마포대교 사일런트 디스코, DR.KTRL 현장 영상"></video><span class="tag">LIVE</span><figcaption>한강 마포대교<small>DR.KTRL · 사일런트 디스코</small></figcaption></figure>
+      <figure class="vid rv"><video data-src="vid/clips/ktrl-incheon.mp4" poster="vid/clips/ktrl-incheon.jpg" muted loop playsinline preload="none" aria-label="실내 행사, DR.KTRL 현장 영상"></video><span class="tag">LIVE</span><figcaption>실내 행사<small>DR.KTRL · 사일런트 디스코</small></figcaption></figure>
+      <figure class="vid rv"><video data-src="vid/v3.mp4" poster="vid/v3.jpg" muted loop playsinline preload="none" aria-label="서리풀 페스티벌 현장 영상"></video><span class="tag">LIVE</span><figcaption>서초 서리풀 페스티벌<small>저소음 사일런트 디스코</small></figcaption></figure>
+    </div>
+  </div>
+  <div class="rail" role="region" aria-label="공연 현장 사진"><button type="button" class="railpp" id="railpp">사진 멈춤</button>
+  <div class="track"><figure><img src="img/live2/c180.webp" alt="" decoding="async"></figure><figure><img src="img/live2/kt27.webp" alt="" decoding="async"></figure><figure><img src="img/live2/c048.webp" alt="" decoding="async"></figure><figure><img src="img/live/s_k1.webp" alt="" decoding="async"></figure><figure><img src="img/live2/kt19.webp" alt="" loading="lazy" decoding="async"></figure><figure><img src="img/live2/c117.webp" alt="" loading="lazy" decoding="async"></figure><figure><img src="img/live/lify02.webp" alt="" loading="lazy" decoding="async"></figure><figure><img src="img/live2/kt15.webp" alt="" loading="lazy" decoding="async"></figure><figure><img src="img/live2/c050.webp" alt="" loading="lazy" decoding="async"></figure><figure><img src="img/live3/lify_banpo_night.webp" alt="" loading="lazy" decoding="async"></figure><figure><img src="img/live/kali09.webp" alt="" loading="lazy" decoding="async"></figure><figure><img src="img/live2/c112.webp" alt="" loading="lazy" decoding="async"></figure><figure aria-hidden="true"><img src="img/live2/c180.webp" alt="" loading="lazy" decoding="async"></figure><figure aria-hidden="true"><img src="img/live2/kt27.webp" alt="" loading="lazy" decoding="async"></figure><figure aria-hidden="true"><img src="img/live2/c048.webp" alt="" loading="lazy" decoding="async"></figure><figure aria-hidden="true"><img src="img/live/s_k1.webp" alt="" loading="lazy" decoding="async"></figure><figure aria-hidden="true"><img src="img/live2/kt19.webp" alt="" loading="lazy" decoding="async"></figure><figure aria-hidden="true"><img src="img/live2/c117.webp" alt="" loading="lazy" decoding="async"></figure><figure aria-hidden="true"><img src="img/live/lify02.webp" alt="" loading="lazy" decoding="async"></figure><figure aria-hidden="true"><img src="img/live2/kt15.webp" alt="" loading="lazy" decoding="async"></figure><figure aria-hidden="true"><img src="img/live2/c050.webp" alt="" loading="lazy" decoding="async"></figure><figure aria-hidden="true"><img src="img/live3/lify_banpo_night.webp" alt="" loading="lazy" decoding="async"></figure><figure aria-hidden="true"><img src="img/live/kali09.webp" alt="" loading="lazy" decoding="async"></figure><figure aria-hidden="true"><img src="img/live2/c112.webp" alt="" loading="lazy" decoding="async"></figure></div>
+  <div class="track rev"><figure><img src="img/live2/kt23.webp" alt="" decoding="async"></figure><figure><img src="img/live2/c077.webp" alt="" loading="lazy" decoding="async"></figure><figure><img src="img/live2/c181.webp" alt="" decoding="async"></figure><figure><img src="img/live2/c073.webp" alt="" decoding="async"></figure><figure><img src="img/live/lify03.webp" alt="" decoding="async"></figure><figure><img src="img/live2/kt34.webp" alt="" loading="lazy" decoding="async"></figure><figure><img src="img/live3/lify_cheonan1.webp" alt="" loading="lazy" decoding="async"></figure><figure><img src="img/live2/kt26.webp" alt="" loading="lazy" decoding="async"></figure><figure><img src="img/live/kali03.webp" alt="" loading="lazy" decoding="async"></figure><figure><img src="img/live2/c014.webp" alt="" loading="lazy" decoding="async"></figure><figure><img src="img/live3/team_cheonan.webp" alt="" loading="lazy" decoding="async"></figure><figure><img src="img/live2/c080.webp" alt="" loading="lazy" decoding="async"></figure><figure><img src="img/live2/kt28.webp" alt="" loading="lazy" decoding="async"></figure><figure><img src="img/live/lify04.webp" alt="" loading="lazy" decoding="async"></figure><figure><img src="img/live2/c352.webp" alt="" loading="lazy" decoding="async"></figure><figure aria-hidden="true"><img src="img/live2/kt23.webp" alt="" loading="lazy" decoding="async"></figure><figure aria-hidden="true"><img src="img/live2/c077.webp" alt="" loading="lazy" decoding="async"></figure><figure aria-hidden="true"><img src="img/live2/c181.webp" alt="" loading="lazy" decoding="async"></figure><figure aria-hidden="true"><img src="img/live2/c073.webp" alt="" loading="lazy" decoding="async"></figure><figure aria-hidden="true"><img src="img/live/lify03.webp" alt="" loading="lazy" decoding="async"></figure><figure aria-hidden="true"><img src="img/live2/kt34.webp" alt="" loading="lazy" decoding="async"></figure><figure aria-hidden="true"><img src="img/live3/lify_cheonan1.webp" alt="" loading="lazy" decoding="async"></figure><figure aria-hidden="true"><img src="img/live2/kt26.webp" alt="" loading="lazy" decoding="async"></figure><figure aria-hidden="true"><img src="img/live/kali03.webp" alt="" loading="lazy" decoding="async"></figure><figure aria-hidden="true"><img src="img/live2/c014.webp" alt="" loading="lazy" decoding="async"></figure><figure aria-hidden="true"><img src="img/live3/team_cheonan.webp" alt="" loading="lazy" decoding="async"></figure><figure aria-hidden="true"><img src="img/live2/c080.webp" alt="" loading="lazy" decoding="async"></figure><figure aria-hidden="true"><img src="img/live2/kt28.webp" alt="" loading="lazy" decoding="async"></figure><figure aria-hidden="true"><img src="img/live/lify04.webp" alt="" loading="lazy" decoding="async"></figure><figure aria-hidden="true"><img src="img/live2/c352.webp" alt="" loading="lazy" decoding="async"></figure></div>
+</div>
+</section>
+
+<section class="sec" id="vol" aria-labelledby="t-vol">
+  <div class="wrap">
+    <p class="kick mono rv">공연 방식</p>
+    <h2 class="h2 rv" id="t-vol">행사 장소에 맞춰<br>볼륨을 고르세요.</h2>
+    <p class="lede rv">세 방식 모두 공연 시간은 60~120분, 행사 일정에 맞춥니다. 장소를 고르면 맞는 방식을 짚어 드립니다.</p>
+    <div class="pick rv" role="radiogroup" aria-label="행사 장소">
+      <span class="mono">행사는 어디서?</span>
+      <button type="button" role="radio" aria-checked="false" data-v="1">주거지 근처 · 심야 · 실내</button>
+      <button type="button" role="radio" aria-checked="false" data-v="2">공원 · 광장 · 야시장 · 캠퍼스</button>
+      <button type="button" role="radio" aria-checked="false" data-v="3">무대·음향이 있는 축제</button>
+    </div>
+    <div class="vols" id="vols">
+      <article class="volc rv" data-v="1"><img src="img/v5/festival.webp" alt="광화문 서울썸머비치에서 헤드셋을 쓰고 춤추는 관객들" loading="lazy"><span class="vn" aria-hidden="true"><small>소음 1/5</small>MUTE</span><span class="fit" hidden>이 장소에 맞아요</span>
+        <div class="bars" role="img" aria-label="소음 수준 5단계 중 1"><i class="on"></i><i></i><i></i><i></i><i></i></div>
+        <span class="k">300명 이내라면 언제 어디든 · 사례 광화문 서울썸머비치</span><h3>무소음 사일런트 디스코</h3>
+        <dl><dt>소리</dt><dd>헤드셋만 사용, 스피커 출력 없음</dd><dt>밖에서</dt><dd>낮은 정도의 관객 박수와 환호성</dd><dt>추천</dt><dd>주거지 인근, 심야, 실내</dd><dt>규모</dt><dd>헤드셋 300대까지</dd></dl>
+        <button type="button" class="ask-b" data-type="무소음 사일런트 디스코">이 방식으로 문의 →</button></article>
+      <article class="volc rv" data-v="2"><img src="img/live/e_seori1.webp" alt="서리풀 페스티벌 거리에서 두 팔을 든 관객들" loading="lazy"><span class="vn" aria-hidden="true"><small>소음 3/5</small>LOW</span><span class="fit" hidden>이 장소에 맞아요</span>
+        <div class="bars" role="img" aria-label="소음 수준 5단계 중 3"><i class="on"></i><i class="on"></i><i class="on"></i><i></i><i></i></div>
+        <span class="k">길 가던 사람 붙잡는 · 사례 서초구 서리풀 페스티벌</span><h3>저소음 사일런트 디스코</h3>
+        <dl><dt>소리</dt><dd>헤드셋 + 부스 전방 3~5m 모니터링 스피커</dd><dt>밖에서</dt><dd>관객 환호·함성 + 모니터링 스피커</dd><dt>추천</dt><dd>공원, 광장, 야시장, 캠퍼스</dd><dt>규모</dt><dd>헤드셋 300대까지</dd></dl>
+        <button type="button" class="ask-b" data-type="저소음 사일런트 디스코">이 방식으로 문의 →</button></article>
+      <article class="volc rv" data-v="3"><img src="img/v5/night.webp" alt="한강 세빛섬 앞에서 헤드셋을 쓰고 손을 든 관객들" loading="lazy"><span class="vn" aria-hidden="true"><small>소음 5/5</small>LOUD</span><span class="fit" hidden>이 장소에 맞아요</span>
+        <div class="bars" role="img" aria-label="소음 수준 5단계 중 5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i></div>
+        <span class="k">소음 걱정 필요 없는 곳에는 · 사례 한강 사일런트 디스코</span><h3>언사일런트 디스코</h3>
+        <dl><dt>소리</dt><dd>주최 측 음향으로 하는 스피커 공연</dd><dt>밖에서</dt><dd>공연 음악 전체 (무소음 동시 진행 가능)</dd><dt>추천</dt><dd>무대·음향이 있는 축제</dd><dt>규모</dt><dd>헤드셋 병행 진행 가능</dd></dl>
+        <button type="button" class="ask-b" data-type="언사일런트 디스코">이 방식으로 문의 →</button></article>
+    </div>
+    <p class="note">* 구성별 비용은 섭외 문의 후 소개서로 보내 드립니다. 방식별 자세한 비교는 <a href="#setup">구성</a>에서.</p>
+  </div>
+</section>
+
+<section class="sec" id="djs" aria-labelledby="t-dj" style="padding-block:0 clamp(40px,6vw,72px)">
+  <div class="wrap">
+    <p class="kick mono rv">DJ · 프레스킷</p>
+    <h2 class="h2 rv" id="t-dj">본업의 내공으로<br>무대에 섭니다.</h2>
+    <p class="lede rv">전 세대를 대상으로 한 디제잉 노하우, 그리고 본업의 내공으로 관객이 ‘나’를 남기고 싶은 시간을 만듭니다.</p>
+  </div>
+</section>
+<div class="stack">
+  <article class="djp" style="--gx:72%" aria-labelledby="d1">
+    <div class="cv" style="right:7%"><p class="cv-title" aria-hidden="true">KTRL</p><img class="cv-cut" src="img/dj/ktrl-cut.webp" alt="DR.KTRL 프로필 사진" loading="lazy"><span class="cv-cap" aria-hidden="true">TEAM UNSILENT · DJ 01</span></div>
+    <div class="in wrap"><div class="box">
+      <p class="mono">Featuring 01 / 03 · K-POP · 떼창 · EDM · HARDSTYLE</p>
+      <h3 id="d1">DR.KTRL</h3>
+      <p class="job">본업 모먼트 · <b>15년 연구개발사업 기획</b></p>
+      <p class="q">“공연도 사전 준비가 8할입니다.”</p>
+      <p class="d">떼창의 민족 아닙니까. 한강에서 검증된 200곡 이상의 떼창곡으로 나이 불문, 간주까지 함께 부르게 만듭니다.</p>
+      <ul aria-label="이력 요약"><li>떼창곡 200곡+</li><li>송도 맥주 축제·서리풀 페스티벌 외 38건+</li></ul>
+      <div class="row"><a class="cta" href="dj/dr-ktrl.html">프레스킷 전체 보기 →</a><a class="ghost" href="https://www.instagram.com/dr.ktrl/" target="_blank" rel="noopener">Instagram ↗</a></div>
+    </div></div>
+  </article>
+  <article class="djp r" style="--gx:28%;--gc:rgba(211,230,191,.2)" aria-labelledby="d2">
+    <div class="cv" style="left:4%"><p class="cv-title" aria-hidden="true">LiFY</p><img class="cv-cut" src="img/dj/lify-cut.webp" alt="LiFY 프로필 사진" loading="lazy"><span class="cv-cap" aria-hidden="true">TEAM UNSILENT · DJ 02</span></div>
+    <div class="in wrap"><div class="box">
+      <p class="mono">Featuring 02 / 03 · ALL GENRE · EDM · HARD BASS</p>
+      <h3 id="d2">LiFY</h3>
+      <p class="job">본업 모먼트 · <b>대기업 마케터</b></p>
+      <p class="q">“찍고 싶은 순간을 만듭니다.”</p>
+      <p class="d">클럽과 호텔 라운지, 브랜드 파티와 한강 사일런트 디스코까지. 장르를 가리지 않는 올장르 DJ입니다.</p>
+      <ul aria-label="이력 요약"><li>2019 상상 디제잉 대회 우승</li><li>롯데백화점 루프탑 파티·ACC City Run 외 16건+</li></ul>
+      <div class="row"><a class="cta" href="dj/lify.html">프레스킷 전체 보기 →</a><a class="ghost" href="https://www.instagram.com/dj_lify/" target="_blank" rel="noopener">Instagram ↗</a></div>
+    </div></div>
+  </article>
+  <article class="djp" style="--gx:72%;--gc:rgba(194,234,140,.22)" aria-labelledby="d3">
+    <div class="cv" style="right:7%"><p class="cv-title" aria-hidden="true">KALI</p><img class="cv-cut" src="img/dj/kali-cut.webp" alt="KALI 프로필 사진" loading="lazy"><span class="cv-cap" aria-hidden="true">TEAM UNSILENT · DJ 03</span></div>
+    <div class="in wrap"><div class="box">
+      <p class="mono">Featuring 03 / 03 · OPEN FORMAT · MELBOURNE BOUNCE</p>
+      <h3 id="d3">KALI</h3>
+      <p class="job">본업 모먼트 · <b>제약회사 영업</b></p>
+      <p class="q">“쭈뼛대는 관객, 제가 설득합니다.”</p>
+      <p class="d">익숙한 추억의 노래부터 모두가 따라 추는 메가히트곡까지, 어린아이부터 중장년층까지 함께 뛰어놀게 만듭니다.</p>
+      <ul aria-label="이력 요약"><li>DJ 경력 2013~</li><li>예술의전당 두둠칫·광안리 무소음 콘서트 외 39건+</li></ul>
+      <div class="row"><a class="cta" href="dj/kali.html">프레스킷 전체 보기 →</a><a class="ghost" href="https://www.instagram.com/djkali92/" target="_blank" rel="noopener">Instagram ↗</a></div>
+    </div></div>
+  </article>
+</div>
+
+<section class="sec" id="rec" aria-labelledby="t-rec">
+  <div class="wrap">
+    <p class="kick mono rv">공연 실적 · 언론</p>
+    <h2 class="h2 rv" id="t-rec">한강에서 시작해<br>전국 축제까지.</h2>
+    <p class="lede rv">2023년부터 한강 사일런트 디스코의 메인 DJ를 맡고 있습니다. 보도에는 ‘한강 무소음 DJ 파티’라는 행사명으로 나옵니다. 저희가 DJ로 참여한 행사의 보도 78편을 모았습니다.</p>
+    <div class="rec">
+      <ul class="yr rv">
+        <li><span class="y">2023~</span><b>한강 사일런트 디스코</b><span class="t">마포대교·잠수교·뚝섬</span></li>
+        <li><span class="y">2026</span><b>예술의전당 두둠칫 사일런트 디스코</b><span class="t">공연장</span></li>
+        <li><span class="y">2026</span><b>광화문 서울썸머비치</b><span class="t">무소음</span></li>
+        <li><span class="y">2026</span><b>광안리 수영구 무소음 DJ 콘서트</b><span class="t">무소음</span></li>
+        <li><span class="y">2026</span><b>성남시청 사일런트 디스코</b><span class="t">지자체</span></li>
+        <li><span class="y">2026</span><b>서울바캉스페스티벌 in 신촌</b><span class="t">축제</span></li>
+        <li><span class="y">2025</span><b>단양 다리안 캠핑 페스티벌</b><span class="t">축제</span></li>
+        <li><span class="y">2025</span><b>하남 스타필드 아쿠아필드 파티</b><span class="t">브랜드</span></li>
+        <li><span class="y">2025</span><b>밤마다 인천 FESTA</b><span class="t">축제</span></li>
+        <li><span class="y">2024</span><b>서초 서리풀 페스티벌</b><span class="t">저소음</span></li>
+        <li><span class="y">2024</span><b>수원화성 미디어아트 페스티벌</b><span class="t">축제</span></li>
+        <li><span class="y">2024</span><b>강남 문화 한마당 축제 (코엑스)</b><span class="t">축제</span></li>
+        <li><span class="y">2024</span><b>강진 하맥축제 · 부산 유라리 건맥축제 · 춘천마임 불의도시 축제</b><span class="t">축제</span></li>
+      </ul>
+      <div class="press-box rv">
+        <div class="press-tabs" role="group" aria-label="참여 행사 보도 78편 · 종류별"><button type="button" aria-pressed="true" data-f="tv">방송·영상 <b>15</b></button><button type="button" aria-pressed="false" data-f="news">신문·온라인 <b>58</b></button><button type="button" aria-pressed="false" data-f="intl">영문·외신 <b>5</b></button></div>
+        <div class="press" id="press" data-f="tv">
+        <a href="https://www.youtube.com/watch?v=u_X48PDOEbs" target="_blank" rel="noopener" data-k="tv"><small>MUSINSA TV · 2025.07.11</small><b>🪩핫 걸 프로미스나인 이채영 첫 클럽 간 썰 푼다. 근데 이제 한강을 곁들인…I 한강 무소음 DJ 파티 I 여름 파티 [성수기 EP.4]</b><span>YouTube ↗</span></a>
+        <a href="https://www.youtube.com/watch?v=HmxsovvUNcE" target="_blank" rel="noopener" data-k="tv"><small>SBS 생방송 투데이(SBS STORY) · 2025.07.03</small><b>무더운 여름 이기는 열정의 ‘무소음’ DJ 파티★</b><span>YouTube ↗</span></a>
+        <a href="https://www.youtube.com/watch?v=oIR8T1gXuio" target="_blank" rel="noopener" data-k="tv" data-more><small>인천일보TV · 2025.07.01</small><b>인천에서 열린 소리없는 DJ파티#무소음 #dj #페스티벌 #silent #disco</b><span>YouTube ↗</span></a>
+        <a href="https://www.youtube.com/watch?v=E4MZSCMXYFM" target="_blank" rel="noopener" data-k="tv" data-more><small>인천일보TV · 2025.06.30</small><b>조용한데 미친듯이 신나는 파티? 인천 무소음 DJ파티 현장! #shorts #무소음 #dj #페스티벌</b><span>YouTube ↗</span></a>
+        <a href="https://www.youtube.com/watch?v=NRAQtbIfLOE" target="_blank" rel="noopener" data-k="tv"><small>MBC 14F 일사에프 · 2025.05.29</small><b>헤드셋만 쓰면, 누구나 춤추는 거리 된다? 6월에 한강 가야되는 이유ㅣ선발대 / 14F</b><span>YouTube ↗</span></a>
+        <a href="https://www.youtube.com/watch?v=zfMIwWyYSuo" target="_blank" rel="noopener" data-k="tv"><small>아리랑TV · 2024.08.18</small><b>[1DAY 1KOREA: K-NOW] Ep.98 Loudness within silence, a quiet madness! Han River muted DJ party</b><span>YouTube ↗</span></a>
+        <a href="https://www.youtube.com/watch?v=DdJ9nxUoJp8" target="_blank" rel="noopener" data-k="tv"><small>연합뉴스TV · 2024.06.19</small><b>[채이는삶의현장] 아이브 팬부터 임영웅 팬까지 세대대통합…&quot;연합뉴스TV가 쏩니다!&quot; / 연합뉴스TV (YonhapnewsTV)</b><span>YouTube ↗</span></a>
+        <a href="https://vod.kbs.co.kr/index.html?source=episode&amp;sname=vod&amp;stype=vod&amp;program_code=T2014-0844&amp;program_id=PS-2023158389-01-000" target="_blank" rel="noopener" data-k="tv"><small>KBS2 2TV 생생정보 · 2023.09.19</small><b>[1890회] 2TV 생생정보</b><span>KBS VOD ↗</span></a>
+        <a href="https://youtube.com/shorts/EP03saztIw8" target="_blank" rel="noopener" data-k="tv" data-more><small>조선일보 · 2023.09.17</small><b>[오종찬의 Oh컷] 헤드셋 쓰니 딴세상. 무소음 댄스 파티 #조선일보 #오종찬</b><span>YouTube ↗</span></a>
+        <a href="https://youtube.com/shorts/svQwaJdJtwc" target="_blank" rel="noopener" data-k="tv" data-more><small>딜라이브TV · 2023.08.17</small><b>한강 페스티벌 &#x27;한강 무소음 DJ파티&#x27; 현장 shorts</b><span>YouTube ↗</span></a>
+        <a href="https://youtube.com/shorts/HesTOghpKic" target="_blank" rel="noopener" data-k="tv" data-more><small>한국미래일보 기자단(안현주) · 2023.08.16</small><b>사일런트 디스코, 서울시가 개최한 한강 무소음 DJ 파티</b><span>YouTube ↗</span></a>
+        <a href="https://youtu.be/RFmu_0sUzLs" target="_blank" rel="noopener" data-k="tv" data-more><small>JTBC 뉴스5후 · 2023.08.15</small><b>음악은 오로지 내 귀에만…한강 바람 맞으며 &#x27;고요 속의 댄스&#x27; #쇼츠트랙 / JTBC 뉴스5후</b><span>YouTube ↗</span></a>
+        <a href="https://www.youtube.com/watch?v=vctkao7D8AA" target="_blank" rel="noopener" data-k="tv" data-more><small>MBC 뉴스투데이 · 2023.08.15</small><b>[와글와글] &quot;헤드셋 끼고 춤춰요&quot;‥한강서 열린 &#x27;무소음 DJ 파티&#x27; (2023.08.15/뉴스투데이/MBC)</b><span>YouTube ↗</span></a>
+        <a href="https://www.youtube.com/watch?v=qqjTNHFxgAk" target="_blank" rel="noopener" data-k="tv" data-more><small>TBS · 2023.08.09</small><b>&quot;올여름 피서 한강으로 떠나자&quot;…2023 한강 페스티벌</b><span>YouTube ↗</span></a>
+        <a href="https://youtu.be/O_6zWdP8AEs" target="_blank" rel="noopener" data-k="tv" data-more><small>딜라이브TV · 2023.08.08</small><b>한강페스티벌 개막…가성비 좋은 여름피서지 &#x27;한강&#x27; / 딜라이브TV</b><span>YouTube ↗</span></a>
+        <a href="https://www.news1.kr/life-culture/performance-exhibition/6295089" target="_blank" rel="noopener" data-k="news"><small>뉴스1 · 2026.09.18</small><b>디스코장 이어 이번엔 패션 런웨이로…예술의전당 광장 또 변신</b><span>기사 ↗</span></a>
+        <a href="https://www.hankyung.com/article/202608248636i" target="_blank" rel="noopener" data-k="news"><small>한국경제 · 2026.08.24</small><b>DJ 음악에 맞춰 한밤중 클럽으로 변신한 &#x27;클래식 성역&#x27; 예술의전당</b><span>기사 ↗</span></a>
+        <a href="https://www.hankyung.com/article/2026082494981" target="_blank" rel="noopener" data-k="news"><small>한국경제 · 2026.08.24</small><b>강렬한 비트의 댄스 음악에 자리 내준 클래식 성지</b><span>기사 ↗</span></a>
+        <a href="https://www.sedaily.com/article/20082711?ref=naver" target="_blank" rel="noopener" data-k="news"><small>서울경제 · 2026.08.24</small><b>클래식 전당이 클럽으로 변신…장한나의 ‘색다른 실험’</b><span>기사 ↗</span></a>
+        <a href="https://www.chosun.com/culture-life/culture_general/2026/08/04/FDUEHHO4CZBABNKMH5BLRZSMOU/?utm_source=naver&amp;utm_medium=referral&amp;utm_campaign=naver-news" target="_blank" rel="noopener" data-k="news"><small>조선일보 · 2026.08.03</small><b>예술의전당서 헤드폰 쓰고 춤춘다고?</b><span>기사 ↗</span></a>
+        <a href="https://www.sac.or.kr/site/main/board/sacnews/318488" target="_blank" rel="noopener" data-k="news"><small>예술의전당(전당소식) · 2026.08.--</small><b>8.23(일) 야외 프로그램 &lt;두둠칫 사일런트 디스코&gt; 안내</b><span>기사 ↗</span></a>
+        <a href="https://www.tournews21.com/news/articleView.html?idxno=139668" target="_blank" rel="noopener" data-k="news" data-more><small>투어코리아 · 2026.07.29</small><b>[서울썸머비치] 광화문이 비치클럽으로 변신…낮엔 물놀이, 밤엔 DJ 파티</b><span>기사 ↗</span></a>
+        <a href="https://www.hankyung.com/article/2026051182357" target="_blank" rel="noopener" data-k="news" data-more><small>한국경제 · 2026.05.11</small><b>&quot;소리 안 나는데 더 뜨겁다&quot;…한강으로 몰려간 2030 [발굴단]</b><span>기사 ↗</span></a>
+        <a href="http://www.mhj21.com/168775" target="_blank" rel="noopener" data-k="news" data-more><small>문화저널21 · 2025.08.18</small><b>[MJ포토] 헤드폰 속 클럽, 표정으로 말해요!</b><span>기사 ↗</span></a>
+        <a href="http://www.mhj21.com/168772" target="_blank" rel="noopener" data-k="news" data-more><small>문화저널21 · 2025.08.17</small><b>한강의 밤, 소음 없는 열정으로 물들다…&#x27;한강 무소음 DJ 파티&#x27;</b><span>기사 ↗</span></a>
+        <a href="https://www.newsis.com/view/NISI20250816_0020935815" target="_blank" rel="noopener" data-k="news" data-more><small>뉴시스 · 2025.08.16</small><b>한강 마포대교 밑에서 즐기는 DJ파티</b><span>기사 ↗</span></a>
+        <a href="https://www.newsis.com/view/NISI20250816_0020935828" target="_blank" rel="noopener" data-k="news" data-more><small>뉴시스 · 2025.08.16</small><b>헤드폰끼고 즐기는 DJ파티</b><span>기사 ↗</span></a>
+        <a href="https://www.sportsworldi.com/newsView/20250728509093" target="_blank" rel="noopener" data-k="news" data-more><small>스포츠월드 · 2025.07.28</small><b>아쿠아필드, 오는 8월 ‘2025 사일런트 디스코파티’ 개최…7월 31일까지 티켓 할인 판매</b><span>기사 ↗</span></a>
+        <a href="https://www.enetnews.co.kr/news/articleView.html?idxno=40535" target="_blank" rel="noopener" data-k="news" data-more><small>이넷뉴스 · 2025.07.28</small><b>“여름밤, 인피니티풀 물들이다” 아쿠아필드, ‘2025 사일런트 디스코파티’ 개최</b><span>기사 ↗</span></a>
+        <a href="https://www.gosiweek.com/article/1065585211124703" target="_blank" rel="noopener" data-k="news" data-more><small>피앤피뉴스 · 2025.07.28</small><b>아쿠아필드, ‘2025 사일런트 디스코파티’ 개최… 내달 1일 고양점 시작으로 릴레이 진행</b><span>기사 ↗</span></a>
+        <a href="https://www.mydaily.co.kr/page/view/2025072511220080593" target="_blank" rel="noopener" data-k="news" data-more><small>마이데일리 · 2025.07.25</small><b>아쿠아필드, 인피니티풀 물들이는 ‘2025 사일런트 디스코파티’ 개최</b><span>기사 ↗</span></a>
+        <a href="https://www.mediafine.co.kr/news/articleView.html?idxno=70455" target="_blank" rel="noopener" data-k="news" data-more><small>미디어파인 · 2025.07.25</small><b>아쿠아필드, 여름 밤 도심 속 힐링 파티 ‘2025 사일런트 디스코파티’ 개최</b><span>기사 ↗</span></a>
+        <a href="http://www.wowtv.co.kr/NewsCenter/News/Read?articleId=A202507250713&amp;t=NN" target="_blank" rel="noopener" data-k="news" data-more><small>한국경제TV · 2025.07.25</small><b>아쿠아필드, 오는 8월 ‘2025 사일런트 디스코파티’ 개최… 도심 속 힐링 파티 열린다</b><span>기사 ↗</span></a>
+        <a href="https://www.incheonilbo.com/news/galleryView.html?idxno=1294384" target="_blank" rel="noopener" data-k="news" data-more><small>인천일보 · 2025.06.29</small><b>[포토] &#x27;밤밤페스타&#x27; 즐기는 관람객</b><span>기사 ↗</span></a>
+        <a href="https://www.jemin.com/news/articleView.html?idxno=810385" target="_blank" rel="noopener" data-k="news" data-more><small>제민일보 · 2025.06.09</small><b>서울 반포한강공원 무소음 DJ 파티 열려</b><span>기사 ↗</span></a>
+        <a href="https://www.newsis.com/view/NISI20250608_0020844427" target="_blank" rel="noopener" data-k="news" data-more><small>뉴시스 · 2025.06.08</small><b>한강에서 열린 무소음 DJ 파티</b><span>기사 ↗</span></a>
+        <a href="https://www.newsis.com/view/NISI20250608_0020844424" target="_blank" rel="noopener" data-k="news" data-more><small>뉴시스 · 2025.06.08</small><b>인파 몰린 무소음 DJ 파티</b><span>기사 ↗</span></a>
+        <a href="https://www.newsis.com/view/NISI20250608_0020844426" target="_blank" rel="noopener" data-k="news" data-more><small>뉴시스 · 2025.06.08</small><b>가장 조용한 DJ 파티</b><span>기사 ↗</span></a>
+        <a href="https://www.newsis.com/view/NISI20250608_0020844430" target="_blank" rel="noopener" data-k="news" data-more><small>뉴시스 · 2025.06.08</small><b>조용히 즐기는 DJ 파티</b><span>기사 ↗</span></a>
+        <a href="https://www.newsis.com/view/NISI20250608_0020844431" target="_blank" rel="noopener" data-k="news" data-more><small>뉴시스 · 2025.06.08</small><b>한강에서 DJ 파티 즐기는 시민들</b><span>기사 ↗</span></a>
+        <a href="https://www.news1.kr/photos/6855099" target="_blank" rel="noopener" data-k="news" data-more><small>뉴스1 · 2024.09.01</small><b>해드폰이 빛나는 무소음 DJ 파티</b><span>기사 ↗</span></a>
+        <a href="https://www.news1.kr/photos/6855104" target="_blank" rel="noopener" data-k="news" data-more><small>뉴스1 · 2024.09.01</small><b>한강 무소음 DJ파티</b><span>기사 ↗</span></a>
+        <a href="https://www.news1.kr/photos/6855098" target="_blank" rel="noopener" data-k="news" data-more><small>뉴스1 · 2024.09.01</small><b>잠수교 뚜벅뚜벅 축제 &#x27;무소음 DJ 파티&#x27;</b><span>기사 ↗</span></a>
+        <a href="https://www.newsis.com/view/NISX20240728_0002828750" target="_blank" rel="noopener" data-k="news" data-more><small>뉴시스 · 2024.07.28</small><b>한 여름밤의 음악파티, 한강공원에서 열린 2024 한강 무소음 DJ파티 [뉴시스Pic]</b><span>기사 ↗</span></a>
+        <a href="https://www.joongang.co.kr/article/25266327" target="_blank" rel="noopener" data-k="news" data-more><small>중앙일보 · 2024.07.26</small><b>한밤 헤드폰 끼고 몸 흔든다…한강 뒤집은 &#x27;조용한 광란&#x27; 무슨일</b><span>기사 ↗</span></a>
+        <a href="https://english.visitseoul.net/events/2024-hangangdj_/46244" target="_blank" rel="noopener" data-k="news" data-more><small>VISIT SEOUL(서울관광재단) · 2024.07.12</small><b>Hangang River Silent Disco DJ Party</b><span>기사 ↗</span></a>
+        <a href="https://view.asiae.co.kr/article/2024052216291269269" target="_blank" rel="noopener" data-k="news" data-more><small>아시아경제 · 2024.05.25</small><b>&quot;3시간에 1300칼로리 태웠다&quot;…깜깜한 한강에서 무슨 일</b><span>기사 ↗</span></a>
+        <a href="https://news.tf.co.kr/read/photomovie/2099432.htm" target="_blank" rel="noopener" data-k="news" data-more><small>더팩트 · 2024.05.19</small><b>한강에서 즐기는 &#x27;조용한 광란&#x27;…&#x27;무소음 DJ 파티&#x27; [TF사진관]</b><span>기사 ↗</span></a>
+        <a href="https://www.khan.co.kr/national/national-general/article/202405131545001" target="_blank" rel="noopener" data-k="news" data-more><small>경향신문 · 2024.05.13</small><b>한강변 운동하는 사람들 옆에서 음악 없이 춤추는 ‘조용한 광란’ 정체는?</b><span>기사 ↗</span></a>
+        <a href="https://www.news1.kr/photos/view/?6266705" target="_blank" rel="noopener" data-k="news" data-more><small>뉴스1 · 2023.10.14</small><b>한강에서 즐기는 무소음 DJ 파티</b><span>기사 ↗</span></a>
+        <a href="https://www.news1.kr/photos/view/?6266706" target="_blank" rel="noopener" data-k="news" data-more><small>뉴스1 · 2023.10.14</small><b>야경 보며 즐기는 무소음 DJ 파티</b><span>기사 ↗</span></a>
+        <a href="https://www.news1.kr/photos/view/?6266702" target="_blank" rel="noopener" data-k="news" data-more><small>뉴스1 · 2023.10.14</small><b>우리끼리 들리는 무소음 파티</b><span>기사 ↗</span></a>
+        <a href="https://www.news1.kr/photos/view/?6266700" target="_blank" rel="noopener" data-k="news" data-more><small>뉴스1 · 2023.10.14</small><b>무소음으로 즐기는 파티</b><span>기사 ↗</span></a>
+        <a href="https://www.news1.kr/photos/view/?6266701" target="_blank" rel="noopener" data-k="news" data-more><small>뉴스1 · 2023.10.14</small><b>한강 야경 보며 즐기는 DJ 파티</b><span>기사 ↗</span></a>
+        <a href="https://www.news1.kr/articles/5185741" target="_blank" rel="noopener" data-k="news" data-more><small>뉴스1 · 2023.09.28</small><b>시원한 한강 바람, 조용한 &#x27;댄스파티&#x27;?…일요일 밤 잠수교에 모인 사람들</b><span>기사 ↗</span></a>
+        <a href="https://www.chosun.com/national/weekend/2023/09/16/MTF6MXQIBRA7JKUIUYNL2MC4DU/" target="_blank" rel="noopener" data-k="news" data-more><small>조선일보 · 2023.09.16</small><b>조용한 댄스파티? 헤드셋 쓰니 딴세상이 열리네</b><span>기사 ↗</span></a>
+        <a href="https://www.news1.kr/photos/view/?6204992" target="_blank" rel="noopener" data-k="news" data-more><small>뉴스1 · 2023.09.10</small><b>분수와 함께하는 한강 무소음 DJ 파티</b><span>기사 ↗</span></a>
+        <a href="https://www.news1.kr/photos/view/?6204994" target="_blank" rel="noopener" data-k="news" data-more><small>뉴스1 · 2023.09.10</small><b>달빛무지개분수와 어우러지는 한강 무소음 DJ 파티</b><span>기사 ↗</span></a>
+        <a href="https://www.news1.kr/photos/view/?6204991" target="_blank" rel="noopener" data-k="news" data-more><small>뉴스1 · 2023.09.10</small><b>달빛무지개분수와 함께하는 무소음 DJ 파티</b><span>기사 ↗</span></a>
+        <a href="https://www.news1.kr/photos/view/?6204986" target="_blank" rel="noopener" data-k="news" data-more><small>뉴스1 · 2023.09.10</small><b>한강 무소음 DJ 파티 &#x27;너무 신나요&#x27;</b><span>기사 ↗</span></a>
+        <a href="https://www.news1.kr/photos/view/?6204988" target="_blank" rel="noopener" data-k="news" data-more><small>뉴스1 · 2023.09.10</small><b>온가족이 함께 즐기는 무소음 DJ 파티</b><span>기사 ↗</span></a>
+        <a href="https://www.news1.kr/photos/view/?6204978" target="_blank" rel="noopener" data-k="news" data-more><small>뉴스1 · 2023.09.10</small><b>무소음 클럽으로 변한 한강공원</b><span>기사 ↗</span></a>
+        <a href="https://www.news1.kr/photos/view/?6204977" target="_blank" rel="noopener" data-k="news" data-more><small>뉴스1 · 2023.09.10</small><b>&#x27;무소음 클럽으로 변한 한강공원&#x27;</b><span>기사 ↗</span></a>
+        <a href="https://www.news1.kr/photos/view/?6204987" target="_blank" rel="noopener" data-k="news" data-more><small>뉴스1 · 2023.09.10</small><b>무소음으로 즐기는 DJ 파티</b><span>기사 ↗</span></a>
+        <a href="https://www.news1.kr/photos/view/?6204989" target="_blank" rel="noopener" data-k="news" data-more><small>뉴스1 · 2023.09.10</small><b>한강공원에서 즐기는 무소음 디제잉 파티</b><span>기사 ↗</span></a>
+        <a href="http://www.koreafuture.co.kr/news/view.php?idx=2873" target="_blank" rel="noopener" data-k="news" data-more><small>한국미래일보 · 2023.08.17</small><b>사일런트 디스코.. 서울시가 개최한 무소음 한강 DJ 파티</b><span>기사 ↗</span></a>
+        <a href="http://www.kukinews.com/newsView/kuk202308130057" target="_blank" rel="noopener" data-k="news" data-more><small>쿠키뉴스 · 2023.08.14</small><b>한강 바람 맞으며 고요 속 댄스… “파워 E 다 모여!” [가봤더니]</b><span>기사 ↗</span></a>
+        <a href="https://www.insight.co.kr/news/447067" target="_blank" rel="noopener" data-k="news" data-more><small>인사이트 · 2023.08.13</small><b>어제(12일) 한강 다리 밑에서 노래도 없이 미친듯이 춤추고 있었던 사람들의 정체 (영상)</b><span>기사 ↗</span></a>
+        <a href="https://news.nate.com/view/20230812n12049" target="_blank" rel="noopener" data-k="news" data-more><small>네이트뉴스(뉴시스) · 2023.08.12</small><b>소음 없는 한강 DJ 파티</b><span>기사 ↗</span></a>
+        <a href="http://www.newsis.com/view/?id=NISX20230812_0002412057&amp;cID=10201&amp;pID=10200" target="_blank" rel="noopener" data-k="news" data-more><small>뉴시스 · 2023.08.12</small><b>한강공원에서 열린 &#x27;무소음 DJ 파티&#x27; [뉴시스Pic]</b><span>기사 ↗</span></a>
+        <a href="https://www.donga.com/news/Society/article/all/20230812/120680330/1" target="_blank" rel="noopener" data-k="news" data-more><small>동아일보(뉴시스) · 2023.08.12</small><b>한강공원에서 열린 ‘무소음 DJ 파티’</b><span>기사 ↗</span></a>
+        <a href="https://www.fnnews.com/news/202308122136300726" target="_blank" rel="noopener" data-k="news" data-more><small>파이낸셜뉴스(뉴시스) · 2023.08.12</small><b>한강공원에서 열린 &#x27;무소음 DJ 파티&#x27; [뉴시스Pic]</b><span>기사 ↗</span></a>
+        <a href="https://www.wikitree.co.kr/articles/877475" target="_blank" rel="noopener" data-k="news" data-more><small>위키트리 · 2023.08.10</small><b>이번 주말에 한강공원에서 획기적인 파티가 열립니다 (+파티 정체)</b><span>기사 ↗</span></a>
+        <a href="https://www.koreajoongangdaily.com/lifestyle/urbane-arts-center-throws-urban-bash-for-all-with-silent-disco/12839049" target="_blank" rel="noopener" data-k="intl"><small>Korea JoongAng Daily · 2026.08.24</small><b>Urbane arts center throws urban bash for all with ‘Silent Disco’</b><span>기사 ↗</span></a>
+        <a href="https://biz.heraldcorp.com/article/10823417" target="_blank" rel="noopener" data-k="intl"><small>The Herald Business(헤럴드경제 영문) · 2026.07.28</small><b>Seoul Summer Beach turns up the heat after dark with new adults-only night program</b><span>기사 ↗</span></a>
+        <a href="https://www.viory.video/en/videos/a3014_13102024/shut-up-and-dance-hundreds-gather-by-the-hangang-river-for-seoul-s-iconic-silent-disco-" target="_blank" rel="noopener" data-k="intl"><small>Viory · 2024.10.13</small><b>Shut up and dance! Hundreds gather by the Hangang River for Seoul&#x27;s iconic &#x27;Silent Disco&#x27;</b><span>기사 ↗</span></a>
+        <a href="https://www.koreaherald.com/article/3484764" target="_blank" rel="noopener" data-k="intl"><small>The Korea Herald · 2024.09.30</small><b>Shut up and dance</b><span>기사 ↗</span></a>
+        <a href="https://www.voakorea.com/a/7619226.html" target="_blank" rel="noopener" data-k="intl"><small>VOA 한국어 · 2024.05.20</small><b>[헬로서울] 소음 공해에서 벗어난, ‘한강 무소음 DJ 파티’</b><span>기사 ↗</span></a>
+        </div>
+        <button type="button" class="press-more" id="pressmore" aria-expanded="false">더 보기</button>
+      </div>
+    </div>
+    <p class="note">* 행사 목록은 팀원 공연 이력에서 발췌했습니다. 보도 78편은 팀 언사일런트가 DJ로 참여한 행사(한강 무소음 DJ 파티, 예술의전당 두둠칫 사일런트 디스코 등)를 다룬 보도이며, 팀 단독 보도가 아닙니다. 축제 일정 안내 기사와 팀 참여를 확인하지 못한 회차의 보도는 뺐습니다. 위의 보도 194+(2023~2024 집계)와는 별개 집계입니다. 링크는 2026-10-20 확인.</p>
+  </div>
+</section>
+
+<section class="sec" id="setup" aria-labelledby="t-setup" style="padding-top:0">
+  <div class="wrap">
+    <p class="kick mono rv">구성</p>
+    <h2 class="h2 rv" id="t-setup">행사 장소와 규모에 맞춰<br>구성을 함께 정합니다.</h2>
+    <div class="tabs" role="group" aria-label="공연 방식 고르기"><button type="button" aria-pressed="true" data-show="1">무소음</button><button type="button" aria-pressed="false" data-show="2">저소음</button><button type="button" aria-pressed="false" data-show="3">언사일런트</button></div>
+    <table class="cmp rv" id="cmp" data-show="1">
+      <caption class="sr">공연 방식별 비교</caption>
+      <thead><tr><td></td><th scope="col"><small aria-hidden="true">MUTE</small>무소음</th><th scope="col"><small aria-hidden="true">LOW</small>저소음</th><th scope="col"><small aria-hidden="true">LOUD</small>언사일런트</th></tr></thead>
+      <tbody>
+        <tr><th scope="row">헤드셋 대여</th><td>O</td><td>O</td><td>선택 (협의) <span class="sub">디제이만 섭외도 가능</span></td></tr>
+        <tr><th scope="row">스피커 출력</th><td>없음 (헤드셋만)</td><td>모니터링 스피커<span class="sub">3~5m 들리는 수준</span></td><td>주최 측 음향 사용</td></tr>
+        <tr><th scope="row">밖에서 들리는 소리</th><td>관객의 박수와 환호</td><td>관객의 환호·함성 + 모니터링 스피커</td><td>공연 음악 전체</td></tr>
+        <tr><th scope="row">맞는 장소</th><td>주거지 인근, 심야, 실내</td><td>공원, 광장, 야시장, 캠퍼스</td><td>무대·음향이 있는 축제</td></tr>
+        <tr><th scope="row">규모</th><td>헤드셋 300대까지</td><td>헤드셋 300대까지</td><td>헤드셋 병행 진행 가능</td></tr>
+        <tr><th scope="row">공연 시간</th><td>60~120분</td><td>60~120분</td><td>60~120분</td></tr>
+      </tbody>
+    </table>
+    <p class="note">* 구성별 비용은 섭외 문의 후 소개서로 보내 드립니다. 스피커 등 부대장비는 포함되지 않습니다.<br>* 헤드셋 300대 초과도 팀 언사일런트로 문의해 주세요.</p>
+    <div class="rider rv">
+      <div><p class="kick mono" style="margin:0">테크라이더</p><h3 style="font-size:clamp(26px,2.8vw,38px);margin-top:14px">헤드셋·송신기·DJ 장비,<br>포터블로 대기 중입니다.</h3>
+        <ul><li><small>전원</small><b>220V 콘센트 2구</b></li><li><small>테이블</small><b>1800 × 600mm 1개</b></li><li><small>공간</small><b>행사 및 디제이 부스 공간</b></li><li><small>우천 대비</small><b>천막 또는 실내 대체 공간</b></li></ul></div>
+      <div class="kit"><figure><img src="img/eq_headset.webp" alt="사일런트 디스코 헤드셋" loading="lazy"><figcaption>HEADSET</figcaption></figure><figure><img src="img/eq_dj.webp" alt="포터블 DJ 장비" loading="lazy"><figcaption>DJ DECK</figcaption></figure><figure><img src="img/eq_tx.webp" alt="헤드셋 송신기" loading="lazy"><figcaption>TRANSMITTER</figcaption></figure></div>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="contact" aria-labelledby="t-flow" style="padding-top:0">
+  <div class="wrap">
+    <p class="kick mono rv">진행 · 섭외 문의</p>
+    <h2 class="h2 rv" id="t-flow">문의부터 공연까지,<br>다섯 단계로 진행됩니다.</h2>
+    <ol class="steps rv">
+      <li><b>문의</b><p>행사 날짜와 장소를 알려주세요.</p></li>
+      <li><b>협의</b><p>규모, 공연 방식, 공연 시간을 정합니다.</p></li>
+      <li><b>견적·계약</b><p>헤드셋 수량과 인원에 맞춘 견적을 드립니다.</p></li>
+      <li><b>공연</b><p>설치부터 진행, 철수까지 팀이 직접 맡습니다.</p></li>
+      <li><b>결과 공유</b><p>현장 반응과 결과를 함께 정리합니다.</p></li>
+    </ol>
+    <p class="note">* 최소 준비 기간은 행사 규모에 따라 협의 후 안내드립니다.</p>
+    <div class="ask rv" id="ask">
+      <div><h3>장소와 날짜만으로<br>상담을 시작할 수 있습니다.</h3><p class="lede">공연 방식과 수량을 아직 못 정하셨어도 괜찮습니다. 맞는 방식과 구성을 제안드리고, 비용이 담긴 소개서를 보내 드립니다.</p>
+        <!-- 섭외 연락처: 사용자 확정 전 자리표시(000). 확정되면 여기와 home.js CONTACT_EMAIL만 바꾼다 -->
+        <ul class="contact"><li><small>전화</small><b>000-0000-0000</b></li><li><small>이메일</small><b>000@000.000</b></li><li><small>카카오톡</small><b>000</b></li></ul></div>
+      <form id="f" novalidate>
+        <label>행사 날짜<input name="date" type="date"></label>
+        <label>예상 인원<input name="people" type="number" min="1" inputmode="numeric" placeholder="예: 150"></label>
+        <label class="full">장소<input name="place" type="text" placeholder="예: 서초구 문화예술회관 앞 광장"></label>
+        <label>관심 있는 방식<select name="type" id="ftype"><option>아직 모르겠어요</option><option>무소음 사일런트 디스코</option><option>저소음 사일런트 디스코</option><option>언사일런트 디스코</option></select></label>
+        <label>회신 받을 연락처<input name="reply" type="text" placeholder="이메일 또는 전화번호"></label>
+        <label class="full">더 알려주실 내용<textarea name="memo" placeholder="행사 성격, 관객층, 공연 시간 등"></textarea></label>
+        <button class="cta" type="submit">섭외 문의 보내기 →</button>
+        <p id="sent" role="status" hidden></p>
+      </form>
+    </div>
+  </div>
+</section>
+</main>
+<footer class="foot">
+  <div class="big" aria-hidden="true">UNSILENT</div>
+  <div class="wrap"><p>© 팀 언사일런트 · 4년간 한강에서 검증된 포터블 무소음 디제잉</p>
+  <nav aria-label="온라인 채널"><a href="https://www.instagram.com/dr.ktrl/" target="_blank" rel="noopener" aria-label="Instagram · DR.KTRL (새 창)">Instagram · DR.KTRL</a><a href="https://www.instagram.com/djkali92/" target="_blank" rel="noopener" aria-label="KALI (새 창)">KALI</a><a href="https://www.instagram.com/dj_lify/" target="_blank" rel="noopener" aria-label="LiFY (새 창)">LiFY</a><a href="https://blog.naver.com/night_share" target="_blank" rel="noopener" aria-label="Blog (새 창)">Blog</a></nav></div>
+</footer>
+<script>document.documentElement.classList.add('js')</script>
+<script src="assets/home.js" defer></script>
 </body>
 </html>

@@ -1,0 +1,452 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>시안 A · 헤드라이너는 관객 — 팀 언사일런트</title>
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#F4F7EF">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@100..125,600..900&family=JetBrains+Mono:wght@500;700&display=swap">
+<style>
+/* 시안 A — 페스티벌 포스터. 2도 인쇄(잉크 + 라임) 감각, 종이 바탕. 헤드라이너 자리에 관객을 올린다. */
+:root{
+  --ink:#1A2828; --ink-2:#223333; --paper:#F4F7EF; --card:#FFFFFF; --lime:#C2EA8C; --moss:#3F5A33; --sub:#566B52; --rec:#E42A19; --mute:#A9BBA4;
+  --ln:rgba(26,40,40,.18);
+  --f-body:"Pretendard Variable",Pretendard,"Noto Sans KR",-apple-system,"Apple SD Gothic Neo",sans-serif;
+  --f-disp:"Archivo","Pretendard Variable",Pretendard,"Noto Sans KR",sans-serif;
+  --f-mono:"JetBrains Mono",ui-monospace,Menlo,monospace;
+  --w:1240px; --gut:clamp(18px,4.4vw,56px); --ease:cubic-bezier(.2,.8,.2,1);
+  color-scheme:light;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:64px}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--f-body);font-size:17px;line-height:1.6;letter-spacing:-.01em;word-break:keep-all;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+/* 종이 결 */
+body::after{content:"";position:fixed;inset:0;pointer-events:none;z-index:100;opacity:.35;mix-blend-mode:multiply;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .1 0 0 0 0 .16 0 0 0 0 .16 0 0 0 .09 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+img,video{max-width:100%;display:block}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--moss);outline-offset:3px}
+h1,h2,h3,p,ul,ol,figure,dl,dd{margin:0}
+h1,h2,h3{font-weight:900;letter-spacing:-.035em;line-height:1.08;text-wrap:balance}
+.wrap{max-width:var(--w);margin-inline:auto;padding-inline:var(--gut)}
+.mono{font-family:var(--f-mono);font-size:12px;letter-spacing:.1em;text-transform:uppercase}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.cta{display:inline-flex;align-items:center;gap:10px;background:var(--ink);color:var(--lime);font:inherit;font-weight:800;text-decoration:none;padding:14px 22px;border:0;cursor:pointer;border-radius:99px;transition:transform .3s var(--ease)}
+.cta:hover{transform:translateY(-2px)}
+.ghost{display:inline-flex;align-items:center;gap:8px;text-decoration:none;font-weight:700;border-bottom:2px solid currentColor;padding-bottom:2px}
+.rv{opacity:0;transform:translateY(24px);transition:opacity .8s var(--ease),transform .9s var(--ease)}
+.rv.in{opacity:1;transform:none}
+
+/* 상단 */
+.top{position:fixed;inset:0 0 auto;z-index:40;transition:background .3s,box-shadow .3s}
+.top.solid{background:rgba(244,247,239,.92);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);box-shadow:0 1px 0 var(--ln)}
+.top .wrap{display:flex;align-items:center;gap:24px;height:60px}
+.logo{font-weight:900;text-decoration:none;display:flex;gap:9px;align-items:center;letter-spacing:-.02em}
+.logo i{width:10px;height:10px;border-radius:50%;background:var(--ink);box-shadow:0 0 0 3px var(--lime)}
+.top nav{margin-left:auto;display:flex;gap:20px;font-size:14px;font-weight:600}
+.top nav a{text-decoration:none}
+.top nav a:hover{text-decoration:underline;text-underline-offset:4px}
+.top .cta{padding:8px 16px;font-size:14px}
+@media (max-width:860px){.top nav{display:none}.top .cta{margin-left:auto}}
+
+/* ── 히어로: 포스터 ── */
+.poster{position:relative;min-height:100svh;display:grid;grid-template-rows:auto 1fr auto;padding-top:60px;overflow:hidden;isolation:isolate}
+.p-meta{width:100%;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;padding-block:18px;border-bottom:2px solid var(--ink)}
+.p-stage{position:relative;min-height:0}
+.p-pre{position:absolute;left:50%;top:clamp(18px,4svh,44px);transform:translateX(-50%);z-index:1;white-space:nowrap;font-weight:800;font-size:clamp(14px,1.4vw,18px);display:flex;gap:12px;align-items:center}
+.p-pre::before,.p-pre::after{content:"";width:28px;height:2px;background:var(--ink)}
+.p-head{position:absolute;left:0;right:0;top:clamp(46px,8svh,84px);z-index:-1;text-align:center;font-weight:900;font-size:min(10.4vw,18svh);line-height:.95;letter-spacing:-.06em;white-space:nowrap}
+.p-head span+span{margin-left:.22em}
+.p-head em{font-style:normal;color:var(--moss)}
+.sun{position:absolute;left:50%;bottom:-22%;width:min(56vw,84svh);aspect-ratio:1;border-radius:50%;background:var(--lime);transform:translateX(-50%);z-index:-2}
+.joy{position:absolute;left:50%;bottom:0;transform:translateX(-50%);height:min(56svh,640px);width:auto;max-width:none;filter:contrast(1.04);animation:rise 1.4s var(--ease) both .15s}
+@keyframes rise{from{opacity:0;transform:translate(-50%,8%)}}
+.sticker{position:absolute;right:max(var(--gut),calc(50% - 560px));top:52%;width:clamp(116px,12vw,168px);aspect-ratio:1;border-radius:50%;background:var(--ink);color:var(--lime);display:grid;place-content:center;text-align:center;font-weight:900;font-size:clamp(14px,1.4vw,19px);line-height:1.25;transform:rotate(12deg);box-shadow:0 14px 30px -14px rgba(26,40,40,.6);animation:stamp .7s var(--ease) both 1s}
+.sticker small{display:block;font-family:var(--f-mono);font-size:10px;font-weight:500;letter-spacing:.1em;color:var(--paper);margin-top:6px}
+@keyframes stamp{from{opacity:0;transform:rotate(30deg) scale(1.4)}}
+.p-bill{position:relative;background:var(--paper);border-top:2px solid var(--ink)}
+.p-bill .wrap{display:grid;grid-template-columns:auto 1fr auto;gap:18px 32px;align-items:center;padding-block:18px 22px}
+.lineup{display:flex;align-items:baseline;gap:clamp(10px,1.6vw,22px);flex-wrap:wrap;font-family:var(--f-disp);font-stretch:118%;font-weight:900;font-size:clamp(26px,3.4vw,48px);letter-spacing:-.03em;line-height:1}
+.lineup small{font-family:var(--f-mono);font-size:11px;font-weight:500;letter-spacing:.12em;align-self:center}
+.lineup i{font-style:normal;color:var(--moss)}
+.lineup a{text-decoration:none}
+.lineup a:hover{color:var(--moss)}
+.p-bill p{font-size:14px;color:var(--sub);line-height:1.5}
+.p-bill p b{color:var(--ink)}
+@media (max-width:900px){
+  .p-head{font-size:15.5vw;top:56px}
+  .p-head span{display:block}.p-head span+span{margin-left:0}
+  .joy{height:auto;width:min(100vw,560px)}
+  .sun{width:96vw;bottom:-14%}
+  .sticker{top:auto;bottom:8%;left:var(--gut);right:auto;width:92px;font-size:12px}
+  .sticker small{display:none}
+  .p-stage{min-height:min(124vw,680px)}
+  .p-bill .wrap{grid-template-columns:1fr}
+  .p-meta span:nth-child(n+3){display:none}
+}
+
+/* 섹션 공통: 프로그램 번호 + 제목 */
+.sec{padding-block:clamp(84px,11vw,150px);position:relative}
+.sh{display:grid;grid-template-columns:clamp(70px,10vw,140px) 1fr;gap:clamp(16px,3vw,40px);align-items:start;margin-bottom:clamp(36px,5vw,64px);border-top:2px solid var(--ink);padding-top:18px}
+.sh .no{font-family:var(--f-disp);font-stretch:118%;font-weight:900;font-size:clamp(46px,6.4vw,96px);line-height:.82;letter-spacing:-.05em}
+.sh .mono{color:var(--sub);margin-bottom:12px;display:block}
+.sh h2{font-size:clamp(32px,4.6vw,62px)}
+.sh p{color:var(--sub);margin-top:16px;max-width:52ch}
+@media (max-width:640px){.sh{grid-template-columns:1fr}.sh .no{font-size:56px}}
+
+/* 01 메시지 */
+.msg{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);gap:clamp(28px,5vw,72px);align-items:center}
+.msg blockquote{margin:0;font-weight:900;font-size:clamp(30px,4.2vw,58px);line-height:1.18;letter-spacing:-.04em}
+.msg blockquote em{font-style:normal;background:linear-gradient(transparent 58%,var(--lime) 58%,var(--lime) 92%,transparent 92%)}
+.duo{position:relative;background:var(--lime);overflow:hidden;border-radius:4px}
+.duo img{width:100%;height:100%;object-fit:cover;filter:grayscale(1) contrast(1.18) brightness(1.04);mix-blend-mode:multiply}
+.msg .duo{aspect-ratio:4/5}
+.facts{display:grid;grid-template-columns:repeat(4,1fr);margin-top:clamp(56px,8vw,96px);border-block:2px solid var(--ink)}
+.facts div{padding:22px clamp(12px,2vw,24px) 20px;display:grid;gap:4px;align-content:start}
+.facts div+div{border-left:1px solid var(--ln)}
+.facts b{font-family:var(--f-disp);font-stretch:112%;font-size:clamp(36px,4.6vw,64px);font-weight:900;letter-spacing:-.04em;line-height:1}
+.facts span{font-size:14px;color:var(--sub);line-height:1.45}
+.fn{font-size:12px;color:var(--sub);margin-top:10px}
+.why{list-style:none;padding:0;display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(16px,2vw,28px);margin-top:clamp(48px,6vw,80px)}
+.why li{display:grid;gap:10px;align-content:start}
+.why b{font-family:var(--f-disp);font-stretch:118%;font-size:clamp(56px,6.4vw,96px);font-weight:900;letter-spacing:-.05em;line-height:.85;color:transparent;-webkit-text-stroke:2px var(--ink)}
+.why h3{font-size:clamp(19px,1.8vw,23px)}
+.why p{font-size:15px;color:var(--sub)}
+@media (max-width:860px){.msg{grid-template-columns:1fr}.facts{grid-template-columns:1fr 1fr}.facts div:nth-child(3){border-left:0}.facts div:nth-child(n+3){border-top:1px solid var(--ln)}.why{grid-template-columns:1fr}}
+
+/* 02 스테이지 = 공연 방식 */
+.stages{display:grid;grid-template-columns:repeat(3,1fr);border-top:2px solid var(--ink)}
+.stage{padding:24px clamp(14px,2vw,26px) 28px;display:grid;gap:14px;align-content:start}
+.stage+.stage{border-left:1px solid var(--ln)}
+.stage .duo{aspect-ratio:4/3;background:var(--ink)}
+.stage .duo img{filter:none;mix-blend-mode:normal}
+.stage .lv{display:flex;justify-content:space-between;align-items:center}
+.vol{display:flex;gap:3px;align-items:flex-end;height:22px}
+.vol i{width:7px;background:var(--ln)}
+.vol i:nth-child(1){height:30%}.vol i:nth-child(2){height:48%}.vol i:nth-child(3){height:66%}.vol i:nth-child(4){height:84%}.vol i:nth-child(5){height:100%}
+.vol i.on{background:var(--ink)}
+.stage h3{font-size:clamp(23px,2.3vw,30px)}
+.stage dl{display:grid;grid-template-columns:auto 1fr;gap:6px 14px;font-size:14px}
+.stage dt{color:var(--sub)}
+.stage .pt{font-size:15px;border-top:1px solid var(--ln);padding-top:12px}
+.stage .pt b{display:block}
+.stage .pt span{color:var(--sub)}
+@media (max-width:900px){.stages{grid-template-columns:1fr}.stage+.stage{border-left:0;border-top:1px solid var(--ln)}}
+
+/* 03 라인업 = DJ (한 명당 한 띠) */
+.act{position:relative;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.1fr);gap:clamp(20px,4vw,64px);align-items:end;border-top:2px solid var(--ink);padding-top:clamp(20px,3vw,32px);min-height:min(76svh,700px)}
+.act+.act{margin-top:clamp(48px,6vw,80px)}
+.act .pic{position:relative;align-self:stretch;min-height:420px;max-height:76svh;display:flex;align-items:flex-end;justify-content:center;overflow:hidden;background:var(--lime);border-radius:4px}
+.act .pic::before{content:attr(data-n);position:absolute;left:0;right:0;top:4%;text-align:center;font-family:var(--f-disp);font-stretch:125%;font-weight:900;font-size:clamp(90px,12vw,190px);line-height:.8;letter-spacing:-.05em;color:transparent;-webkit-text-stroke:1.5px var(--moss)}
+.act .pic img{position:relative;height:94%;width:auto;max-width:none;filter:grayscale(1) contrast(1.15);mix-blend-mode:multiply}
+.act:nth-of-type(even) .pic{order:2}
+.act .no{font-family:var(--f-mono);font-size:12px;letter-spacing:.12em;color:var(--sub)}
+.act h3{font-family:var(--f-disp);font-stretch:120%;font-size:clamp(56px,7.6vw,120px);line-height:.85;letter-spacing:-.05em;margin:10px 0 0;white-space:nowrap}
+.act .job{margin-top:14px;font-weight:700}
+.act .job span{color:var(--sub);font-weight:500}
+.act .q{font-size:clamp(22px,2.4vw,32px);font-weight:900;letter-spacing:-.03em;line-height:1.25;margin-top:clamp(20px,3vw,36px)}
+.act .q::before{content:"“"}.act .q::after{content:"”"}
+.act .d{color:var(--sub);margin-top:12px;max-width:40ch;font-size:15px}
+.tags{list-style:none;padding:0;display:flex;flex-wrap:wrap;gap:6px;margin-top:18px}
+.tags li{font-family:var(--f-disp);font-stretch:110%;font-weight:800;font-size:12px;letter-spacing:.03em;border:1.5px solid var(--ink);padding:5px 11px;border-radius:99px}
+.act dl{display:grid;margin-top:22px;border-top:1px solid var(--ink)}
+.act dl div{display:grid;grid-template-columns:96px 1fr;gap:12px;padding:10px 0;border-bottom:1px solid var(--ln);align-items:baseline}
+.act dt{font-family:var(--f-disp);font-stretch:112%;font-weight:900;font-size:22px}
+.act dd{font-size:13px;color:var(--sub)}
+.act .row{display:flex;gap:18px;align-items:center;flex-wrap:wrap;margin-top:24px;padding-bottom:6px}
+@media (max-width:860px){.act{grid-template-columns:1fr;min-height:0}.act .pic{min-height:0;aspect-ratio:4/4.4}.act:nth-of-type(even) .pic{order:0}.act h3{font-size:16vw}}
+
+/* 04 투어 = 공연 실적 */
+.tour{list-style:none;padding:0;border-top:2px solid var(--ink)}
+.tour li{display:grid;grid-template-columns:110px minmax(0,1fr) 160px;gap:16px;align-items:baseline;padding:14px 0;border-bottom:1px solid var(--ln)}
+.tour .y{font-family:var(--f-mono);font-size:13px;font-weight:700}
+.tour b{font-size:clamp(18px,2vw,26px);letter-spacing:-.03em}
+.tour .t{font-family:var(--f-mono);font-size:11px;letter-spacing:.08em;color:var(--sub);text-align:right}
+.tour li.hl{background:var(--lime);padding-inline:12px;margin-inline:-12px;border-bottom-color:var(--ink)}
+.tour li.hl .t{color:var(--moss)}
+@media (max-width:640px){.tour li{grid-template-columns:64px 1fr}.tour .t{display:none}}
+.press{display:grid;grid-template-columns:repeat(5,1fr);gap:0;margin-top:clamp(56px,7vw,88px);border-top:2px solid var(--ink)}
+.press a{display:grid;gap:10px;align-content:space-between;padding:18px 16px 20px 0;text-decoration:none;min-height:170px}
+.press a+a{border-left:1px solid var(--ln);padding-left:16px}
+.press small{font-family:var(--f-mono);font-size:11px;letter-spacing:.06em;color:var(--sub)}
+.press b{font-size:16px;line-height:1.4}
+.press a:hover b{text-decoration:underline;text-underline-offset:4px}
+.press span{font-size:13px;font-weight:700}
+@media (max-width:960px){.press{grid-template-columns:1fr 1fr}.press a+a{border-left:0;padding-left:0}.press a{border-bottom:1px solid var(--ln)}}
+
+/* 타임랩스 한 장면 */
+.reel{position:relative;margin-top:clamp(64px,8vw,104px);display:grid;grid-template-columns:minmax(0,1fr) 300px;gap:clamp(18px,3vw,40px);align-items:end}
+.reel figure{position:relative;aspect-ratio:16/9;background:var(--ink);overflow:hidden;border-radius:4px}
+.reel video{width:100%;height:100%;object-fit:cover}
+.reel .clk{position:absolute;left:16px;bottom:12px;font-family:var(--f-disp);font-stretch:118%;font-weight:900;font-size:clamp(40px,6vw,88px);line-height:.8;color:var(--paper);letter-spacing:-.04em;font-variant-numeric:tabular-nums;text-shadow:0 2px 20px rgba(0,0,0,.4)}
+.reel .pp{position:absolute;right:12px;top:12px;font:700 11px var(--f-mono);background:var(--paper);color:var(--ink);border:0;padding:6px 10px;border-radius:99px;cursor:pointer}
+.reel h3{font-size:clamp(24px,2.6vw,34px)}
+.reel p{color:var(--sub);margin-top:10px;font-size:15px}
+@media (max-width:860px){.reel{grid-template-columns:1fr}}
+
+/* 05 티켓 = 비용 */
+.tix{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(12px,1.6vw,20px)}
+.ticket{position:relative;background:var(--card);border:2px solid var(--ink);border-radius:14px;padding:22px 22px 20px;display:grid;gap:10px;align-content:start}
+.ticket::before,.ticket::after{content:"";position:absolute;top:58%;width:22px;height:22px;border-radius:50%;background:var(--paper);border:2px solid var(--ink)}
+.ticket::before{left:-12px;border-left-color:transparent;border-bottom-color:transparent;transform:rotate(45deg)}
+.ticket::after{right:-12px;border-right-color:transparent;border-top-color:transparent;transform:rotate(45deg)}
+.ticket .mono{color:var(--sub)}
+.ticket h3{font-size:24px}
+.ticket ul{list-style:none;padding:0;font-size:14px;color:var(--sub);display:grid;gap:3px}
+.ticket .pr{border-top:2px dashed var(--ln);margin-top:8px;padding-top:16px;display:grid;gap:8px}
+.ticket .pr div{display:flex;justify-content:space-between;align-items:baseline;gap:10px}
+.ticket .pr span{font-size:13px;color:var(--sub)}
+.ticket .pr b{font-family:var(--f-disp);font-stretch:108%;font-size:21px;letter-spacing:-.02em}
+.ticket.hot{background:var(--lime)}
+@media (max-width:900px){.tix{grid-template-columns:1fr}}
+.rider{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.2fr);gap:clamp(24px,4vw,56px);align-items:center;margin-top:clamp(64px,8vw,104px);border-top:2px solid var(--ink);padding-top:28px}
+.rider ul{list-style:none;padding:0;display:grid;grid-template-columns:1fr 1fr;border-top:1px solid var(--ln)}
+.rider li{padding:14px 0;border-bottom:1px solid var(--ln);display:grid;gap:2px}
+.rider li:nth-child(even){padding-left:16px;border-left:1px solid var(--ln)}
+.rider small{font-family:var(--f-mono);font-size:11px;color:var(--sub);letter-spacing:.08em}
+.rider b{font-size:16px}
+.kit{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.kit figure{background:var(--card);border-radius:12px;display:grid;place-items:center;padding:16px;aspect-ratio:1;position:relative;min-width:0}
+.kit img{max-height:78%;max-width:100%;width:auto;object-fit:contain}
+.kit figcaption{position:absolute;left:12px;bottom:10px;font-family:var(--f-mono);font-size:10px;letter-spacing:.08em;color:var(--sub)}
+@media (max-width:860px){.rider{grid-template-columns:1fr}}
+
+/* 06 문의 */
+.book{background:var(--ink);color:var(--paper)}
+.book .sh{border-color:var(--paper)}
+.book .sh .mono,.book .sh p{color:var(--mute)}
+.steps{list-style:none;padding:0;display:grid;grid-template-columns:repeat(5,1fr);gap:14px;counter-reset:s}
+.steps li{border-top:2px solid var(--lime);padding-top:14px;display:grid;gap:4px;align-content:start}
+.steps li::before{counter-increment:s;content:"0" counter(s);font-family:var(--f-mono);font-size:12px;color:var(--lime)}
+.steps b{font-size:18px}.steps p{font-size:14px;color:var(--mute)}
+@media (max-width:900px){.steps{grid-template-columns:1fr 1fr}}
+.form{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.3fr);gap:clamp(24px,5vw,72px);margin-top:clamp(56px,7vw,96px)}
+.form h3{font-size:clamp(28px,3.4vw,44px)}
+.form .soon{display:inline-block;margin-top:20px;font-family:var(--f-mono);font-size:12px;border:1px dashed rgba(244,247,239,.35);padding:8px 12px;color:var(--mute)}
+form{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+label{display:grid;gap:6px;font-size:13px;color:var(--mute)}
+label.full{grid-column:1/-1}
+input,select,textarea{font:inherit;font-size:16px;color:var(--paper);background:transparent;border:0;border-bottom:1.5px solid rgba(244,247,239,.4);padding:10px 2px;border-radius:0;min-width:0}
+input:focus,select:focus,textarea:focus{outline:none;border-bottom-color:var(--lime)}
+select option{color:var(--ink)}
+textarea{min-height:80px;resize:vertical}
+form .cta{grid-column:1/-1;justify-self:start;background:var(--lime);color:var(--ink);margin-top:8px}
+#sent{grid-column:1/-1;color:var(--lime);font-size:14px}
+@media (max-width:760px){.form,form{grid-template-columns:1fr}}
+.foot{background:var(--ink);color:var(--mute);font-size:14px;padding-block:20px 48px;overflow:hidden}
+.foot .big{font-family:var(--f-disp);font-stretch:125%;font-weight:900;font-size:clamp(46px,14.6vw,230px);line-height:.8;letter-spacing:-.05em;color:var(--lime);white-space:nowrap;margin-bottom:28px}
+.foot .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+.foot nav{display:flex;gap:16px;flex-wrap:wrap}
+.foot a{text-decoration:none}.foot a:hover{color:var(--lime)}
+@media (prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}.rv{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+<header class="top" id="top-bar"><div class="wrap">
+  <a class="logo" href="#top"><i aria-hidden="true"></i>팀 언사일런트</a>
+  <nav aria-label="주 메뉴"><a href="#program">소개</a><a href="#stages">공연 방식</a><a href="#lineup">DJ</a><a href="#tour">실적</a><a href="#tickets">비용</a></nav>
+  <a class="cta" href="#booking">섭외 문의</a>
+</div></header>
+
+<main id="top">
+<section class="poster" aria-labelledby="h1">
+  <div class="wrap p-meta mono"><span>Team Unsilent presents</span><span>Silent Disco · Seoul</span><span>Since 2023 — 한강</span></div>
+  <div class="p-stage">
+    <p class="p-pre">오늘의 헤드라이너</p>
+    <h1 class="p-head" id="h1"><span>가장 즐거운</span><span><em>‘나’</em></span></h1>
+    <div class="sun" aria-hidden="true"></div>
+    <img class="joy" src="../../img/v5/joy-cut.webp" alt="헤드셋을 쓰고 두 팔을 들어 환호하는 관객 두 명" fetchpriority="high">
+    <p class="sticker">디제이는<br>찍지<br>마세요<small>FILM YOURSELF</small></p>
+  </div>
+  <div class="p-bill"><div class="wrap">
+    <p class="lineup"><small>WITH&nbsp;DJ</small><a href="#dj-ktrl">DR.KTRL</a><i>·</i><a href="#dj-lify">LiFY</a><i>·</i><a href="#dj-kali">KALI</a></p>
+    <p>굳이 찍겠다면, <b>가장 즐거운 ‘나’를 찍으세요.</b><br>무소음 · 저소음 · 언사일런트 디스코 · 헤드셋 최대 300대</p>
+    <a class="cta" href="#booking">섭외 문의 →</a>
+  </div></div>
+</section>
+
+<section class="sec" id="program" aria-labelledby="t1">
+  <div class="wrap">
+    <div class="sh rv"><span class="no">01</span><div><span class="mono">Program · 왜 팀 언사일런트인가</span><h2 id="t1">한강에서 4년,<br>주인공은 언제나 관객.</h2></div></div>
+    <div class="msg">
+      <blockquote class="rv">유명한 DJ가 없어서,<br>관객이 더 놉니다.<br><em>폰 대신 두 팔을 듭니다.</em></blockquote>
+      <figure class="duo rv"><img src="../../img/v5/crowd.webp" alt="헤드셋을 쓰고 손을 뻗어 춤추는 관객" loading="lazy"></figure>
+    </div>
+    <div class="facts rv">
+      <div><b data-count="900" data-suffix="+">900+</b><span>한강 사일런트 디스코<br>회당 관객</span></div>
+      <div><b data-count="194" data-suffix="+">194+</b><span>한강 사일런트 디스코<br>관련 언론 보도</span></div>
+      <div><b data-count="5">5</b><span>방송사 소개<br>MBC·KBS2·JTBC·TBS·딜라이브</span></div>
+      <div><b data-count="300" data-suffix="대">300대</b><span>헤드셋 한 번에 최대<br>더 큰 규모도 문의 가능</span></div>
+    </div>
+    <p class="fn">* 한강 관객 수는 2024년 회차별 집계, 언론 보도는 2023~2024년 집계 기준.</p>
+    <ol class="why">
+      <li class="rv"><b>200+</b><h3>전 세대 입증된 떼창곡</h3><p>한강 4년, 전 세대가 따라 부른 곡만 모았습니다.</p></li>
+      <li class="rv"><b>50+</b><h3>누구나 함께하는 레크레이션</h3><p>놀 줄 몰라도 괜찮습니다. 저희가 뛰게 만듭니다.</p></li>
+      <li class="rv"><b>0</b><h3>폰을 들지 않아 배가 되는 즐거움</h3><p>시작부터 마무리까지 감정선이 끊기지 않습니다.</p></li>
+    </ol>
+  </div>
+</section>
+
+<section class="sec" id="stages" aria-labelledby="t2" style="padding-top:0">
+  <div class="wrap">
+    <div class="sh rv"><span class="no">02</span><div><span class="mono">Stages · 공연 방식</span><h2 id="t2">행사 장소에 맞춰<br>소리를 고르세요.</h2><p>세 방식 모두 공연 시간은 60~120분, 행사 일정에 맞춥니다.</p></div></div>
+    <div class="stages">
+      <article class="stage rv">
+        <div class="lv"><span class="mono">Stage 1 · 300명 이내라면 언제 어디든</span><span class="vol" role="img" aria-label="소음 수준 5단계 중 1"><i class="on"></i><i></i><i></i><i></i><i></i></span></div>
+        <div class="duo"><img src="../../img/v5/festival.webp" alt="광화문 서울썸머비치에서 헤드셋을 쓰고 춤추는 관객들" loading="lazy"></div>
+        <h3>무소음 사일런트 디스코</h3>
+        <dl><dt>소리</dt><dd>헤드셋만 사용, 스피커 출력 없음</dd><dt>밖에서</dt><dd>낮은 정도의 관객 박수와 환호성</dd><dt>추천</dt><dd>주거지 인근, 심야, 실내</dd><dt>사례</dt><dd>광화문 서울썸머비치</dd></dl>
+        <p class="pt"><b>한강 4년, 무소음 공연에 익숙한 팀.</b><span>시작부터 마무리까지 감정선이 끊기지 않습니다.</span></p>
+      </article>
+      <article class="stage rv">
+        <div class="lv"><span class="mono">Stage 2 · 길 가던 사람 붙잡는</span><span class="vol" role="img" aria-label="소음 수준 5단계 중 3"><i class="on"></i><i class="on"></i><i class="on"></i><i></i><i></i></span></div>
+        <div class="duo"><img src="../../img/live/e_seori1.webp" alt="서리풀 페스티벌 거리에서 두 팔을 든 관객들" loading="lazy"></div>
+        <h3>저소음 사일런트 디스코</h3>
+        <dl><dt>소리</dt><dd>헤드셋 + 부스 전방 3~5m 모니터링 스피커</dd><dt>밖에서</dt><dd>관객 환호·함성 + 모니터링 스피커</dd><dt>추천</dt><dd>공원, 광장, 야시장, 캠퍼스</dd><dt>사례</dt><dd>서초구 서리풀 페스티벌</dd></dl>
+        <p class="pt"><b>적당한 소음이 연출이 됩니다.</b><span>열광적인 장면이 여기서 나옵니다.</span></p>
+      </article>
+      <article class="stage rv">
+        <div class="lv"><span class="mono">Stage 3 · 소음 걱정 필요 없는 곳에는</span><span class="vol" role="img" aria-label="소음 수준 5단계 중 5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i></span></div>
+        <div class="duo"><img src="../../img/v5/night.webp" alt="한강 세빛섬 앞에서 헤드셋을 쓰고 손을 든 관객들" loading="lazy"></div>
+        <h3>언사일런트 디스코</h3>
+        <dl><dt>소리</dt><dd>주최 측 음향으로 하는 스피커 공연</dd><dt>밖에서</dt><dd>공연 음악 전체 (무소음 동시 진행 가능)</dd><dt>추천</dt><dd>무대·음향이 있는 축제</dd><dt>사례</dt><dd>한강 사일런트 디스코</dd></dl>
+        <p class="pt"><b>전 세대를 상대한 공연 노하우.</b><span>제약이 풀리면 저희 고삐도 풀립니다.</span></p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="lineup" aria-labelledby="t3" style="padding-top:0">
+  <div class="wrap">
+    <div class="sh rv"><span class="no">03</span><div><span class="mono">Line-up · DJ 프레스킷</span><h2 id="t3">본업의 내공으로<br>무대에 섭니다.</h2><p>전 세대를 대상으로 한 디제잉 노하우, 그리고 본업의 내공으로 관객이 ‘나’를 남기고 싶은 시간을 만듭니다.</p></div></div>
+    <article class="act" id="dj-ktrl" aria-labelledby="n1">
+      <div class="pic" data-n="KTRL"><img src="../../img/dj/ktrl-cut.webp" alt="DR.KTRL 프로필 사진" loading="lazy"></div>
+      <div class="rv">
+        <p class="no">ACT 01 / 03 · K-POP · EDM · HARDSTYLE</p>
+        <h3 id="n1">DR.KTRL</h3>
+        <p class="job">본업 모먼트 <span>· 15년 연구개발사업 기획</span></p>
+        <p class="q">공연도 사전 준비가 8할입니다.</p>
+        <p class="d">떼창의 민족 아닙니까. 한강에서 검증된 200곡 이상의 떼창곡으로 나이 불문, 간주까지 함께 부르게 만듭니다.</p>
+        <dl><div><dt>200곡+</dt><dd>한강 행사로 검증된 떼창곡</dd></div><div><dt>38건+</dt><dd>송도 맥주 축제·서리풀 페스티벌 외</dd></div></dl>
+        <div class="row"><a class="cta" href="../../dj/dr-ktrl.html">프레스킷 전체 보기 →</a><a class="ghost" href="https://www.instagram.com/dr.ktrl/" target="_blank" rel="noopener">Instagram ↗</a></div>
+      </div>
+    </article>
+    <article class="act" id="dj-lify" aria-labelledby="n2">
+      <div class="pic" data-n="LiFY"><img src="../../img/dj/lify-cut.webp" alt="LiFY 프로필 사진" loading="lazy"></div>
+      <div class="rv">
+        <p class="no">ACT 02 / 03 · ALL GENRE · EDM · HARD BASS</p>
+        <h3 id="n2">LiFY</h3>
+        <p class="job">본업 모먼트 <span>· 대기업 마케터</span></p>
+        <p class="q">찍고 싶은 순간을 만듭니다.</p>
+        <p class="d">클럽과 호텔 라운지, 브랜드 파티와 한강 사일런트 디스코까지. 장르를 가리지 않는 올장르 DJ입니다.</p>
+        <dl><div><dt>1st</dt><dd>2019 상상 디제잉 대회 우승</dd></div><div><dt>16건+</dt><dd>롯데백화점 루프탑 파티·ACC City Run 외</dd></div></dl>
+        <div class="row"><a class="cta" href="../../dj/lify.html">프레스킷 전체 보기 →</a><a class="ghost" href="https://www.instagram.com/dj_lify/" target="_blank" rel="noopener">Instagram ↗</a></div>
+      </div>
+    </article>
+    <article class="act" id="dj-kali" aria-labelledby="n3">
+      <div class="pic" data-n="KALI"><img src="../../img/dj/kali-cut.webp" alt="KALI 프로필 사진" loading="lazy"></div>
+      <div class="rv">
+        <p class="no">ACT 03 / 03 · OPEN FORMAT · MELBOURNE BOUNCE</p>
+        <h3 id="n3">KALI</h3>
+        <p class="job">본업 모먼트 <span>· 제약회사 영업</span></p>
+        <p class="q">쭈뼛대는 관객, 제가 설득합니다.</p>
+        <p class="d">익숙한 추억의 노래부터 모두가 따라 추는 메가히트곡까지, 어린아이부터 중장년층까지 함께 뛰어놀게 만듭니다.</p>
+        <dl><div><dt>2013~</dt><dd>DJ 경력</dd></div><div><dt>39건+</dt><dd>예술의전당 두둠칫·광안리 무소음 콘서트 외</dd></div></dl>
+        <div class="row"><a class="cta" href="../../dj/kali.html">프레스킷 전체 보기 →</a><a class="ghost" href="https://www.instagram.com/djkali92/" target="_blank" rel="noopener">Instagram ↗</a></div>
+      </div>
+    </article>
+  </div>
+</section>
+
+<section class="sec" id="tour" aria-labelledby="t4" style="padding-top:0">
+  <div class="wrap">
+    <div class="sh rv"><span class="no">04</span><div><span class="mono">Tour · 공연 실적</span><h2 id="t4">한강에서 시작해<br>전국 축제까지.</h2><p>2023년부터 한강 사일런트 디스코 메인 DJ로 마포대교·잠수교·뚝섬을 맡아 왔습니다.</p></div></div>
+    <ul class="tour rv">
+      <li class="hl"><span class="y">2023~</span><b>한강 사일런트 디스코</b><span class="t">마포대교·잠수교·뚝섬</span></li>
+      <li><span class="y">2026</span><b>예술의전당 두둠칫 사일런트 디스코</b><span class="t">공연장</span></li>
+      <li><span class="y">2026</span><b>광화문 서울썸머비치</b><span class="t">무소음</span></li>
+      <li><span class="y">2026</span><b>광안리 수영구 무소음 DJ 콘서트</b><span class="t">무소음</span></li>
+      <li><span class="y">2026</span><b>성남시청 사일런트 디스코</b><span class="t">지자체</span></li>
+      <li><span class="y">2026</span><b>서울바캉스페스티벌 in 신촌</b><span class="t">축제</span></li>
+      <li><span class="y">2025</span><b>단양 다리안 캠핑 페스티벌</b><span class="t">축제</span></li>
+      <li><span class="y">2025</span><b>하남 스타필드 아쿠아필드 파티</b><span class="t">브랜드</span></li>
+      <li><span class="y">2024</span><b>서초 서리풀 페스티벌</b><span class="t">저소음</span></li>
+      <li><span class="y">2024</span><b>수원화성 미디어아트 페스티벌</b><span class="t">축제</span></li>
+      <li><span class="y">2024</span><b>강남 문화 한마당 축제 (코엑스)</b><span class="t">축제</span></li>
+      <li><span class="y">2024</span><b>강진 하맥축제 · 부산 유라리 건맥축제 · 춘천마임 불의도시 축제</b><span class="t">축제</span></li>
+    </ul>
+    <p class="fn">* 행사 목록은 팀원 공연 이력에서 발췌했습니다.</p>
+
+    <div class="reel rv">
+      <figure><video id="reel" muted playsinline loop preload="none" aria-label="2026년 5월 10일 한강 반포 강변, 빈 광장이 헤드셋을 쓴 관객으로 가득 차기까지 3시간 타임랩스"></video><span class="clk" id="clk" aria-hidden="true">18:05</span><button type="button" class="pp" id="reelpp">일시정지</button></figure>
+      <div><span class="mono" style="color:var(--sub)">2026.05.10 · 한강 반포 강변</span><h3 style="margin-top:10px">3시간을 28초로.</h3><p>빈 광장이 헤드셋을 쓴 관객으로 가득 차기까지.</p></div>
+    </div>
+
+    <div class="press">
+      <a href="https://www.youtube.com/watch?v=vctkao7D8AA" target="_blank" rel="noopener"><small>MBC 뉴스투데이 · 2023.08</small><b>“헤드셋 끼고 춤춰요”… 한강서 열린 ‘무소음 DJ 파티’</b><span>YouTube ↗</span></a>
+      <a href="https://www.donga.com/news/Society/article/all/20230812/120680330/1" target="_blank" rel="noopener"><small>동아일보 · 뉴시스 · 2023.08</small><b>한강공원에서 열린 ‘무소음 DJ 파티’</b><span>기사 ↗</span></a>
+      <a href="https://www.youtube.com/watch?v=DdJ9nxUoJp8" target="_blank" rel="noopener"><small>연합뉴스TV</small><b>아이브 팬부터 임영웅 팬까지 세대대통합</b><span>YouTube ↗</span></a>
+      <a href="https://www.youtube.com/watch?v=NRAQtbIfLOE" target="_blank" rel="noopener"><small>14F 일사에프</small><b>헤드셋만 쓰면, 누구나 춤추는 거리 된다?</b><span>YouTube ↗</span></a>
+      <a href="https://www.youtube.com/watch?v=u_X48PDOEbs" target="_blank" rel="noopener"><small>MUSINSA TV · 성수기 EP.4</small><b>한강 무소음 DJ 파티 편</b><span>YouTube ↗</span></a>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="tickets" aria-labelledby="t5" style="padding-top:0">
+  <div class="wrap">
+    <div class="sh rv"><span class="no">05</span><div><span class="mono">Booking · 비용</span><h2 id="t5">행사 장소와 규모에 맞춰<br>구성을 함께 정합니다.</h2></div></div>
+    <div class="tix">
+      <article class="ticket rv"><span class="mono">Stage 1</span><h3>무소음</h3><ul><li>헤드셋만, 스피커 출력 없음</li><li>헤드셋 300대까지</li></ul>
+        <div class="pr"><div><span>헤드셋 · 개당</span><b>협의</b></div><div><span>공연 1시간 · 2인</span><b>협의</b></div><div><span>공연 1~2시간 · 3인</span><b>협의</b></div></div></article>
+      <article class="ticket rv"><span class="mono">Stage 2</span><h3>저소음</h3><ul><li>헤드셋 + 모니터링 스피커 (3~5m)</li><li>헤드셋 300대까지</li></ul>
+        <div class="pr"><div><span>헤드셋 · 개당</span><b>협의</b></div><div><span>공연 1시간 · 2인</span><b>협의</b></div><div><span>공연 1~2시간 · 3인</span><b>협의</b></div></div></article>
+      <article class="ticket rv"><span class="mono">Stage 3</span><h3>언사일런트</h3><ul><li>주최 측 음향 사용 · 디제이만 섭외</li><li>헤드셋 병행 진행 가능</li></ul>
+        <div class="pr"><div><span>헤드셋</span><b>협의</b></div><div><span>공연 1시간 · 2인</span><b>협의</b></div><div><span>공연 1~2시간 · 3인</span><b>협의</b></div></div></article>
+    </div>
+    <p class="fn">* 수량에 따라 송신기, DJ 장비 및 헤드셋 보관 케이스 비용이 포함될 수 있습니다. 스피커 등 부대장비는 별도입니다. 금액은 협의 후 조정됩니다. 헤드셋 300대 초과도 팀 언사일런트로 문의해 주세요.</p>
+
+    <div class="rider rv">
+      <div><span class="mono" style="color:var(--sub)">Tech rider</span><h3 style="font-size:clamp(24px,2.6vw,34px);margin-top:10px">헤드셋·송신기·DJ 장비,<br>포터블로 대기 중입니다.</h3>
+        <ul style="margin-top:22px"><li><small>전원</small><b>220V 콘센트 2구</b></li><li><small>테이블</small><b>1800 × 600mm 1개</b></li><li><small>공간</small><b>행사 및 디제이 부스 공간</b></li><li><small>우천 대비</small><b>천막 또는 실내 대체 공간</b></li></ul></div>
+      <div class="kit"><figure><img src="../../img/eq_headset.webp" alt="사일런트 디스코 헤드셋" loading="lazy"><figcaption>HEADSET</figcaption></figure><figure><img src="../../img/eq_dj.webp" alt="포터블 DJ 장비" loading="lazy"><figcaption>DJ DECK</figcaption></figure><figure><img src="../../img/eq_tx.webp" alt="헤드셋 송신기" loading="lazy"><figcaption>TRANSMITTER</figcaption></figure></div>
+    </div>
+  </div>
+</section>
+
+<section class="sec book" id="booking" aria-labelledby="t6">
+  <div class="wrap">
+    <div class="sh rv"><span class="no">06</span><div><span class="mono">How to book · 진행</span><h2 id="t6">문의부터 공연까지,<br>다섯 단계로 진행됩니다.</h2><p>최소 준비 기간은 행사 규모에 따라 협의 후 안내드립니다.</p></div></div>
+    <ol class="steps rv">
+      <li><b>문의</b><p>행사 날짜와 장소를 알려주세요.</p></li>
+      <li><b>협의</b><p>규모, 공연 방식, 공연 시간을 정합니다.</p></li>
+      <li><b>견적·계약</b><p>헤드셋 수량과 인원에 맞춘 견적을 드립니다.</p></li>
+      <li><b>공연</b><p>설치부터 진행, 철수까지 팀이 직접 맡습니다.</p></li>
+      <li><b>결과 공유</b><p>현장 반응과 결과를 함께 정리합니다.</p></li>
+    </ol>
+    <div class="form">
+      <div><h3>장소와 날짜만으로<br>상담을 시작할 수 있습니다.</h3><p style="color:var(--mute);margin-top:14px">공연 방식과 수량을 아직 못 정하셨어도 괜찮습니다. 맞는 방식과 구성을 제안드립니다.</p><p class="soon">연락처 준비 중</p></div>
+      <form id="f" novalidate>
+        <label>행사 날짜<input name="date" type="date"></label>
+        <label>예상 인원<input name="people" type="number" min="1" inputmode="numeric" placeholder="예: 150"></label>
+        <label class="full">장소<input name="place" type="text" placeholder="예: 서초구 문화예술회관 앞 광장"></label>
+        <label>관심 있는 방식<select name="type"><option>아직 모르겠어요</option><option>무소음 사일런트 디스코</option><option>저소음 사일런트 디스코</option><option>언사일런트 디스코</option></select></label>
+        <label>회신 받을 연락처<input name="reply" type="text" autocomplete="email" placeholder="이메일 또는 전화번호"></label>
+        <label class="full">더 알려주실 내용<textarea name="memo" placeholder="행사 성격, 관객층, 공연 시간 등"></textarea></label>
+        <button class="cta" type="submit">섭외 문의 보내기 →</button>
+        <p id="sent" role="status" hidden></p>
+      </form>
+    </div>
+  </div>
+</section>
+</main>
+<footer class="foot">
+  <div class="big" aria-hidden="true">UNSILENT</div>
+  <div class="wrap"><p>© 팀 언사일런트 · 4년간 한강에서 검증된 포터블 무소음 디제잉</p>
+  <nav aria-label="온라인 채널"><a href="https://www.instagram.com/dr.ktrl/" target="_blank" rel="noopener">Instagram · DR.KTRL</a><a href="https://www.instagram.com/djkali92/" target="_blank" rel="noopener">KALI</a><a href="https://www.instagram.com/dj_lify/" target="_blank" rel="noopener">LiFY</a><a href="https://blog.naver.com/night_share" target="_blank" rel="noopener">Blog</a></nav></div>
+</footer>
+<script src="v5.js"></script>
+</body>
+</html>

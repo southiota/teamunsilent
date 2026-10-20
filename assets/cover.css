@@ -1,0 +1,14 @@
+/* DJ 커버 — 헤어라인. 홈 DJ 패널과 프레스킷 상단이 함께 쓴다.
+   1px 선으로만 그린 큰 이름 뒤에 은은한 라임 윤곽광의 누끼, 오른쪽 아래 세로 mono 글자 하나. */
+.cv{position:absolute;bottom:0;height:min(86svh,880px);aspect-ratio:3/4;pointer-events:none;z-index:0}
+.cv>*{pointer-events:auto}
+.cv-title{position:absolute;left:50%;top:3%;transform:translateX(-50%);z-index:-1;margin:0;font-family:var(--f-disp);font-stretch:62%;font-weight:900;font-size:min(28vw,40svh);line-height:.78;letter-spacing:-.03em;text-align:center;white-space:nowrap;color:transparent;-webkit-text-stroke:1px rgba(244,247,239,.32)}
+.cv-cut{position:absolute;left:50%;bottom:0;transform:translateX(-50%);height:86%;z-index:1;width:auto;max-width:none;
+  filter:drop-shadow(0 0 1px rgba(194,234,140,.55)) drop-shadow(0 -10px 50px rgba(194,234,140,.14))}
+.cv-cap{position:absolute;right:0;bottom:6%;z-index:2;font-family:var(--f-mono);font-size:11px;letter-spacing:.14em;color:var(--mute);writing-mode:vertical-rl}
+@media (max-width:860px){
+  .cv{position:relative;left:auto!important;right:auto!important;height:auto;width:min(92vw,460px);aspect-ratio:3/4;margin:0 auto}
+  .cv-title{font-size:min(40vw,184px)}
+  .cv-cap{bottom:4%}
+  .cv-cut{-webkit-mask-image:linear-gradient(180deg,#000 82%,transparent);mask-image:linear-gradient(180deg,#000 82%,transparent);filter:drop-shadow(0 0 1px rgba(194,234,140,.55))}
+}
