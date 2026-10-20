@@ -5,8 +5,8 @@
   const pad = n => String(n).padStart(2, '0');
   const $ = id => document.getElementById(id);
 
-  // 섭외 문의 받을 곳. 정해지면 여기만 채운다 (지금은 자리표시)
-  const CONTACT_EMAIL = '';
+  // 섭외 문의 받을 곳 (2026-10-20 확정)
+  const CONTACT_EMAIL = 'support@fextai.com';
 
   const bar = document.querySelector('.top');
   const solid = () => bar.classList.toggle('solid', scrollY > 30);

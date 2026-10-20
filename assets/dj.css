@@ -52,6 +52,8 @@
 .pk-links a:hover{background:var(--ink-2)}
 .pk-links small{font-family:var(--f-mono);font-size:11px;color:var(--mute)}
 .pk-cta{display:flex;justify-content:space-between;align-items:end;gap:24px;flex-wrap:wrap;margin-top:clamp(56px,8vw,96px);padding:clamp(24px,4vw,48px);background:var(--ink-2)}
+.pk-ask{display:grid;gap:10px;justify-items:end}.pk-ask p{margin:0;font-size:14px;color:var(--mute)}.pk-ask a:not(.cta){text-decoration:underline;text-decoration-color:var(--line);text-underline-offset:3px}.pk-ask a:not(.cta):hover{color:var(--lime)}
+@media (max-width:640px){.pk-ask{justify-items:start}}
 .pk-next{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:16px}
 .pk-next a{text-decoration:none;border:1px solid var(--line);padding:20px;display:grid;gap:4px;transition:border-color .2s,color .2s}
 .pk-next a:hover{border-color:var(--lime);color:var(--lime)}
