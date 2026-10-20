@@ -40,8 +40,8 @@
   let loaded = false, userPaused = false;
   const load = () => {
     if (loaded) return; loaded = true;
-    reel.poster = 'vid/v7/tl.jpg';
-    if (small) reel.src = 'vid/v7/tl-sm.mp4';
+    reel.poster = small ? 'vid/v7/tl-m.jpg' : 'vid/v7/tl.jpg';
+    if (small) reel.src = 'vid/v7/tl-m.mp4';
     else reel.innerHTML = '<source src="vid/v7/tl.av1.mp4" type=\'video/mp4; codecs="av01.0.08M.08"\'><source src="vid/v7/tl.mp4" type="video/mp4">';
     reel.load();
   };
@@ -51,7 +51,7 @@
     new IntersectionObserver(([e]) => {
       if (e.isIntersecting) { load(); if (!userPaused) reel.play().catch(() => {}); }
       else reel.pause();
-    }, { threshold: .25 }).observe(reel.parentElement);
+    }, { threshold: .25 }).observe(night);
     const tick = () => {
       if (reel.duration && !reel.paused) { show(at(reel.currentTime)); rb.style.width = (reel.currentTime / reel.duration * 100) + '%'; }
       requestAnimationFrame(tick);
