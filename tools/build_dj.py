@@ -96,7 +96,7 @@ DJS = [
             ("2023", ["사일런트 디스코 마포대교·잠수교·뚝섬 메인 DJ", "코엑스 COFFEE FAIR", "야누스 라운지", "부산 피셔맨 라운지 레지던트", "부산 DENGUE FEVER PUB 게스트"]),
             ("2019~2022", ["KOREAN HARD BASS 오거나이저 & DJ (2019·2022)", "부산 PRIZM LOUNGE (2021)", "부산 BASS OPEN DECK 오거나이저 & DJ", "부산 PKNU CLASS PARTY w/ SIUL PARTY", "디지털 스타디움 워터파크", "부산 CLUB VIBE·CLUB MAHA 게스트", "부산 PNU BASEMENT·NOBODY·POCHAMONSTER·SPACE WHALE 라운지"]),
         ],
-        "gallery": ["live3/team_cheonan", "live3/kali_sac_face", "live3/kali_mapo_booth", "live3/kali_sac_crowd", "live3/kali_mapo_flag", "live2/c077", "live3/kali_sac_play", "live/s_k1", "live2/c123"],
+        "gallery": ["live3/team_cheonan", "live3/kali_sac_face", "live3/kali_mapo_booth", "live3/kali_sac_crowd", "live2/c112", "live2/c077", "live3/kali_sac_play", "live/s_k1", "live2/c123"],
         "videos": [("kali-mapo", "한강 마포대교"), ("kali-apt2", "한강 마포대교"), ("kali-jamsu", "한강 잠수교"),
                    ("kali-love", "한강 마포대교"), ("kali-mapo2", "한강 마포대교"), ("kali-apt", "한강 마포대교")],
         "links": [("INSTAGRAM", "@djkali92", "https://www.instagram.com/djkali92/")],
