@@ -77,7 +77,7 @@ DJS = [
         "slug": "kali", "name": "KALI", "img": "kali", "ow": "KALI",
         "aka": "",
         "tags": ["OPEN FORMAT", "MELBOURNE BOUNCE", "BIGROOM HOUSE"],
-        "job": "제약회사 영업",
+        "job": "의약품 영업",
         "quote": "쭈뼛대는 관객, 제가 설득합니다.",
         "intro": [
             "어린아이부터 중장년층까지 모두를 아우르는 음악을 들려주는 DJ KALI. 익숙한 추억의 노래부터 모두가 따라 추는 메가히트곡까지, 폭넓은 스펙트럼으로 관객이 함께 뛰어놀 수 있는 즐거움을 선사합니다.",
