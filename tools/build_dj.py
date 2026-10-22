@@ -47,7 +47,7 @@ DJS = [
         "slug": "lify", "name": "LiFY", "img": "lify", "ow": "LiFY",
         "aka": "",
         "tags": ["ALL GENRE", "EDM", "HARD BASS", "LOUNGE"],
-        "job": "대기업 마케터",
+        "job": "마케터",
         "quote": "찍고 싶은 순간을 만듭니다.",
         "intro": [
             "클럽과 호텔 라운지, 브랜드 파티와 한강 사일런트 디스코까지. 장르를 가리지 않는 올장르 DJ입니다.",
