@@ -4,15 +4,17 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="robots" content="noindex,nofollow">
-<title>대행사 제안 메일 · 팀원용</title>
+<title>섭외 제안 메일 · 팀원용</title>
 <style>
   :root{--night:#111C1C;--ink:#1A2828;--lime:#C2EA8C;--paper:#F4F7EF;--sub:#566B52;--line:#D5DDCF;--note:#FFF8D6;--noteb:#E0B400}
   body{margin:0;background:#E9EEE3;font-family:'Apple SD Gothic Neo','Malgun Gothic',sans-serif;color:var(--ink)}
   .guide{max-width:600px;margin:0 auto;padding:24px 16px 8px}
-  .note{background:var(--note);border:2px dashed var(--noteb);border-radius:12px;padding:18px 18px 16px}
-  .note h1{margin:0 0 4px;font-size:18px}
-  .note p{margin:0 0 12px;font-size:13px;color:#7A6500;line-height:1.6}
-  ol{margin:0 0 14px;padding-left:20px;font-size:14px;line-height:1.75}
+  .ttl{margin:0 0 12px;font-size:18px;color:var(--night)}
+  .steps{background:#FDECEC;border:2px solid #E42A19;border-radius:12px;padding:6px 16px}
+  .step{display:flex;gap:12px;align-items:flex-start;padding:12px 0;font-size:16px;color:#B3261E}
+  .step+.step{border-top:1px solid #F5B8B2}
+  .step b{display:block;margin:2px 0 8px}
+  .num{flex:none;width:28px;height:28px;border-radius:50%;background:#E42A19;color:#fff;font-weight:800;display:flex;align-items:center;justify-content:center;font-size:15px}
   .row{display:flex;flex-wrap:wrap;gap:8px}
   button,.btn{appearance:none;border:0;border-radius:8px;padding:12px 16px;font:inherit;font-size:14px;font-weight:800;cursor:pointer;text-decoration:none;display:inline-block}
   .primary{background:var(--night);color:var(--lime)}
@@ -20,32 +22,25 @@
   .toast{margin:10px 0 0;font-size:13px;font-weight:700;color:#3D6B1F;min-height:1.2em}
   .subject{margin:12px 0 0;padding:10px 12px;background:#fff;border-radius:8px;font-size:13px;color:var(--sub)}
   .subject b{color:var(--night)}
-  .label{max-width:600px;margin:18px auto 6px;padding:0 16px;font-size:12px;font-weight:700;letter-spacing:1px;color:var(--sub)}
+  .divider{max-width:600px;margin:22px auto 4px;padding:0 16px;position:relative;text-align:center}
+  .divider hr{border:0;border-top:2px solid #B9C4B2;margin:0}
+  .divider span{position:relative;top:-11px;background:#E9EEE3;padding:0 12px;font-size:13px;font-weight:800;letter-spacing:1px;color:var(--sub)}
   .mailwrap{padding:0 10px 40px}
 </style>
 </head>
 <body>
 <div class="guide">
-  <div class="note">
-    <h1>📌 대행사 제안 메일 · 팀원용</h1>
-    <p>아래 ▼ 표시 밑의 메일을 그대로 복사해 내 메일에 붙여 넣는 페이지예요. 이 노란 안내는 복사되지 않아요.</p>
-    <ol>
-      <li><b>[본문 복사]</b>를 누르고, 새 메일 본문에 붙여넣기(⌘V / Ctrl+V)</li>
-      <li><b>[제목 복사]</b>로 제목 붙여넣기</li>
-      <li><b>[소개서 PDF 받기]</b>로 내려받아 첨부</li>
-      <li>노란 칸 <b>[대행사가 진행한 행사명]</b>을 실제 행사명으로 바꾸고 노란 배경 지우기</li>
-      <li>받는 사람은 대행사 <b>한 곳만</b> · 금액은 쓰지 않고 견적은 회신으로</li>
-    </ol>
-    <div class="row">
-      <button class="primary" id="copyBody">본문 복사</button>
-      <button class="ghost" id="copySubj">제목 복사</button>
-      <a class="btn ghost" href="team-unsilent-intro.pdf" download="팀 언사일런트 소개서.pdf">소개서 PDF 받기</a>
-    </div>
-    <div class="subject">제목: <b id="subj">[팀 언사일런트] 소음 걱정 없는 DJ 프로그램, 제안서에 한 칸</b></div>
-    <div class="toast" id="toast" role="status"></div>
+  <h1 class="ttl">섭외 제안 메일 · 팀원용</h1>
+  <div class="steps">
+    <div class="step"><span class="num">1</span><div><b>본문·제목 복사해서 붙여넣기</b>
+      <div class="row"><button class="primary" id="copyBody">본문 복사</button><button class="ghost" id="copySubj">제목 복사</button></div></div></div>
+    <div class="step"><span class="num">2</span><div><b>소개서 PDF 다운받아 첨부</b>
+      <div class="row"><a class="btn ghost" href="team-unsilent-intro.pdf" download="팀 언사일런트 소개서.pdf">소개서 PDF 받기</a></div></div></div>
   </div>
+  <div class="subject">제목: <b id="subj">[팀 언사일런트] 헤드셋 무소음 DJ 공연 프로그램 제안</b></div>
+  <div class="toast" id="toast" role="status"></div>
 </div>
-<div class="label">▼ 여기부터 메일 본문</div>
+<div class="divider"><hr><span>메일 미리보기</span></div>
 <div class="mailwrap">
 <table id="mail" bgcolor="#E9EEE3" role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background-color:#E9EEE3;">
 <tr><td style="padding:16px 0;">
@@ -68,7 +63,7 @@
 
 <tr><td style="padding:30px 24px 6px;font-size:15px;line-height:1.75;">
   <p style="margin:0 0 18px;color:#3A4A48;">안녕하세요, 팀 언사일런트입니다.<br>
-  <span style="background-color:#FFF3B0;">[대행사가 진행한 행사명]</span>을 보고 연락드립니다.</p>
+  행사 프로그램을 준비하시는 분께 소개드리고 싶어 연락드립니다.</p>
   <p style="margin:0 0 16px;font-size:21px;line-height:1.5;font-weight:800;letter-spacing:-0.5px;color:#111C1C;">포터블 장비와 헤드셋으로, <span style="background-color:#DDF3C2;">어디든 공연장</span>으로 만들어 보세요.</p>
   <p style="margin:0;color:#3A4A48;">관객만 헤드셋으로 음악을 듣는 DJ 공연입니다. 헤드셋 300대가 넘는 규모도 문의 주세요.</p>
 </td></tr>
