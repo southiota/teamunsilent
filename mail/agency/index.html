@@ -1,0 +1,250 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>대행사 제안 메일 · 팀원용</title>
+<style>
+  :root{--night:#111C1C;--ink:#1A2828;--lime:#C2EA8C;--paper:#F4F7EF;--sub:#566B52;--line:#D5DDCF;--note:#FFF8D6;--noteb:#E0B400}
+  body{margin:0;background:#E9EEE3;font-family:'Apple SD Gothic Neo','Malgun Gothic',sans-serif;color:var(--ink)}
+  .guide{max-width:600px;margin:0 auto;padding:24px 16px 8px}
+  .note{background:var(--note);border:2px dashed var(--noteb);border-radius:12px;padding:18px 18px 16px}
+  .note h1{margin:0 0 4px;font-size:18px}
+  .note p{margin:0 0 12px;font-size:13px;color:#7A6500;line-height:1.6}
+  ol{margin:0 0 14px;padding-left:20px;font-size:14px;line-height:1.75}
+  .row{display:flex;flex-wrap:wrap;gap:8px}
+  button,.btn{appearance:none;border:0;border-radius:8px;padding:12px 16px;font:inherit;font-size:14px;font-weight:800;cursor:pointer;text-decoration:none;display:inline-block}
+  .primary{background:var(--night);color:var(--lime)}
+  .ghost{background:#fff;color:var(--night);border:1px solid var(--line)}
+  .toast{margin:10px 0 0;font-size:13px;font-weight:700;color:#3D6B1F;min-height:1.2em}
+  .subject{margin:12px 0 0;padding:10px 12px;background:#fff;border-radius:8px;font-size:13px;color:var(--sub)}
+  .subject b{color:var(--night)}
+  .label{max-width:600px;margin:18px auto 6px;padding:0 16px;font-size:12px;font-weight:700;letter-spacing:1px;color:var(--sub)}
+  .mailwrap{padding:0 10px 40px}
+</style>
+</head>
+<body>
+<div class="guide">
+  <div class="note">
+    <h1>📌 대행사 제안 메일 · 팀원용</h1>
+    <p>아래 ▼ 표시 밑의 메일을 그대로 복사해 내 메일에 붙여 넣는 페이지예요. 이 노란 안내는 복사되지 않아요.</p>
+    <ol>
+      <li><b>[본문 복사]</b>를 누르고, 새 메일 본문에 붙여넣기(⌘V / Ctrl+V)</li>
+      <li><b>[제목 복사]</b>로 제목 붙여넣기</li>
+      <li><b>[소개서 PDF 받기]</b>로 내려받아 첨부</li>
+      <li>노란 칸 <b>[대행사가 진행한 행사명]</b>을 실제 행사명으로 바꾸고 노란 배경 지우기</li>
+      <li>받는 사람은 대행사 <b>한 곳만</b> · 금액은 쓰지 않고 견적은 회신으로</li>
+    </ol>
+    <div class="row">
+      <button class="primary" id="copyBody">본문 복사</button>
+      <button class="ghost" id="copySubj">제목 복사</button>
+      <a class="btn ghost" href="team-unsilent-intro.pdf" download="팀 언사일런트 소개서.pdf">소개서 PDF 받기</a>
+    </div>
+    <div class="subject">제목: <b id="subj">[팀 언사일런트] 소음 걱정 없는 DJ 프로그램, 제안서에 한 칸</b></div>
+    <div class="toast" id="toast" role="status"></div>
+  </div>
+</div>
+<div class="label">▼ 여기부터 메일 본문</div>
+<div class="mailwrap">
+<table id="mail" bgcolor="#E9EEE3" role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background-color:#E9EEE3;">
+<tr><td align="center" style="padding:16px 0;">
+<table bgcolor="#FFFFFF" role="presentation" cellpadding="0" cellspacing="0" border="0" style="width:100%;max-width:600px;background-color:#FFFFFF;border-radius:12px;overflow:hidden;font-family:'Apple SD Gothic Neo','Malgun Gothic','맑은 고딕',sans-serif;color:#1A2828;">
+
+<tr><td bgcolor="#111C1C" style="padding:14px 24px;background-color:#111C1C;">
+  <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr>
+    <td style="font-size:13px;font-weight:bold;color:#F4F7EF;"><span style="color:#C2EA8C;">●</span> 팀 언사일런트</td>
+    <td align="right" style="font-size:10px;letter-spacing:2px;color:#93A68E;">SILENT DISCO PROPOSAL</td>
+  </tr></table>
+</td></tr>
+
+<tr><td bgcolor="#111C1C" style="padding:0;background-color:#111C1C;">
+  <img src="https://southiota.github.io/teamunsilent/mail/agency/img/hero.jpg" alt="헤드셋을 쓰고 춤추는 관객들" style="display:block;width:100%;max-width:600px;height:auto;border:0;">
+</td></tr>
+<tr><td bgcolor="#111C1C" style="padding:26px 24px 30px;background-color:#111C1C;">
+  <p style="margin:0;font-size:34px;line-height:1.25;font-weight:800;letter-spacing:-1px;color:#F4F7EF;">스피커는 끄고,<br><span style="color:#C2EA8C;">축제는 켭니다.</span></p>
+  <p style="margin:12px 0 0;font-size:15px;line-height:1.6;color:#B9C7B3;">무소음 DJ 프로그램 · 낮에도 밤에도 · 헤드셋 300대까지</p>
+</td></tr>
+
+<tr><td style="padding:30px 24px 6px;font-size:15px;line-height:1.75;">
+  <p style="margin:0 0 18px;color:#3A4A48;">안녕하세요, 팀 언사일런트입니다.<br>
+  <span style="background-color:#FFF3B0;">[대행사가 진행한 행사명]</span>을 보고 연락드립니다.</p>
+  <p style="margin:0 0 16px;font-size:21px;line-height:1.5;font-weight:800;letter-spacing:-0.5px;color:#111C1C;">포터블 장비와 헤드셋으로, <span style="background-color:#DDF3C2;">어디든 공연장</span>으로 만들어 보세요.</p>
+  <p style="margin:0;color:#3A4A48;">관객만 헤드셋으로 음악을 듣는 DJ 공연입니다. 헤드셋 300대가 넘는 규모도 문의 주세요.</p>
+</td></tr>
+
+<tr><td style="padding:30px 24px 6px;">
+  <p style="margin:0 0 4px;font-size:11px;letter-spacing:2px;color:#5E8A3A;font-weight:bold;">WHY TEAM UNSILENT</p>
+  <p style="margin:0 0 14px;font-size:19px;line-height:1.4;font-weight:800;color:#111C1C;">왜 팀 언사일런트일까요? 세 가지로 답합니다.</p>
+  <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr><td style="padding:14px 0;border-top:2px solid #111C1C;">
+    <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr>
+      <td width="92" valign="top" style="font-size:30px;line-height:1;font-weight:800;color:#111C1C;">200+</td>
+      <td valign="top">
+        <p style="margin:0;font-size:15px;font-weight:800;color:#111C1C;">전 세대 입증된 떼창곡</p>
+        <p style="margin:4px 0 0;font-size:13px;line-height:1.6;color:#566B52;">한강에서 전 세대 대상으로 발굴된 떼창곡.<br>솔직히 몇 개인지 헤아리기도 어렵습니다.</p>
+      </td>
+    </tr></table>
+  </td></tr>
+  <tr><td style="padding:14px 0;border-top:1px solid #D5DDCF;">
+    <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr>
+      <td width="92" valign="top" style="font-size:30px;line-height:1;font-weight:800;color:#111C1C;">50+</td>
+      <td valign="top">
+        <p style="margin:0;font-size:15px;font-weight:800;color:#111C1C;">누구나 함께하는 레크레이션 콘텐츠</p>
+        <p style="margin:4px 0 0;font-size:13px;line-height:1.6;color:#566B52;">흥의 민족, 문제는 어떻게 놀 줄 모르는 것.<br>현장에서 검증한 콘텐츠로 함께 뛰게 합니다.</p>
+      </td>
+    </tr></table>
+  </td></tr>
+  <tr><td style="padding:14px 0;border-top:1px solid #D5DDCF;border-bottom:1px solid #D5DDCF;">
+    <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr>
+      <td width="92" valign="top" style="font-size:30px;line-height:1;font-weight:800;color:#5E8A3A;">0</td>
+      <td valign="top">
+        <p style="margin:0;font-size:15px;font-weight:800;color:#5E8A3A;">폰을 들지 않아 배가 되는 즐거움</p>
+        <p style="margin:4px 0 0;font-size:13px;line-height:1.6;color:#566B52;">아이러니하게도 공연자가 유명하지 않아<br>더 열광적인 무대가 연출됩니다.</p>
+      </td>
+    </tr></table>
+  </td></tr>
+  </table>
+</td></tr>
+
+<tr><td style="padding:30px 24px 6px;">
+  <p style="margin:0 0 4px;font-size:11px;letter-spacing:2px;color:#5E8A3A;font-weight:bold;">TECH RIDER</p>
+  <p style="margin:0 0 14px;font-size:19px;line-height:1.4;font-weight:800;color:#111C1C;">현장에서 준비하실 건 네 가지입니다.</p>
+  <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr>
+    <td width="50%" valign="top" style="padding:0 4px 8px 0;">
+      <table bgcolor="#F4F7EF" role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background-color:#F4F7EF;border-radius:8px;"><tr><td style="padding:12px 14px;">
+        <p style="margin:0;font-size:11px;font-weight:bold;color:#5E8A3A;">01 전원</p>
+        <p style="margin:3px 0 0;font-size:14px;font-weight:bold;color:#111C1C;">220V 콘센트 2구</p>
+      </td></tr></table>
+    </td>
+    <td width="50%" valign="top" style="padding:0 0 8px 4px;">
+      <table bgcolor="#F4F7EF" role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background-color:#F4F7EF;border-radius:8px;"><tr><td style="padding:12px 14px;">
+        <p style="margin:0;font-size:11px;font-weight:bold;color:#5E8A3A;">02 테이블</p>
+        <p style="margin:3px 0 0;font-size:14px;font-weight:bold;color:#111C1C;">1800×600mm 1개</p>
+      </td></tr></table>
+    </td>
+  </tr>
+  <tr>
+    <td width="50%" valign="top" style="padding:0 4px 0 0;">
+      <table bgcolor="#F4F7EF" role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background-color:#F4F7EF;border-radius:8px;"><tr><td style="padding:12px 14px;">
+        <p style="margin:0;font-size:11px;font-weight:bold;color:#5E8A3A;">03 공간</p>
+        <p style="margin:3px 0 0;font-size:14px;font-weight:bold;color:#111C1C;">행사 및 DJ 부스 공간</p>
+      </td></tr></table>
+    </td>
+    <td width="50%" valign="top" style="padding:0 0 0 4px;">
+      <table bgcolor="#F4F7EF" role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background-color:#F4F7EF;border-radius:8px;"><tr><td style="padding:12px 14px;">
+        <p style="margin:0;font-size:11px;font-weight:bold;color:#5E8A3A;">04 우천 대비</p>
+        <p style="margin:3px 0 0;font-size:14px;font-weight:bold;color:#111C1C;">천막 또는 실내 대체 공간</p>
+      </td></tr></table>
+    </td>
+  </tr>
+  </table>
+  <p style="margin:10px 0 0;font-size:13px;color:#566B52;">DJ 장비와 헤드셋·송신기는 저희가 포터블로 가져갑니다.</p>
+</td></tr>
+
+<tr><td style="padding:30px 0 0;">
+  <table bgcolor="#111C1C" role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background-color:#111C1C;"><tr><td style="padding:26px 24px 24px;">
+    <p style="margin:0 0 4px;font-size:11px;letter-spacing:2px;color:#C2EA8C;font-weight:bold;">TRACK RECORD</p>
+    <p style="margin:0 0 18px;font-size:19px;line-height:1.4;font-weight:800;color:#F4F7EF;">한강에서 4년, 숫자로 먼저 말씀드립니다.</p>
+    <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr>
+      <td width="33%" valign="top" style="padding:12px 6px 0 0;border-top:1px solid #3A4D4B;">
+        <p style="margin:0;font-size:32px;line-height:1.1;font-weight:800;color:#C2EA8C;">900+</p>
+        <p style="margin:6px 0 0;font-size:12px;line-height:1.5;color:#B9C7B3;">한강 회당 관객</p>
+      </td>
+      <td width="33%" valign="top" style="padding:12px 6px 0;border-top:1px solid #3A4D4B;">
+        <p style="margin:0;font-size:32px;line-height:1.1;font-weight:800;color:#C2EA8C;">194+</p>
+        <p style="margin:6px 0 0;font-size:12px;line-height:1.5;color:#B9C7B3;">한강 관련 언론 보도</p>
+      </td>
+      <td width="34%" valign="top" style="padding:12px 0 0 6px;border-top:1px solid #3A4D4B;">
+        <p style="margin:0;font-size:32px;line-height:1.1;font-weight:800;color:#C2EA8C;">2023~</p>
+        <p style="margin:6px 0 0;font-size:12px;line-height:1.5;color:#B9C7B3;">한강 메인 DJ</p>
+      </td>
+    </tr></table>
+    <p style="margin:18px 0 0;font-size:13px;line-height:1.7;color:#E1E8DC;">지자체 행사 출연 · 성남시청 사일런트 디스코, 광안리 수영구 무소음 DJ 콘서트, 서초 서리풀 페스티벌 외</p>
+    <p style="margin:10px 0 0;font-size:11px;line-height:1.6;color:#7F927B;">관객 900+는 2024년 회차별 집계, 보도 194+는 2023~2024년 한강 사일런트 디스코 관련 보도 집계입니다. 한강 사일런트 디스코의 보도상 행사명은 ‘한강 무소음 DJ 파티’이며 주최는 사일런트 디스코 코리아, 팀 언사일런트는 메인 DJ입니다. 행사 목록은 팀원 공연 이력에서 발췌했습니다.</p>
+  </td></tr></table>
+</td></tr>
+
+<tr><td style="padding:30px 24px 6px;">
+  <p style="margin:0 0 4px;font-size:11px;letter-spacing:2px;color:#5E8A3A;font-weight:bold;">LINE-UP</p>
+  <p style="margin:0 0 14px;font-size:19px;line-height:1.4;font-weight:800;color:#111C1C;">본업은 셋, 무대는 한 팀입니다.</p>
+  <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr>
+    <td width="33.33%" valign="top" style="width:33.33%;padding:0 6px 0 0;">
+      <a href="https://www.instagram.com/dr.ktrl/reel/DfOYnf9Mbeo/"><img src="https://southiota.github.io/teamunsilent/mail/agency/img/dj_ktrl.jpg" alt="DR.KTRL" style="display:block;width:100%;height:auto;border:0;border-radius:8px;"></a>
+      <p style="margin:8px 0 0;font-size:14px;font-weight:800;color:#111C1C;">DR.KTRL</p>
+      <p style="margin:2px 0 0;font-size:11px;line-height:1.45;color:#566B52;">본업 15년 R&D 기획</p>
+      <p style="margin:6px 0 0;font-size:12px;line-height:1.5;color:#1A2828;">“공연도 사전 준비가 8할입니다.”</p>
+      <a href="https://www.instagram.com/dr.ktrl/reel/DfOYnf9Mbeo/"><img src="https://southiota.github.io/teamunsilent/mail/agency/img/vid_ktrl.jpg" alt="KTRL 현장 영상" style="display:block;width:100%;height:auto;border:0;border-radius:6px;margin:8px 0 0;"></a>
+      <p style="margin:4px 0 0;font-size:12px;"><a href="https://www.instagram.com/dr.ktrl/reel/DfOYnf9Mbeo/" style="color:#3D6B1F;font-weight:bold;">▶ 한강 현장</a></p>
+    </td>
+    <td width="33.33%" valign="top" style="width:33.33%;padding:0 3px;">
+      <a href="https://www.instagram.com/djkali92/reel/Db2KoR7JHmD/"><img src="https://southiota.github.io/teamunsilent/mail/agency/img/dj_kali.jpg" alt="KALI" style="display:block;width:100%;height:auto;border:0;border-radius:8px;"></a>
+      <p style="margin:8px 0 0;font-size:14px;font-weight:800;color:#111C1C;">KALI</p>
+      <p style="margin:2px 0 0;font-size:11px;line-height:1.45;color:#566B52;">본업 의약품 영업</p>
+      <p style="margin:6px 0 0;font-size:12px;line-height:1.5;color:#1A2828;">“쭈뼛대는 관객, 제가 설득합니다.”</p>
+      <a href="https://www.instagram.com/djkali92/reel/Db2KoR7JHmD/"><img src="https://southiota.github.io/teamunsilent/mail/agency/img/vid_kali.jpg" alt="KALI 현장 영상" style="display:block;width:100%;height:auto;border:0;border-radius:6px;margin:8px 0 0;"></a>
+      <p style="margin:4px 0 0;font-size:12px;"><a href="https://www.instagram.com/djkali92/reel/Db2KoR7JHmD/" style="color:#3D6B1F;font-weight:bold;">▶ 한강 잠수교 ‘Pedro’</a></p>
+    </td>
+    <td width="33.33%" valign="top" style="width:33.33%;padding:0 0 0 6px;">
+      <a href="https://www.instagram.com/dj_lify/reel/DJ4lmLKy95I/"><img src="https://southiota.github.io/teamunsilent/mail/agency/img/dj_lify.jpg" alt="LiFY" style="display:block;width:100%;height:auto;border:0;border-radius:8px;"></a>
+      <p style="margin:8px 0 0;font-size:14px;font-weight:800;color:#111C1C;">LiFY</p>
+      <p style="margin:2px 0 0;font-size:11px;line-height:1.45;color:#566B52;">본업 마케터</p>
+      <p style="margin:6px 0 0;font-size:12px;line-height:1.5;color:#1A2828;">“찍고 싶은 순간을 만듭니다.”</p>
+      <a href="https://www.instagram.com/dj_lify/reel/DJ4lmLKy95I/"><img src="https://southiota.github.io/teamunsilent/mail/agency/img/vid_lify.jpg" alt="LIFY 현장 영상" style="display:block;width:100%;height:auto;border:0;border-radius:6px;margin:8px 0 0;"></a>
+      <p style="margin:4px 0 0;font-size:12px;"><a href="https://www.instagram.com/dj_lify/reel/DJ4lmLKy95I/" style="color:#3D6B1F;font-weight:bold;">▶ 한강 무소음 DJ 파티</a></p>
+    </td>
+  </tr></table>
+</td></tr>
+
+<tr><td style="padding:32px 24px 8px;">
+  <table bgcolor="#F4F7EF" role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background-color:#F4F7EF;border-left:4px solid #C2EA8C;border-radius:0 8px 8px 0;"><tr><td style="padding:18px 18px;">
+    <p style="margin:0;font-size:18px;line-height:1.5;font-weight:800;color:#111C1C;">협력 업체 명단에 올려 주실 수 있을까요?<br>한 줄 회신이면 충분합니다.</p>
+    <p style="margin:10px 0 0;font-size:13px;line-height:1.6;color:#566B52;">팀 소개서를 첨부합니다(PDF). 견적은 헤드셋 수와 공연 시간에 맞춰 회신드립니다.</p>
+  </td></tr></table>
+</td></tr>
+<tr><td style="padding:16px 24px 8px;">
+  <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr>
+  <td bgcolor="#C2EA8C" align="center" style="background-color:#C2EA8C;border-radius:8px;">
+    <a href="https://southiota.github.io/teamunsilent/" style="display:block;padding:16px 20px;font-size:16px;font-weight:800;color:#111C1C;text-decoration:none;">현장 영상·보도 먼저 보기 →</a>
+  </td></tr></table>
+</td></tr>
+
+<tr><td style="padding:22px 24px 26px;font-size:14px;line-height:1.7;">
+  <p style="margin:0 0 14px;color:#3A4A48;">감사합니다.</p>
+  <p style="margin:0;padding-top:14px;border-top:1px solid #D5DDCF;"><b style="color:#111C1C;">팀 언사일런트</b><br>
+  <span style="color:#566B52;">0507-1494-4029 · <a href="mailto:support@fextai.com" style="color:#566B52;">support@fextai.com</a></span></p>
+</td></tr>
+
+</table>
+</td></tr>
+</table>
+</div>
+<script>
+  const toast = (m) => { const t = document.getElementById('toast'); t.textContent = m; };
+  function selectCopy(el){
+    const r = document.createRange(); r.selectNode(el);
+    const s = window.getSelection(); s.removeAllRanges(); s.addRange(r);
+    let ok = false; try { ok = document.execCommand('copy'); } catch(e) {}
+    s.removeAllRanges(); return ok;
+  }
+  document.getElementById('copyBody').addEventListener('click', async () => {
+    const el = document.getElementById('mail');
+    try {
+      await navigator.clipboard.write([new ClipboardItem({
+        'text/html': new Blob([el.outerHTML], {type: 'text/html'}),
+        'text/plain': new Blob([el.innerText], {type: 'text/plain'})
+      })]);
+      toast('본문을 복사했어요. 새 메일 본문에 붙여 넣으세요.');
+    } catch (e) {
+      toast(selectCopy(el) ? '본문을 복사했어요. 새 메일 본문에 붙여 넣으세요.' : '복사가 안 되면 메일 부분을 드래그해서 복사해 주세요.');
+    }
+  });
+  document.getElementById('copySubj').addEventListener('click', async () => {
+    const t = document.getElementById('subj').textContent;
+    try { await navigator.clipboard.writeText(t); toast('제목을 복사했어요.'); }
+    catch (e) { toast(selectCopy(document.getElementById('subj')) ? '제목을 복사했어요.' : '제목을 드래그해서 복사해 주세요.'); }
+  });
+</script>
+</body>
+</html>
